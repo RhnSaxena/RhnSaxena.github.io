@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&subset=latin-ext,vietnamese');
 
 :root {
-	font-size: 20px;
 	--red: #da2c4d;
 	--yellow: #f8ab37;
 	--green: #2ecc71;
@@ -18,12 +17,9 @@
 }
 body{
     font-family: 'Muli', sans-serif;
-	font-size: 16px;
-	font-weight: 500;
 	line-height: 1.65;
 	color: var(--grey);
 	background-color: var(--black-blue);
-	overflow-x: hidden;
 	letter-spacing: 0.2px;
 	-webkit-transition: all 200ms linear;
 	transition: all 200ms linear; 
@@ -194,27 +190,28 @@ h1{
   animation: stroke 6s infinite linear;
 }
 .text:nth-child(5n + 1) {
-  stroke: #F2385A;
+  stroke: #0286c3;
   -webkit-animation-delay: -1.2s;
   animation-delay: -1.2s;
 }
 .text:nth-child(5n + 2) {
-  stroke: #F5A503;
+  /*stroke: #ffffff;*/
+  stroke: #000000;
   -webkit-animation-delay: -2.4s;
   animation-delay: -2.4s;
 }
 .text:nth-child(5n + 3) {
-  stroke: #E9F1DF;
+  stroke: #ee304d;
   -webkit-animation-delay: -3.6s;
   animation-delay: -3.6s;
 }
 .text:nth-child(5n + 4) {
-  stroke: #56D9CD;
+  stroke: #fbb32e;
   -webkit-animation-delay: -4.8s;
   animation-delay: -4.8s;
 }
 .text:nth-child(5n + 5) {
-  stroke: #3AA1BF;
+  stroke: #158c39;
   -webkit-animation-delay: -6s;
   animation-delay: -6s;
 }

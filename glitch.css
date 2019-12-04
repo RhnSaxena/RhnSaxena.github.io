@@ -1,44 +1,36 @@
-  .htmlGlitch {
+@import url(https://fonts.googleapis.com/css?family=Medula+One);
+
+.htmlGlitch {
   height: 100%;
-  margin: 0;
   padding: 0;
-  background-color: black;
+  background-color: #1f2029;
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Medula One', sans-serif;
-  font-size: 3em;
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5em;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  translate: none;
 }
 
-.bodyGlitch {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: black;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Medula One', sans-serif;
-  font-size: 3em;
+.spanGlitch {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5em;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  translate: none;
 }
-
+/*
 .spanGlitch:first-child {
   margin-right: 20px;
 }
-
+*/
 .spanGlitch:last-child {
-  color: black;
-  background-color: black;
+  color: #1f2029;
+  background-color: #1f2029;
   animation: fadeWhite 4s forwards;
   animation-delay: 2s;
   position: relative;
@@ -49,10 +41,10 @@
   left: 2px;
   top: 2px;
   clip: rect(0, 900px, 0, 0);
-  background-color: black;
+  background-color: #1f2029;
   color: white;
   animation: glitch 3s infinite alternate-reverse;
-  animation-delay: 4s;
+  animation-delay: 2s;
 }
 .spanGlitch:last-child:before {
   content: "presents";
@@ -60,10 +52,10 @@
   left: -2px;
   top: -2px;
   clip: rect(0, 900px, 0, 0);
-  background-color: black;
+  background-color: #1f2029;
   color: white;
   animation: glitch 3s infinite alternate-reverse;
-  animation-delay: 4s;
+  animation-delay: 2s;
 }
 
 @keyframes fadeWhite {
@@ -134,5 +126,11 @@
   }
   100% {
     clip: rect(83px, 9999px, 9px, 0);
+  }
+}
+
+@media only screen and (max-width: 850px){
+  .htmlGlitch{
+    font-size : 3rem;
   }
 }

@@ -3,7 +3,7 @@
 .bodyrot {
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
-    font-size: 40px;
+    font-size: 3em;
 }
 
 .textrot {
@@ -76,5 +76,17 @@
 }
 
 .midnight {
-    color: #2c3e50;
+    color: #ba0639;
+}
+
+@media only screen and (max-width: 800px){
+  .bodyrot {
+    font-size: 2.5em;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .bodyrot {
+    font-size: 1.5em;
+  }
 }
