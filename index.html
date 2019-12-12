@@ -1,124 +1,492 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>GUSTO 2020</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Medula+One" rel="stylesheet">
-    <link href='./glitch.css' rel='stylesheet'>
-    <link href="./index.css" rel="stylesheet">
-    <link href="./animateGusto.css" rel="stylesheet">
-    <link href="./comingsoon.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
-    <script>
-      window.console = window.console || function(t) {};
-    </script>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>GUSTO 2020</title>
 
-    <script>
-      if (document.location.search.match(/type=embed/gi)) {
-        window.parent.postMessage("resize", "*");
-      }
-    </script>
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/space.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Mr+Dafoe|Raleway&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
+  <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
-  </head>
-  <body translate="no">
 
-    <!-- IIITDM Presents -->
-    <div class="section parallax-fade-top">
-      <!-- <div id="IIITDMJ" class="row htmlGlitch justify-content-center">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""/>
 
-        <span class="col-md-3 spanGlitch">IIITDM</span>
-        <span class="col-md-3 spanGlitch">JABALPUR</span>
-        <span class="col-md-3 spanGlitch">PRESENTS</span>
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+ integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+ crossorigin=""></script>
 
-      </div> -->
+ 
 
-      <!-- With Seperate Section -->
-      <div id="IIITDMJ" class="htmlGlitch" style="margin-top: 40vh;">
-        <div class="container">
-          <div class="row text-center">
-              <span class=" htmlGlitch col h1 float-right">IIITDM</span>
-              <span class=" htmlGlitch col h1 float-left">JABALPUR</span>
+</head>
+<body>
+    <!-- <div class="navbar-fixed">
+      
+  <nav class="white" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo">Logo</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#">Navbar Link</a></li>
+        </ul>
+  
+        <ul id="nav-mobile" class="sidenav">
+          <li><a href="#">Navbar Link</a></li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>jp
+    </div> -->
+
+  <div id="index-banner" class="parallax-container">
+
+    <div class="section no-pad-bot gustoLogo">
+      <div class="container">
+        <div class="row center">
+            <div class="stars"></div>
+            <div class="twinkling"></div>
+            <div class="clouds" style="">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col sm12 m12 mx-auto">
+                                <h2>IIITDM Jabalpur</h2>
+                                
+                                <h4 style="font-family: 'Mr Dafoe', cursive;"> presents</h4>
+                            </div>
+                          </div>
+                      <div class="row">
+                        <div class="col sm12 m12 mx-auto">
+                            <img src="./images/gusto.jpeg" style="height: 60%;width:60%" alt="Unsplashed background img 1">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col sm12 m12">
+                          <h3> 29th February - 3rd March, 2019</h3>
+                        </div>
+                      </div>
+
+                    </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="parallax"><img src="./images/gusto.jpeg" alt="Unsplashed background img 1"></div> -->
+  </div>
+
+<br><br>
+
+  <div class="container" style="padding-bottom: 10%; padding-top: 5%;">
+    <div class="section">
+
+        <div class="row">
+          
+
+            <div class="col s12 m6" style="padding-right: 5%;">
+                <h3 class="Left brown-text">Inter IIIT</h3>  
+                <p class="light">
+                    This year PDPM IIITDM Jabalpur will be hosting the Inter-IIIT Sports Meet as it's annual Sports Fest : GUSTO. This will be the fourth edition in
+                    the series with the first three being successfully hosted by IIITDM Kancheepuram, ABV-IIITM Gwalior and
+                    IIIT Allahabad. With participants from over 24 IIITs from all over India, it is one of the largest fests in
+                    Central India.</p>
+            </div>
+    
+            <div class="col s12 m6 right">
+                
+
+                <div class="container">
+                    <div >
+                      <img src="./images/Iiitdmj-logo.jpg ">
+                      <!-- <span class="card-title">Card Title</span> -->
+                    </div>
+                    </div>
+
+
+                <!-- <img src="" style=" padding: 5%;"> -->
+          
+            </div>
+    
           </div>
-          <div class="row justify-content-center">
-            <div>
-              <span class="spanGlitch col">presents</span>
+
+
+    </div>
+  </div>
+
+  <div class="container" style="padding-bottom: 5%;">
+      <div class="section">  
+  
+            <div class="row">
+            
+                
+                <div class="col s12 m6 left">
+                    
+    
+                    <div class="container">
+                        <div>
+                          <img  src="./images/gusto_about.jpeg " style="padding: 2%; height: 80%; width: 80%;">
+                          <!-- <span class="card-title">Card Title</span> -->
+                        </div>
+                        </div>
+    
+    
+                    <!-- <img src="" style=" padding: 5%;"> -->
+              
+                </div>
+                <div class="col s12 m6" style="padding-left: 5%;">
+                    <h3 class="Right brown-text"> GUSTO 2020</h3>  
+                      <p class="light">
+                          GUSTO – the Annual Sports Fest of IIITDM Jabalpur held every year during the even semester where the
+                          sports enthusiasts of various colleges come together into the Institute campus to showcase their talents
+                          and participate in the competitive sporting events. This year GUSTO gives
+                          you the opportunity to grow as a sports person inculcated with various values and provides a healthy
+                          competitive environment which will be full of excitement and joy.
+                      </p>
+                </div>
+              </div>
+      </div>
+    </div>
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h1 class="header col s12 light" style="font-family: 'Mr Dafoe', cursive;">Summon the <span style="color:#F91F1F">Champions.</span></h1>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="./images/cricket2_edited1.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h3 class="Right brown-text">Events</h3> 
+
+
+
+          <div class="row">
+
+
+
+            <div class="col s12 m4 ">
+              <div class="card small hoverable">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="images/chess.jpg">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">Chess</span>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">Event List Here<i class="material-icons right">close</i></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col s12 m4 ">
+              <div class="card small hoverable">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="images/cricket2_edited.jpg">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">Cricket</span>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">Event List Here<i class="material-icons right">close</i></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col s12 m4 ">
+            <div class="card small hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="images/Volleyball.jpg">
+            </div>
+            <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Volleyball</span>
+            </div>
+            <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Event List Here<i class="material-icons right">close</i></span>
+            </div>
+            </div>
             </div>
           </div>
+          <div class="row">
+            <div class="col s12 m2"></div>
+            <div class="col s12 m4 ">
+            <div class="card small hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="images/basketball2.jpg">
+            </div>
+            <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Basketball</span>
+            </div>
+            <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Event List Here<i class="material-icons right">close</i></span>
+            </div>
+            </div>
+            </div>
+
+            <div class="col s12 m4 ">
+            <div class="card small hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="images/football.jpg">
+            </div>
+            <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Football</span>
+            </div>
+            <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Event List Here<i class="material-icons right">close</i></span>
+            </div>
+            </div>
+            </div>
+
+          </div>
+          <div class="row">
+
+
+            <div class="col s12 m4 ">
+            <div class="card small hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="images/badminton.jpg">
+            </div>
+            <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Badminton</span>
+            </div>
+            <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Event List Here<i class="material-icons right">close</i></span>
+            </div>
+            </div>
+            </div>
+
+            <div class="col s12 m4 ">
+            <div class="card small hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="images/lawntennis.jpg">
+            </div>
+            <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Lawn Tennis</span>
+            </div>
+            <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Event List Here<i class="material-icons right">close</i></span>
+            </div>
+            </div>
+            </div>
+
+            <div class="col s12 m4 ">
+            <div class="card small hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="images/tabletennis.jpg">
+            </div>
+            <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Table Tennis</span>
+            </div>
+            <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Event List Here<i class="material-icons right">close</i></span>
+            </div>
+            </div>
+            </div>
+
+          </div>
+          <div class="row">
+              <div class="col s12 m2"></div>
+            <div class="col s12 m4 float-center">
+            <div class="card small hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="images/athletics.jpg">
+            </div>
+            <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Athletics</span>
+            </div>
+            <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+                <ul class="collapsible clearfix">
+                  <li>
+                    <div class="collapsible-header">Racing</div>
+                    <div class="collapsible-body left-align">
+                      <ul>
+                        <li>100 meters</li>
+                        <li>200 meters</li>
+                        <li>400 meters</li>
+                        <li>800 meters</li>
+                        <li>1500 meters</li>
+                        <li>3000 meters</li>
+                        <li>5000 meters</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">Hurdle</div>
+                    <div class="collapsible-body left-align">
+                      <ul>
+                        <li>110 meters</li>
+                        <li>400 meters</li>
+                        <li>100 meters</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">Relay</div>
+                    <div class="collapsible-body left-align">
+                      <ul>
+                        <li>4x100 meters</li>
+                        <li>4x400 meters</li>
+                        <li>4x100 meters (Mixed: 2 Boys 2 Girls)</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">Field</div>
+                    <div class="collapsible-body left-align">
+                      <ul>
+                        <li >High Jump</li>
+                        <li >Long Jump</li>
+                        <li >Triple Jump</li>
+                        <li >Shotput</li>
+                        <li >Discus Throw</li>
+                        <li >Javelin Throw</li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+            </div>
+            </div>
+            </div>
+
+            <div class="col s12 m4 ">
+            <div class="card small hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="images/carrom.jfif">
+            </div>
+            <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Carrom</span>
+            </div>
+            <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Event List Here<i class="material-icons right">close</i></span>
+            </div>
+            </div>
+            </div>
+
+          </div>
+
         </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+            <h1 class="header col s12 light" style="font-family: 'Mr Dafoe', cursive;">See you on the <span style="color:#F91F1F">court.</span></h1>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="./images/1_edited.jpg" alt="Unsplashed background img 3"></div>
+  </div>
+
+  
+
+  <!-- Footer -->
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+ 
+        <div class="col l8 s12">
+            <div class="container">
+                <div id="mapid">
+                
+                  </div>
+            </div>
+        </div>
+
+        <div class="col l4 s12">
+
+          <h5 class="white-text">Contact Us <a class="waves-effect waves-light btn-floating social">
+            <i class="material-icons circle green ">phone</i></a></h5>
+          <ul>
+            <li><h6>Shakti Raj Singh - +(91) 7007427883</h6></li>
+            <li><h6>Abhishek Patel - +(91) 9144418241</h6></li>
+            <li><h6>Siddhant Lohia - +(91) 9166788668</h6></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row right" >
+
+          <!-- <div class="col s2 icon center">
+            <a class="waves-effect waves-light btn-floating social hoverable">
+            <i class="material-icons circle green ">phone</i></a>
+          </div>
+ -->
+          <div class="col icon center">
+            <a class="waves-effect waves-light btn-floating social hoverable" href="https://twitter.com/gusto_2020">
+            <i class="fa fa-twitter circle blue "></i></a>
+          </div>
+
+          <div class="col icon center">
+            <a class="waves-effect waves-light btn-floating social hoverable" href="https://www.facebook.com/iiitdmj.gusto">
+            <i class="fa fa-facebook circle blue darken-4"></i></a>
+          </div>
+
+          <div class="col icon center">
+            <a class="waves-effect waves-light btn-floating social hoverable" href="https://www.linkedin.com/in/gusto-iiitdm-jabalpur-0a9176199/">
+            <i class="fa fa-linkedin circle light-blue darken-4"></i></a>
+          </div>
+
+          <div class="col icon center">
+            <a class="waves-effect waves-light btn-floating social hoverable" href="https://www.instagram.com/gusto_2020/">
+            <img src="images/instagram.svg"></a>
+          </div>
+
+          <div class="col icon center">
+            <a class="waves-effect waves btn-floating social hoverable" target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=gusto@iiitdmj.ac.in">
+            <i class="fa fa-envelope circle red darken-2"></i></a>
+          </div>
+      </div>
+              <div class="break"></div>
+
+          </div>
+
+
+    <div class="footer-copyright clearfix center">
         <div class="container">
-        </div>
+        <div class="item">Copyright © 2020 All Rights Reserved | Gusto Core Team, IIITDM Jabalpur</div>
+        <!-- <div class="break"></div> -->
       </div>
-
+      
     </div>
 
+  </footer>
 
-     <!-- GUSTO2020 Coming Soon -->
-    <div class="section">
-      <div id="GUSTO2020">
 
-        
-        <!-- Strokes Animation -->
-        <div class="bodyGusto htmlGusto" translate="no">
-          <svg class="svgGusto" viewBox="0 0 600 300">
+  <script>
+      var mymap = L.map('mapid').setView([23.175628,80.024239], 13);
+      L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox/streets-v11',
+        accessToken: 'pk.eyJ1IjoiZ3VzdG9tYXBzIiwiYSI6ImNrNDF4aTc5bjAwMDYzbmp5NXYwaXZoemgifQ.TVfKlC6h1MTzU0oML0tvqQ'
+        }).addTo(mymap);
 
-            <symbol id="s-text">
-              <text text-anchor="middle" x="50%" y="28%" dy=".35em">GUSTO 2020</text>
-            </symbol>
-
-            <use class="text" xlink:href="#s-text"></use>
-            <use class="text" xlink:href="#s-text"></use>
-            <use class="text" xlink:href="#s-text"></use>
-            <use class="text" xlink:href="#s-text"></use>
-            <use class="text" xlink:href="#s-text"></use>
-          </svg>
-        </div>
-
-        <!-- More Action Sports -->
-        <div class="textrot bodyrot prot" style="margin-top:1%">
-          <p>More &nbsp
-            <span class="word wisteria">Action.</span>
-            <span class="word belize">Sports.</span>
-            <span class="word pomegranate">Cheers.</span>
-            <span class="word green">Fun.</span>
-            <span class="word midnight">Thrill.</span>
-          </p>
-        </div>
-
-        <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script>
-        <script src="./animateRotate.js" id="rendered-js"></script>
-
-        <!-- Coming Soon -->
-        <div class="comingHTML" style="margin-top:75vh">
-          <p class="comingP">
-            COMING SOON
-            <span class="comingSpan">
-              29 Feb - 3 March, 2020
-            </span>
-          </p>
-        </div>
-      </div>
-
-    </div>
-
-    <div class='cursor' id="cursor"></div>
-    <div class='cursor2' id="cursor2">
-      <div class="progress-wrap">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-        </svg>
-      </div>
-    </div>
-    <div class='cursor3' id="cursor3"></div>
-    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js'></script>
-    <script src='./scrollrender.js' id='rendered-js'></script>
+      var marker = L.marker([23.175628,80.024239]).addTo(mymap);
+      marker.bindPopup("<b>PDPM IIITDM Jabalpur</b><br>Airport Rd, Khamaria, Dumna, Madhya Pradesh 482005.").openPopup();
+    </script>
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
 
   </body>
 </html>
