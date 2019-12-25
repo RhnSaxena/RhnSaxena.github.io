@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>GUSTO 2020</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/space.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Mr+Dafoe|Raleway&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
+  <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="icon" href="./images/logo4.png">
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""/>
+
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+ integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+ crossorigin=""></script>
+
+ 
+
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="transparent navbar-fixed" style="padding:0% 4%; position: fixed;">
+    <div class="nav-wrapper transparent white-text">
+      <a href="index.html" class="brand-logo white-text">Gusto'20</a>
+
+      <a href="#" class="sidenav-trigger" data-target="mobile-nav">
+        <i class="material-icons white-text" >menu</i>
+      </a>
+
+      <ul class="right hide-on-med-and-down white-text">
+        <li><a href="index.html" class="white-text">Home</a></li>
+        <li><a href="#" class="white-text">About</a></li>
+        <li><a href="#events_list" class="white-text">Events</a></li>
+        <li><a href="#" class="white-text">Schedule</a></li>
+        <li><a href="#" class="white-text">Scorecard</a></li>
+        <li><a href="#" class="white-text">Contact Us</a></li>
+        <li><a href="#" class="white-text">Register</a></li>
+      </ul>
+    </div>
+  </nav>
+  <ul class="sidenav" id="mobile-nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#events_list">Events</a></li>
+    <li><a href="#">Schedule</a></li>
+    <li><a href="#">Scorecard</a></li>
+    <li><a href="#">Contact Us</a></li>
+    <li><a href="#">Register</a></li>
+  </ul>
+
+  <!-- <div id="index-banner" class="parallax-container"> -->
+    <div class="section no-pad-bot gustoLogo">
+        <div class="stars"></div>
+        <div class="twinkling"></div>
+        <div class="clouds">
+
+      <div class="container" style="margin-top: 5%;">
+        <div class="row center">
+            <div class="container">
+                <div class="row">
+                    <div class="col sm12 m12 mx-auto white-text center">
+                        <h2>IIITDM Jabalpur</h2>
+                        
+                        <h4 style="font-family: 'Mr Dafoe', cursive;"> presents</h4>
+                    </div>
+                  </div>
+              <div class="row">
+                <div class="col sm12 m12 mx-auto">
+                    <img src="./images/logo2.png" style="height: 70%;width:70%" alt="Unsplashed background img 1">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col sm12 m12 white-text">
+                  <h3> 29th February - 3rd March, 2020</h3>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+
+<br><br>
+
+  <div class="container" style="padding-bottom: 10%; padding-top: 5%;">
+    <div class="section">
+
+        <div class="row">
+          
+
+            <div class="col s12 m6" style="padding-right: 5%;">
+                <h3 class="Left brown-text">Inter IIIT</h3>  
+                <p class="light">
+                    This year PDPM IIITDM Jabalpur will be hosting the Inter-IIIT Sports Meet as it's annual Sports Fest : GUSTO. This will be the fourth edition in
+                    the series with the first three being successfully hosted by IIITDM Kancheepuram, ABV-IIITM Gwalior and
+                    IIIT Allahabad. With participants from over 25 IIITs from all over India, it is one of the largest fests in
+                    Central India.</p>
+            </div>
+    
+            <div class="col s12 m6 right">
+                
+
+                <div class="container">
+                    <div >
+                      <img src="./images/Iiitdmj-logo.jpg " >
+                      <!-- <span class="card-title">Card Title</span> -->
+                    </div>
+                    </div>
+
+
+                <!-- <img src="" style=" padding: 5%;"> -->
+          
+            </div>
+    
+          </div>
+
+
+    </div>
+  </div>
+
+  <div class="container" style="padding-bottom: 5%;">
+      <div class="section">  
+  
+            <div class="row">
+            
+                
+                <div class="col s12 m6 left">
+                    
+    
+                    <div class="container">
+                        <div>
+                          <img  src="./images/logo3.png" style="padding: 2%; height: 90%; width: 90%;">
+                          <!-- <span class="card-title">Card Title</span> -->
+                        </div>
+                        </div>
+    
+    
+                    <!-- <img src="" style=" padding: 5%;"> -->
+              
+                </div>
+                <div class="col s12 m6" style="padding-left: 5%;">
+                    <h3 class="Right brown-text"> GUSTO 2020</h3>  
+                      <p class="light">
+                          GUSTO – the Annual Sports Fest of IIITDM Jabalpur held every year during the even semester where the
+                          sports enthusiasts of various colleges come together into the Institute campus to showcase their talents
+                          and participate in the competitive sporting events. This year GUSTO gives
+                          you the opportunity to grow as a sports person inculcated with various values and provides a healthy
+                          competitive environment which will be full of excitement and joy.
+                      </p>
+                </div>
+              </div>
+      </div>
+    </div>
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h1 class="header col s12 light" style="font-family: 'Mr Dafoe', cursive;">Summon the <span style="color:#F91F1F">Champions.</span></h1>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="./images/cricket2_edited.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+
+  <div class="container" id="events_list">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h3 class="Right brown-text">Events</h3> 
+
+
+
+          <div class="row">
+
+
+
+            <div class="col s12 m4 ">
+              <div class="card small hoverable">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="./images/chess.jpg">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">Chess</span>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">Event List Here<i class="material-icons right">close</i></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col s12 m4 ">
+              <div class="card small hoverable">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="./images/cricket2_edited.jpg">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">Cricket</span>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">Event List Here<i class="material-icons right">close</i></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col s12 m4 ">
+            <div class="card small hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="./images/volleyball.jpg">
+            </div>
+            <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Volleyball</span>
+            </div>
+            <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Event List Here<i class="material-icons right">close</i></span>
+            </div>
+            </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m2"></div>
+            <div class="col s12 m4 ">
+            <div class="card small hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="./images/basketball2.jpg">
+            </div>
+            <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Basketball</span>
+            </div>
+            <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Event List Here<i class="material-icons right">close</i></span>
+            </div>
+            </div>
+            </div>
+
+            <div class="col s12 m4 ">
+            <div class="card small hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="./images/football.jpg">
+            </div>
+            <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Football</span>
+            </div>
+            <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Event List Here<i class="material-icons right">close</i></span>
+            </div>
+            </div>
+            </div>
+
+          </div>
+          <div class="row">
+
+
+            <div class="col s12 m4 ">
+            <div class="card small hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="./images/badminton.jpg">
+            </div>
+            <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Badminton</span>
+            </div>
+            <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Event List Here<i class="material-icons right">close</i></span>
+            </div>
+            </div>
+            </div>
+
+            <div class="col s12 m4 ">
+            <div class="card small hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="./images/lawntennis.jpg">
+            </div>
+            <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Lawn Tennis</span>
+            </div>
+            <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Event List Here<i class="material-icons right">close</i></span>
+            </div>
+            </div>
+            </div>
+
+            <div class="col s12 m4 ">
+            <div class="card small hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="./images/tabletennis.jpg">
+            </div>
+            <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Table Tennis</span>
+            </div>
+            <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Event List Here<i class="material-icons right">close</i></span>
+            </div>
+            </div>
+            </div>
+
+          </div>
+          <div class="row">
+              <div class="col s12 m2"></div>
+            <div class="col s12 m4 float-center">
+            <div class="card small hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="./images/athletics.jpg">
+            </div>
+            <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Athletics</span>
+            </div>
+            <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+                <ul class="collapsible clearfix">
+                  <li>
+                    <div class="collapsible-header">Racing</div>
+                    <div class="collapsible-body left-align">
+                      <ul>
+                        <li>100 meters</li>
+                        <li>200 meters</li>
+                        <li>400 meters</li>
+                        <li>800 meters</li>
+                        <li>1500 meters</li>
+                        <li>3000 meters</li>
+                        <li>5000 meters</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">Hurdle</div>
+                    <div class="collapsible-body left-align">
+                      <ul>
+                        <li>110 meters</li>
+                        <li>400 meters</li>
+                        <li>100 meters</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">Relay</div>
+                    <div class="collapsible-body left-align">
+                      <ul>
+                        <li>4x100 meters</li>
+                        <li>4x400 meters</li>
+                        <li>4x100 meters (Mixed: 2 Boys 2 Girls)</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="collapsible-header">Field</div>
+                    <div class="collapsible-body left-align">
+                      <ul>
+                        <li >High Jump</li>
+                        <li >Long Jump</li>
+                        <li >Triple Jump</li>
+                        <li >Shotput</li>
+                        <li >Discus Throw</li>
+                        <li >Javelin Throw</li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+            </div>
+            </div>
+            </div>
+
+            <div class="col s12 m4 ">
+            <div class="card small hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="./images/carrom.jfif">
+            </div>
+            <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Carrom</span>
+            </div>
+            <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Event List Here<i class="material-icons right">close</i></span>
+            </div>
+            </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+            <h1 class="header col s12 light" style="font-family: 'Mr Dafoe', cursive;">See you on the <span style="color:#F91F1F">court.</span></h1>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="./images/1_edited.jpg" alt="Unsplashed background img 3"></div>
+  </div>
+
+  
+
+  <!-- Footer -->
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+ 
+        <div class="col l6 s12">
+            <div class="container">
+              <div class="row">
+
+                <div id="mapid">
+                
+                </div>
+              </div>  
+            </div>
+        </div>
+
+        <div class="col l6 s12 center">
+
+          <h4 class="white-text">Contact Us</h4>
+          <p>Team GUSTO</p> 
+          <p>PDPM IIITDM Jabalpur</p>
+          <ul>
+            <li><h6>Shakti Raj Singh - +(91) 7007427883</h6></li>
+            <li><h6>Siddhant Lohia - +(91) 9166784668</h6></li>
+            <li><h6>Abhishek Patel - +(91) 9144418241</h6></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row center" >
+
+          <!-- <div class="col s2 icon center">
+            <a class="waves-effect waves-light btn-floating social hoverable">
+            <i class="material-icons circle green ">phone</i></a>
+          </div>
+ -->
+ <div class="col l2 s12"></div>
+ <div class="col l8 s12 center">
+   <h5 class="center">Follow Us</h5>
+  <div class="col icon center" style="padding: 3px 10.5px;">
+    <a class="waves-e ffect waves-light btn-floating social hoverable" href="https://twitter.com/gusto_2020">
+    <i class="fa fa-twitter circle blue "></i></a>
+  </div>
+
+  <div class="col icon center" style="padding: 3px 10.5px;">
+    <a class="waves-effect waves-light btn-floating social hoverable" href="https://www.facebook.com/iiitdmj.gusto">
+    <i class="fa fa-facebook circle blue darken-4"></i></a>
+  </div>
+
+  <div class="col icon center" style="padding: 3px 10.5px;">
+    <a class="waves-effect waves-light btn-floating social hoverable" href="https://www.linkedin.com/in/gusto-iiitdm-jabalpur-0a9176199/">
+    <i class="fa fa-linkedin circle light-blue darken-4"></i></a>
+  </div>
+
+  <div class="col icon center" style="padding: 3px 10.5px;">
+    <a class="waves-effect waves-light btn-floating social hoverable" href="https://www.instagram.com/gusto_2020/">
+    <img src="images/instagram.svg"></a>
+  </div>
+
+  <div class="col icon center" style="padding: 3px 10.5px;">
+    <a class="waves-effect waves btn-floating social hoverable" target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=gusto@iiitdmj.ac.in">
+    <i class="fa fa-envelope circle red darken-2"></i></a>
+  </div>
+
+
+
+ </div>
+ <!-- <div class="col l4 s12"></div> -->
+          
+      </div>
+              <div class="break"></div>
+
+          </div>
+
+
+    <div class="footer-copyright clearfix center">
+      <div class="container">
+        <div class="item">Copyright © 2020 All Rights Reserved | Gusto Core Team, IIITDM Jabalpur</div>
+        <!-- <div class="break"></div> -->
+      </div>
+      
+    </div>
+
+  </footer>
+
+
+  <script>
+      var mymap = L.map('mapid').setView([23.175628,80.024239], 13);
+      L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox/streets-v11',
+        accessToken: 'pk.eyJ1IjoiZ3VzdG9tYXBzIiwiYSI6ImNrNDF4aTc5bjAwMDYzbmp5NXYwaXZoemgifQ.TVfKlC6h1MTzU0oML0tvqQ'
+        }).addTo(mymap);
+
+      var marker = L.marker([23.175628,80.024239]).addTo(mymap);
+      marker.bindPopup("<b>PDPM IIITDM Jabalpur</b><br>Airport Rd, Khamaria, Dumna, Madhya Pradesh 482005.<br><a href='https://www.google.com/maps/dir//IIITDM+Jabalpur,+Airport+Rd,+PDPM+IIITDM+Jabalpur+Campus,+Khamaria,+Jabalpur,+Madhya+Pradesh+482005/@23.1769205,80.0223994,17z/data=!4m16!1m6!3m5!1s0x3981a94397365dd3:0x5f9aeb812c2678c9!2sIIITDM+Jabalpur!8m2!3d23.1769205!4d80.0245881!4m8!1m0!1m5!1m1!1s0x3981a94397365dd3:0x5f9aeb812c2678c9!2m2!1d80.0245881!2d23.1769205!3e3' target='_blank' >Get Directions</a>").openPopup();
+    </script>
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
