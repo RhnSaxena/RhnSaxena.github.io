@@ -269,7 +269,7 @@ p {
 	display: block;
 	height: 2px;
 	width: 100%;
-	background-color: #a5acbc;
+	background-color: white;
 	margin-bottom: 4px;
 	border-radius: 2px;
 	transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s ease-out;
@@ -277,7 +277,7 @@ p {
 }
 
 .menu:hover>.menu-icon-line {
-	background-color: #8591ac;
+	background-color: #d8dce6;
 	transform: scaleX(1.2)
 }
 
@@ -526,7 +526,8 @@ p {
 	padding: 0 10px;
 	z-index: 1;
 	position: relative;
-	background-color: #1f4954
+	font-size: 3em;
+	background-color: #1e0f21
 }
 
 .nav-categories {
@@ -541,7 +542,8 @@ p {
 .nav-category {
 	padding: 0;
 	position: relative;
-	display: block
+	display: block;
+	font-size: 2.5em;
 }
 
 .nav-link {
@@ -1260,12 +1262,12 @@ a {
 .composition-source-header {
 	font-size: 86px;
 	font-weight: 800;
-	padding-top: 100px;
-	padding-bottom: 100px;
+	padding-top: 70px;
+	padding-bottom: 45px;
 	line-height: 1em;
 	padding-left: 40px;
 	text-align: center;
-	color: #1e0f21;
+	color: #4b1d54;
 }
 
 @media (max-width: 940px) {
@@ -1357,11 +1359,12 @@ a {
 /* Tabs in EVENTS deatails*/
 
 .tabs {
-    max-width: 90%;
+    max-width: 100%;
     float: none;
     list-style: none;
     padding: 0;
-    margin: 75px auto;
+    margin: 65px auto;
+    padding: 5px 15px;
     border-bottom: 4px solid #ccc;
 }
 .tabs:after {
@@ -1376,8 +1379,9 @@ a {
     display: block;
     float: left;
     width: 33.3333%;
+    /*width: 33.3333%;*/
     color: #ccc;
-    font-size: 30px;
+    font-size: 22px;
     font-weight: normal;
     text-decoration: none;
     text-align: center;
@@ -1396,9 +1400,9 @@ a {
     margin-right: 0;
 }
 .tabs label:hover {
-    color: #3498db;
-    box-shadow: inset 0 4px #3498db;
-    border-bottom: 4px solid #3498db;
+    color: #5a1f66;
+    box-shadow: inset 0 4px #5a1f66;
+    border-bottom: 4px solid #5a1f66;
 }
 .tab-content {
     display: none;
@@ -1407,7 +1411,23 @@ a {
     padding: 15px;
     box-sizing: border-box;
     background-color:#ffffff;
+    font-size: 27px;
 }
+
+.tab-content h3 {
+	text-align: center;
+	font-size: 35px;
+	color: #5a1f66;
+}
+
+.tab-content p {
+	color: #78707a;
+}
+
+.tab-content ul {
+	margin: 0px;
+}
+
 .tab-content * {
     -webkit-animation: scale 0.7s ease-in-out;
     -moz-animation: scale 0.7s ease-in-out;
@@ -1429,9 +1449,9 @@ a {
 }
 .tabs [id^="tab"]:checked + label {
     background: #FFF;
-    box-shadow: inset 0 4px #3498db;
-    border-bottom: 4px solid #3498db;
-    color: #3498db;
+    box-shadow: inset 0 4px #5a1f66;
+    border-bottom: 4px solid #5a1f66;
+    color: #5a1f66;
 }
 #tab1:checked ~ #tab-content1,
 #tab2:checked ~ #tab-content2,
@@ -1442,6 +1462,7 @@ a {
     .tabs i {
         padding: 5px;
         margin-right: 10px;
+        margin-left: 10px;
     }
     .tabs label span {
         display: inline-block;
@@ -1450,4 +1471,104 @@ a {
     max-width: 950px;
     margin: 50px auto;
     }
+}
+
+@media (max-width: 768px) {
+    .tabs {
+        width: 90%;
+    }
+    
+    .tab-content p {
+    	font-size: 25px;
+    }
+}
+
+
+/*-----------------------------------------------------*/
+/* Icons in Navbar */
+
+#lab_social_icon_footer {
+  padding: 40px 0;
+}
+
+#lab_social_icon_footer a {
+  color: #333;
+}
+
+#lab_social_icon_footer .social:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+
+#lab_social_icon_footer .social {
+  -webkit-transform: scale(0.8);
+  /* Browser Variations: */
+  
+  -moz-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+}
+/*
+    Multicoloured Hover Variations
+*/
+
+#lab_social_icon_footer #social-fb:hover {
+  color: #3B5998;
+}
+
+#lab_social_icon_footer #social-tw:hover {
+  color: #4099FF;
+}
+
+#lab_social_icon_footer #social-gp:hover {
+  color: #d34836;
+}
+
+#lab_social_icon_footer #social-em:hover {
+  color: #f39c12;
+}
+
+
+
+/*----------------------------------------------------*/
+/* Collapsible Accordion */
+
+.collapsible {
+  background-color: #cccccc;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 80%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  margin-left: 8%;
+}
+
+.active, .collapsible:hover {
+  background-color: #4b1d54;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
 }

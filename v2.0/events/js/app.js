@@ -158,7 +158,7 @@ app.menu.reveal = (e) => {
 
   app.overlay.show({
     position: app.clickPosition(e),
-    fill: "#1f4954"
+    fill: "#1e0f21"
   });
 
   var containerDelay = 200;
@@ -214,7 +214,7 @@ app.search.reveal = (e, ) => {
 
   app.overlay.show({
     position: app.clickPosition(e),
-    fill: "#1f4954"
+    fill: "#1e0f21"
   });
 
   // Hide search icon and show X
@@ -307,7 +307,7 @@ app.search.hide = () => {
 
   app.overlay.hide({
     position: app.overlay.lastStartingPoint,
-    fill: "#1f4954",
+    fill: "#1e0f21",
     complete: () => app.menu.showMenuIcon()
   });
 
@@ -372,7 +372,7 @@ app.menu.hide = () => {
 
   app.overlay.hide({
     position: app.overlay.lastStartingPoint,
-    fill: "#1f4954",
+    fill: "#1e0f21",
     complete: () => document.dispatchEvent(new Event("app:menuDidHide"))
   });
 

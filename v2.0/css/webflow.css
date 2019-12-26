@@ -748,6 +748,10 @@ textarea.w-select {
 }
 
 @media screen and (max-width: 767px) {
+	.gustologo{
+		width:50%;
+		height: 50%;
+	}
 	.w-hidden-main {
 		display: inherit !important;
 	}
@@ -806,6 +810,10 @@ textarea.w-select {
 }
 
 @media screen and (max-width: 479px) {
+	.gustologo{
+		width:50%;
+		height: 50%;
+	}
 	.w-container {
 		max-width: none;
 	}
@@ -1276,6 +1284,10 @@ textarea.w-select {
 }
 
 @media screen and (max-width: 991px) {
+	.gustologo{
+		width:100%;
+		height: 100%;
+	}
 	.w-nav[data-collapse="medium"] .w-dropdown,
 	.w-nav[data-collapse="medium"] .w-dropdown-toggle {
 		display: block;
@@ -1286,6 +1298,10 @@ textarea.w-select {
 }
 
 @media screen and (max-width: 767px) {
+	.gustologo{
+		width:40%;
+		height: 40%;
+	}
 	.w-nav[data-collapse="small"] .w-dropdown,
 	.w-nav[data-collapse="small"] .w-dropdown-toggle {
 		display: block;

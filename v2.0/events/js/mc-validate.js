@@ -190,12 +190,12 @@
         /**
 		 *	Grab the list subscribe url from the form action and make it work for an ajax post.
          */
-		getAjaxSubmitUrl: function() {
-			var url = $("form#mc-embedded-subscribe-form").attr("action");
-			url = url.replace("/post?u=", "/post-json?u=");
-			url += "&c=?";
-			return url;
-		},
+		// getAjaxSubmitUrl: function() {
+		// 	var url = $("form#mc-embedded-subscribe-form").attr("action");
+		// 	url = url.replace("/post?u=", "/post-json?u=");
+		// 	url += "&c=?";
+		// 	return url;
+		// },
 		/**
 		 *	Classify text inputs in the same field group as group for validation purposes.
 		 *	All this does is tell jQueryValidation to create one error div for the group, rather
@@ -348,7 +348,7 @@
  	});
 
  	window.mc.ajaxOptions = { 
-		url: mc.getAjaxSubmitUrl(), 
+		// url: mc.getAjaxSubmitUrl(), 
 		type: 'GET', 
 		dataType: 'json', 
 		contentType: "application/json; charset=utf-8",

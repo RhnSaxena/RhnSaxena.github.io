@@ -18,7 +18,7 @@ app.ready(function() {
     ml.hideSource();
   });
 
-  document.querySelector(".header-title").addEventListener("click", ml.animateHeader);
+  // document.querySelector(".header-title").addEventListener("click", ml.animateHeader);
 
   window.addEventListener("scroll", ml.onlyPlayVisible);
   window.addEventListener("resize", ml.onlyPlayVisible);
@@ -38,8 +38,8 @@ ml.init = function() {
   ml.compositions = document.querySelectorAll(".composition");
   // ml.ad = document.querySelector(".ml-carbon-ad");
 
-  var header = document.querySelector('.header-title');
-  header.innerHTML = header.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+  // var header = document.querySelector('.header-title');
+  // header.innerHTML = header.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 }
 
 ml.animateHeader = function() {
@@ -103,27 +103,26 @@ ml.prepareSourceForComposition = function(comp) {
   var compNumber = ml.getElementIndex(comp) + 1;
   document.querySelector(".composition-source-header").textContent = "EVENTS";
 
-  // Set html
-  var html = comp.querySelector(".composition-static-html").innerHTML;
-  html = ml.prependHTMLwithJS(html.trim());
-  document.querySelector(".composition-source-code-html").innerHTML = html;
+  // Set Events
+  var events = comp.querySelector(".event-list").innerHTML;
+  console.log(events);
+  if(events != "")
+    var xmlString = events;
+    var doc = new DOMParser().parseFromString(xmlString, "text/xml");
+    console.log(doc)
+    doc = new XMLSerializer().serializeToString(doc.documentElement);
+    document.querySelector(".fill-events").innerHTML = doc;
 
-  // Set CSS
-  var css = comp.querySelector("style").innerHTML;
-  document.querySelector(".composition-source-code-css").textContent = css.trim();
+  // Set Rules
+  var rules = comp.querySelector(".rules").innerHTML;
+  if(rules != "")
+    document.querySelector(".fill-rulebook").textContent = rules;
 
-  // Set javascript
-  var script = comp.querySelector("script").innerHTML;
-  script = ml.removeInternalJSFromCode(script);
-  document.querySelector(".composition-source-code-js").textContent = script.trim();
-}
-
-ml.prependHTMLwithJS = function(html) {
-  var cdn = "https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js";
-  var scriptTag = '<script src="' + cdn + '"></script>';
-  var scripts = ml.escapeHTML(scriptTag);
-
-  return html + "\n\n" + scripts;
+  // Set Contact
+  var contact = comp.querySelector(".contact").innerHTML;
+  console.log(contact);
+  if(contact != "")
+    document.querySelector(".fill-contacts").textContent = contact;
 }
 
 ml.escapeHTML = function(html) {
@@ -149,6 +148,23 @@ ml.showSourceForComposition = function(c, e, options) {
   // ml.ad.style.opacity = 0;
   // ml.ad.classList.add("ml-carbon-ad-source-showing");
   // if (options.refreshAd == true) ml.refreshAd();
+
+
+  // Collapse JS
+  var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        } 
+      });
+    }
 
   document.querySelector("html").classList.add("is-showing-source");
   c.classList.add("composition-active");
