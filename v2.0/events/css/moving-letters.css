@@ -1586,3 +1586,18 @@ a {
     	padding: 20px;
     }
 }
+
+/*----------------------------*/
+/* nav bar icon*/
+
+@media (max-width: 1090px) {
+	.iconlarge{
+		display: none!important;
+	}
+}
+
+@media (min-width: 1090px) {
+	.iconsmall{
+		display: none!important;
+	}
+}

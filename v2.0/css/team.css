@@ -1,4 +1,4 @@
-a:hover{
+.container a:hover{
 	color: white!important;
 }
 .wrapper{
@@ -95,4 +95,11 @@ figcaption{
 
 .social_media a:hover{
 	width: 65px;
+}
+
+.row h4{
+	font-size: 25px;
+}
+.row h5{
+	font-size: 18px;
 }
