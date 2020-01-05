@@ -1,6 +1,6 @@
 body {
   background-color: #1e0f21;
-  font-family: Suisseintl, sans-serif;
+  font-family: Poppins, sans-serif;
   color: #333;
   font-size: 18px;
   line-height: 1.6em;
@@ -171,7 +171,7 @@ a {
 
 .number {
   margin-bottom: 42px;
-  font-family: Suisseintlmono, sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: 16px;
 }
 
@@ -260,7 +260,7 @@ a {
 
 .white-paragraph {
   margin-top: 42px;
-  font-family: Suisseintl, sans-serif;
+  font-family: Poppins, sans-serif;
   color: #fff;
   font-weight: 400;
 }
@@ -428,7 +428,7 @@ a {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  font-family: Suisseintl, sans-serif;
+  font-family: Poppins, sans-serif;
   color: #e9b2d8;
   font-size: 15px;
   text-align: center;
@@ -463,7 +463,7 @@ a {
   display: inline;
   width: auto;
   clear: left;
-  font-family: Suisseintlmono, sans-serif;
+  font-family: Poppins, sans-serif;
   color: #9d90a8;
   font-size: 15px;
   text-align: center;
@@ -477,7 +477,7 @@ a {
 
 .centered-hero-text.all-caps.full {
   width: auto;
-  font-family: Suisseintl, sans-serif;
+  font-family: Poppins, sans-serif;
   color: #fff;
   font-size: 12px;
   text-transform: none;
@@ -1010,7 +1010,7 @@ color: #202125;
 .judge-heading {
   margin-top: 25px;
   margin-bottom: 25px;
-  font-family: Suisseintlmono, sans-serif;
+  font-family: Poppins, sans-serif;
   font-weight: 400;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -1870,32 +1870,32 @@ color: #202125;
 }
 
 @font-face {
-  font-family: 'Suisseintl book';
-  src: url('../fonts/SuisseIntl-Book.woff2') format('woff2'), url('../fonts/SuisseIntl-Book.woff') format('woff');
+  font-family: 'Poppins';
+  /* src: url('../fonts/SuisseIntl-Book.woff2') format('woff2'), url('../fonts/SuisseIntl-Book.woff') format('woff'); */
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Suisseintl';
-  src: url('../fonts/SuisseIntl-Regular.woff2') format('woff2'), url('../fonts/SuisseIntl-Regular.woff') format('woff');
+  font-family: 'Poppins';
+  /* src: url('../fonts/SuisseIntl-Regular.woff2') format('woff2'), url('../fonts/SuisseIntl-Regular.woff') format('woff'); */
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Suisseintl';
-  src: url('../fonts/SuisseIntl-Semibold.woff2') format('woff2'), url('../fonts/SuisseIntl-Semibold.woff') format('woff');
+  font-family: 'Poppins';
+  /* src: url('../fonts/SuisseIntl-Semibold.woff2') format('woff2'), url('../fonts/SuisseIntl-Semibold.woff') format('woff'); */
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Suisseintlmono';
-  src: url('../fonts/SuisseIntlMono-Bold.woff2') format('woff2'), url('../fonts/SuisseIntlMono-Bold.woff') format('woff');
+  font-family: 'Poppins';
+  /* src: url('../fonts/SuisseIntlMono-Bold.woff2') format('woff2'), url('../fonts/SuisseIntlMono-Bold.woff') format('woff'); */
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Suisseintlmono';
-  src: url('../fonts/SuisseIntlMono-Regular.woff2') format('woff2'), url('../fonts/SuisseIntlMono-Regular.woff') format('woff');
+  font-family: 'Poppins';
+  /* src: url('../fonts/SuisseIntlMono-Regular.woff2') format('woff2'), url('../fonts/SuisseIntlMono-Regular.woff') format('woff'); */
   font-weight: 400;
   font-style: normal;
 }

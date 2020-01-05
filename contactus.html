@@ -55,17 +55,17 @@
     -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,1); 
 }
 ::-webkit-scrollbar-thumb:window-inactive {
-	background: rgb(190, 105, 105); 
+  background: rgb(190, 105, 105); 
 }
 @media (min-width: 800px) {
-	iframe{
+  iframe{
         height: 300px;
         width: 500px;
         border-radius: 10px;
     }
 }
 @media (max-width: 800px) {
-	iframe{
+  iframe{
         height: 210px;
         width: 350px;
         border-radius: 10px;
@@ -97,13 +97,39 @@
          </div>
       </div>
 
-          <!-- ----------Navbar--------- -->
+    <!-- ----------Navbar--------- -->
     <!-- <div class="header"> -->
-      <!-- <canvas class="site-nav-canvas"></canvas> -->
+      <canvas class="site-nav-canvas"></canvas>
       <a href="menu" class="menu menu-white menu-movingLetters" aria-label="Site navigation">
+      <!-- <span class="menu-icon-line-1 menu-icon-line" ></span>
+      <span class="menu-icon-line-2 menu-icon-line"></span>
+      <span class="menu-icon-line-3 menu-icon-line"></span> -->
         <i class="fas fa-bars fa-2x iconlarge"></i>
          <i class="fas fa-bars fa iconsmall"></i>
       </a>
+      <div class="site-nav-overlay js-nav">
+        <div class="nav-content">
+          <div class="js-nav-header nav-header">
+            <span class="nav-header-text">Inter IIIT</span>
+            <div class="nav-header-line js-nav-header-line"></div>
+          </div>
+          <ul class="nav-categories">
+            <li class="nav-category js-nav-animate"><a href="./index.html" class="nav-link">HOME</a></li>
+            <li class="nav-category js-nav-animate"><a href="./events.html" class="nav-link">EVENTS</a></li>
+            <li class="nav-category js-nav-animate"><a href="./team.html" class="nav-link">OUR TEAM</a></li>
+            <li class="nav-category js-nav-animate"><a href="./register.html" class="nav-link">REGISTER</a></li>
+            <li class="nav-category js-nav-animate"><a href="./contactus.html" class="nav-link">CONTACT US</a></li>
+          </ul>
+            <div class="container" style="padding-top: 0px;">
+              <div class="text-center center-block">
+                <a href="http://facebook.com/iiitdmj.gusto/" target="_blank"><i id="social-fb" class="fab fa-facebook social"></i></a>
+                <a href="http://twitter.com/gusto_2020/" target="_blank"><i id="social-tw" class="fab fa-twitter social"></i></a>
+                <a href="http://instagram.com/gusto_2020/" target="_blank"><i id="social-gp" class="fab fa-instagram social"></i></a>
+                <a href="http://linkedin.com/in/gusto-iiitdm-jabalpur-0a9176199" target="_blank"><i id="social-em" class="fab fa-linkedin social"></i></a>
+              </div>
+            </div>
+        </div>
+      </div>
 
     <div data-w-id="06341bb2-6451-4474-d23e-e8442456ae7c" class="hero-section" style="height: 100vh;">
         <div class="container less-top not-relative w-container">
