@@ -106,17 +106,24 @@ ml.prepareSourceForComposition = function(comp) {
   // Set Events
   var events = comp.querySelector(".event-list").innerHTML;
   console.log(events);
-  if(events != "")
+  if(events != ""){
     var xmlString = events;
     var doc = new DOMParser().parseFromString(xmlString, "text/xml");
     console.log(doc)
     doc = new XMLSerializer().serializeToString(doc.documentElement);
     document.querySelector(".fill-events").innerHTML = doc;
+  }
 
   // Set Rules
   var rules = comp.querySelector(".rules").innerHTML;
-  if(rules != "")
-    document.querySelector(".fill-rulebook").textContent = rules;
+  if(rules != ""){
+    var xmlString = rules;
+    var doc = new DOMParser().parseFromString(xmlString, "text/xml");
+    console.log(doc)
+    doc = new XMLSerializer().serializeToString(doc.documentElement);
+    document.querySelector(".fill-rulebook").innerHTML = doc;
+    // document.querySelector(".fill-rulebook").textContent = rules;
+  }
 
   // Set Contact
   var contact = comp.querySelector(".contact").innerHTML;

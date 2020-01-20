@@ -79,6 +79,13 @@ figcaption{
 	background: #1da1f2
 }
 
+.social_media li.envelope a{
+	background: #c70001
+}
+.social_media li.black a{
+	background: #000000
+}
+
 .social_media a{
 	display: block;
 	position: absolute;

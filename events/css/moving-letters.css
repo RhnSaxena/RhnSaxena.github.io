@@ -563,7 +563,7 @@ p {
 .nav-link {
 	display: inline-block;
 	color: inherit;
-	padding: 27px 20px 30px;
+	padding: 10px 20px 10px;
 	letter-spacing: 1px;
 	text-decoration: none;
 	transition: color 0.25s ease-in-out;
@@ -1614,4 +1614,13 @@ a {
 	.iconsmall{
 		display: none!important;
 	}
+}
+
+/*---------------Custom--------------*/
+.button-uni {
+	color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: rgb(66, 184, 221);
+    font-size: 1.5rem;
 }
