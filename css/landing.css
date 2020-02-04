@@ -35,8 +35,9 @@
     font-weight: 600;
     font-size:28px;
     letter-spacing: 0;
-    color: #505050;
+    color: #ffffff;
     opacity: 1;
+    background-color: #1B6242;
 }
 
 .heading_date{
@@ -50,20 +51,27 @@
 }
 
 .pdpm-logo{
-    margin-top: 2%; 
     height: 68px; 
     width:70px;
 }
 
 .sprint_run{
     width: 80%; 
-    margin-top:3%;  
-    border: 7px solid #362525; 
-    background-image:url(../images/Asset1.png   ); 
-    background-repeat: no-repeat; 
+    border: 2px solid #362525; 
+    /* background-image:url(../images/Asset1.png   );  */
+    /* background-repeat: no-repeat;  */
     padding : 30px 15px;
 }
 
+.summon_image{
+}
+
+.col_class_left{
+}
+
+.col_class_right{
+
+}
 @media screen and (max-width: 800px){
     .college_heading{
         font-size:18px;
