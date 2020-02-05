@@ -1,0 +1,28 @@
+.sponsor-cat{
+    text-align: center;
+    font-family: 'Poppins';
+    font-weight: 600;
+    letter-spacing: 0;
+    color: #a12323;
+    font-size:48px;
+    padding-top: 5%;
+}
+
+@media screen and (max-width: 800px){
+    .sponsor-cat{
+        font-size:28px;
+    }
+
+}
+@media screen and (max-width: 800px){
+    .sponsor-cat{
+        font-size:28px;
+    }
+
+}
+@media screen and (max-width: 1024px){
+    .sponsor-cat{
+        font-size:28px;
+    }
+
+}
