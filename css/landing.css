@@ -2,21 +2,21 @@
     text-align: center;
     font-family: 'Poppins';
     font-weight: 600;
-    font-size:24px;
+    font-size:14px;
     letter-spacing: 0;
     color: #474747;
     opacity: 1;
-    padding-top: 5px;
 }
 
 .heading_presents{
     text-align: center;
     font-family: 'Poppins';
     font-weight: 600;
-    font-size:20px;
+    font-size:12px;
     letter-spacing: 0;
     color: #646464;
     opacity: 1;
+    margin-bottom: 0px;
 }
 
 .heading_summon{
@@ -35,8 +35,10 @@
     font-weight: 600;
     font-size:28px;
     letter-spacing: 0;
-    color: #505050;
+    color: #ffffff;
     opacity: 1;
+    background-color: #1B6242;
+    margin-top: 5px;
 }
 
 .heading_date{
@@ -50,23 +52,80 @@
 }
 
 .pdpm-logo{
-    margin-top: 2%; 
     height: 68px; 
     width:70px;
 }
 
 .sprint_run{
     width: 80%; 
-    margin-top:3%;  
-    border: 7px solid #362525; 
-    background-image:url(../images/Asset1.png   ); 
-    background-repeat: no-repeat; 
+    border: 2px solid #362525; 
+    /* background-image:url(../images/Asset1.png   );  */
+    /* background-repeat: no-repeat;  */
     padding : 30px 15px;
+}
+
+.summon_image{
+}
+
+.col_class_left{
+}
+
+.col_class_right{
+}
+
+@media screen and (min-width: 800px){
+    .college_heading{
+        font-size:14px;
+        margin-bottom: 0px;
+    }
+    .view_small{
+        display: none;
+    }
+    .view_large{
+        display: inline;
+    }
+    .heading_inter_iiit{
+        margin-top: 10px;
+    }
+    .col_class_right{
+        margin-top: 60px;
+    }
+}
+
+
+@media screen and (max-width: 1132px){
+    .college_heading{
+        font-size:8px;
+        margin-bottom: 0px;
+    }
+    .view_small{
+        display: none;
+    }
+    .view_large{
+        display: inline;
+    }
+    .heading_date{
+        font-size: 18px;
+    }
+    .heading_inter_iiit{
+        margin-top: 5px;
+    }
+    .col_class_right{
+        margin-top: 0px;
+    }
+
 }
 
 @media screen and (max-width: 800px){
     .college_heading{
-        font-size:18px;
+        font-size:12px;
+        margin-bottom: 0px;
+    }
+    .view_small{
+        display: inline;
+    }
+    .view_large{
+        display: none;
     }
 
 }
