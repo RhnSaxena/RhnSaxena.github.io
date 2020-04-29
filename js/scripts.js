@@ -7,7 +7,8 @@ var query = '';
 function renderJson(endpoint, requestOptions){
     fetch(endpoint, requestOptions)
         .then(response => response.text())
-        .then(result => document.getElementById("json").innerHTML =result)
+        .then(result => document.getElementById("json").innerHTML =JSON.stringify(JSON.parse(result), undefined, 4))
+        .then(result => document.getElementById("json").innerHTML =syntaxHighlight(result))
         .catch(error => document.getElementById("json").innerHTML =error);
 }
 
@@ -61,8 +62,31 @@ function functionFour() {
         redirect: 'follow'
     };
 
-    api = "Patient/";
-    query = "ddf8e442-5b14-491d-80a4-adfffab4b3ea";
+    api = "Medication";
+    query = "?status=active";
     
     renderJson(url+api+query, requestOptions);
+}
+
+
+function syntaxHighlight(json) {
+    if (typeof json != 'string') {
+         json = JSON.stringify(json, undefined, 2);
+    }
+    json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+        var cls = 'number';
+        if (/^"/.test(match)) {
+            if (/:$/.test(match)) {
+                cls = 'key';
+            } else {
+                cls = 'string';
+            }
+        } else if (/true|false/.test(match)) {
+            cls = 'boolean';
+        } else if (/null/.test(match)) {
+            cls = 'null';
+        }
+        return '<span class="' + cls + '">' + match + '</span>';
+    });
 }

@@ -1,0 +1,33 @@
+.list-group-item.active {
+    background-color: rgb(226, 174, 206)!important;;
+    border-color: rgb(226, 174, 206)!important;;
+}
+
+shadow{
+    /* background-color: rgb(226, 174, 206)!important; */
+    -webkit-box-shadow: 0 4px 3px -3px #999;
+    -moz-box-shadow: 0 4px 3px -3px #999;
+    box-shadow: 0 4px 3px -3px #999;
+}
+
+#row-api{
+    margin-top: 100px;
+}
+
+pre{
+    height: 500px;
+    padding: 5px; 
+    margin: 5px; 
+}
+
+.navbar-text{
+    color: blue;
+    font-size: large;
+    padding-right: 15px;
+}
+
+.string { color: rgb(39, 58, 139); }
+.number { color: darkorange; }
+.boolean { color: rgb(24, 133, 39); }
+.null { color: magenta; }
+.key { color: rgb(192, 33, 33); }
