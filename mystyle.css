@@ -1,0 +1,12 @@
+.list-group-item.active {
+    background-color: rgb(226, 174, 206)!important;;
+    border-color: rgb(226, 174, 206)!important;;
+}
+
+nav{
+    background-color: rgb(226, 174, 206)!important;
+}
+
+#row-api{
+    margin-top: 100px;
+}
