@@ -8,7 +8,9 @@ var requestOptions = {
     redirect: 'follow'
 };
 
-function renderJson(endpoint, requestOptions){
+function renderJson(id){
+    console.log(id);
+    var endpoint = url + api + "\\" + id;
     fetch(endpoint, requestOptions)
         .then(response => response.text())
         // .then(result => document.getElementById("json").innerHTML =JSON.stringify(JSON.parse(result), undefined, 4))
@@ -16,12 +18,38 @@ function renderJson(endpoint, requestOptions){
         .catch(error => document.getElementById("tab_2_json").innerHTML =error);
 }
 
-function functionOne() {
+function renderPatientList(Patients){
+
+    var text = "";
+    text +="<table>"
+    var patient;
+    for (patient in Patients["entry"][0]["resource"]){
+
+    text += "<tr> <td>"
+            + Patients["entry"][0]["resource"][patient]["name"][0]["given"][0] +" " 
+            + Patients["entry"][0]["resource"][patient]["name"][0]["family"] + "<br>"
+            + Patients["entry"][0]["resource"][patient]["gender"] + "<br>"
+            + Patients["entry"][0]["resource"][patient]["address"][0]["city"] + ", "
+            + Patients["entry"][0]["resource"][patient]["address"][0]["state"] + "<br> "
+            + "<button class='btn info' onclick="+'renderJson('+'"'+ Patients["entry"][0]["resource"][patient]["id"]+'"' +')'+">More Info</button>"
+            + "</td></tr>" ;
+    }
+    text +="</table>"
+    document.getElementById("tab_1_json").innerHTML = text;
+}
+
+
+
+function function_Patient_Query() {
 
     api = "Patient";
-    query = "/ddf8e442-5b14-491d-80a4-adfffab4b3ea";
-    
-    renderJson(url+api+query, requestOptions);
+    query = "?active=true";
+
+    fetch(url+api+query, requestOptions)
+        .then(response => response.text())
+        // .then(result => document.getElementById("json").innerHTML =JSON.stringify(JSON.parse(result), undefined, 4))
+        .then(result => renderPatientList(JSON.parse(result)))
+        .catch(error => document.getElementById("tab_1_json").innerHTML =error);
 }
 
 function functionTwo() {
@@ -29,7 +57,7 @@ function functionTwo() {
     api = "RelatedPerson";
     query = "/608809d0-0911-476c-aa89-53b2bdb98fe1";
 
-    renderJson(url+api+query, requestOptions);
+    renderJson(url+api+query, requestOptions,"tab_2_json");
 }
 
 function functionThree() {
@@ -37,7 +65,7 @@ function functionThree() {
     api = "Practitioner";
     query = "/1fdba303-cfa1-40c3-b058-d1b01ac8527b";
     
-    renderJson(url+api+query, requestOptions);
+    renderJson(url+api+query, requestOptions,"tab_2_json");
 }
 
 function functionFour() {
@@ -45,7 +73,7 @@ function functionFour() {
     api = "Medication";
     query = "?status=active";
     
-    renderJson(url+api+query, requestOptions);
+    renderJson(url+api+query, requestOptions,"tab_1_json");
 }
 
 

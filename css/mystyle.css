@@ -3,7 +3,7 @@
     border-color: rgb(226, 174, 206)!important;;
 }
 
-shadow{
+.shadow{
     /* background-color: rgb(226, 174, 206)!important; */
     -webkit-box-shadow: 0 4px 3px -3px #999;
     -moz-box-shadow: 0 4px 3px -3px #999;
@@ -28,6 +28,10 @@ pre{
 
 #api_container{
     display: none;
+}
+
+.tab_1 td{
+    height: 50px;
 }
 
 .string { color: rgb(39, 58, 139); }
