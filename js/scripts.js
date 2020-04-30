@@ -9,8 +9,7 @@ var requestOptions = {
 };
 
 function renderJson(id){
-    
-    // console.log(id);
+
     var endpoint = url + api + "\\" + id;
     fetch(endpoint, requestOptions)
         .then(response => response.text())
@@ -23,7 +22,8 @@ function renderJson(id){
 }
 
 function renderPatientList(Patients){
-    console.log(Patients)
+
+    toggle_tabs("tab_1");
     var text = "";
     text +="<table>"
     var patient;
@@ -41,7 +41,6 @@ function renderPatientList(Patients){
     text +="</table>"
     document.getElementById("tab_1_json").innerHTML = text;
     document.getElementById("tab_1_json_des").innerHTML = "These are few instances of the chosen API.";
-    toggle_tabs("tab_1");
 }
 
 
@@ -50,7 +49,7 @@ function function_Patient_Query() {
 
     api = "Patient";
     query = "?active=true";
-
+    document.getElementById("tab_1_json").innerHTML = '';
     fetch(url+api+query, requestOptions)
         .then(response => response.text())
         // .then(result => document.getElementById("json").innerHTML =JSON.stringify(JSON.parse(result), undefined, 4))
@@ -60,7 +59,7 @@ function function_Patient_Query() {
 
 
 function renderAllergyList(Allergy){
-    console.log(Allergy)
+    toggle_tabs("tab_1");
     var text = "";
     text +="<table>"
     var allergy;
@@ -70,63 +69,30 @@ function renderAllergyList(Allergy){
             for( cat in Allergy["entry"][0]["resource"][allergy]["category"]){
                 text+= Allergy["entry"][0]["resource"][allergy]["category"][cat] +", "
             }
-        text += "<br>Clinical Status : "+ Allergy["entry"][0]["resource"][allergy]["clinicalStatus"]["coding"][0]["code"]+"<br>" 
-            // + "Type : " +Allergy["entry"][0]["resource"][allergy]["encounter"]["type"] +"<br> " 
-            + "Patient : " +Allergy["entry"][0]["resource"][allergy]["patient"]["reference"] +"<br></td><td class='col-4'> "
-            + "<a class='more_info' onclick="+'renderJson('+'"'+ Allergy["entry"][0]["resource"][allergy]["id"]+'"' +')'+">More Info</a>"
-            + "</td></tr>" ;
+        text += "<br>Clinical Status : "
+                + Allergy["entry"][0]["resource"][allergy]["clinicalStatus"]["coding"][0]["code"]+ "<br>"
+                 // + "Type : " +Allergy["entry"][0]["resource"][allergy]["encounter"]["type"] +"<br> " 
+                + "Patient : " +Allergy["entry"][0]["resource"][allergy]["patient"]["reference"] 
+                + "<br></td><td class='col-4'><a class='more_info' onclick="
+                + 'renderJson('+'"'+ Allergy["entry"][0]["resource"][allergy]["id"]+'"' +')'
+                +">More Info</a></td></tr>" ;
     }
     text +="</table>"
     document.getElementById("tab_1_json").innerHTML = text;
     document.getElementById("tab_1_json_des").innerHTML = "These are few instances of the chosen API.";
-
-    toggle_tabs("tab_1");
 }
-
-
-
-
-
 
 function function_AllergyIn_Query() {
 
     api = "AllergyIntolerance";
     query = "?clinical-status=active";
-
+    document.getElementById("tab_1_json").innerHTML = '';
     fetch(url+api+query, requestOptions)
         .then(response => response.text())
         // .then(result => document.getElementById("json").innerHTML =JSON.stringify(JSON.parse(result), undefined, 4))
         .then(result => renderAllergyList(JSON.parse(result)))
         .catch(error => document.getElementById("tab_1_json").innerHTML =error);
-
-    
 }
-
-
-function functionTwo() {
-
-    api = "RelatedPerson";
-    query = "/608809d0-0911-476c-aa89-53b2bdb98fe1";
-
-    renderJson(url+api+query, requestOptions,"tab_2_json");
-}
-
-function functionThree() {
-
-    api = "Practitioner";
-    query = "/1fdba303-cfa1-40c3-b058-d1b01ac8527b";
-    
-    renderJson(url+api+query, requestOptions,"tab_2_json");
-}
-
-function functionFour() {
-
-    api = "Medication";
-    query = "?status=active";
-    
-    renderJson(url+api+query, requestOptions,"tab_1_json");
-}
-
 
 function syntaxHighlight(json) {
     if (typeof json != 'string') {
@@ -176,6 +142,7 @@ function toggle_tabs(tab){
     }else{
         document.getElementById('tab_1').style.display='block';
         document.getElementById('tab_2').style.display='none';
+        document.getElementById("tab_2_json").innerHTML = '';
     }
     return false;
 }
