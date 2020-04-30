@@ -160,13 +160,39 @@ function submit_app_token(){
     }
 
     else{
+
+        api = "Patient";
+        query = "?active=true";
+
+        fetch(url+api+query, requestOptions)
+            .then(response => {
+                    if(response.ok) {
+                        myHeaders.append("x-api-key", app_token);
+                        document.getElementById('api_container').style.display='block';
+                        document.getElementById('tab_1').style.display='block';
+                        document.getElementById('tab_2').style.display='none';
+                        document.getElementById('api_credentials').style.display='none';
+                    }else{
+                        alert("Please Enter Correct app token.\nStatus Code : "+ response.status);
+                    }
+                })
+            .then(response => console.log(response))
+            .then(result => result)
+            .catch(error => document.getElementById("tab_1_json").innerHTML =error);
+    }
+    return false;
+}
+
+function authorize_function(){
+    if(response.status==200){
         myHeaders.append("x-api-key", app_token);
         document.getElementById('api_container').style.display='block';
         document.getElementById('tab_1').style.display='block';
         document.getElementById('tab_2').style.display='none';
         document.getElementById('api_credentials').style.display='none';
+    }else{
+        alert("Please Enter Correct app token.<br> Status Code : "+ response.status);
     }
-    return false;
 }
 
 function toggle_tabs(tab){
