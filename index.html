@@ -14,7 +14,7 @@
   <body>
 
     <nav class="navbar fixed-top shadow">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="">
           <img src="./images/logo.svg" alt="">
         </a>
         <span class="navbar-text">
@@ -39,15 +39,16 @@
           <div class="list-group shadow" id="list-tab" role="tablist">
             <a onClick="function_Patient_Query();" class="list-group-item list-group-item-action "  data-toggle="list"  role="tab" aria-controls="home">Patient</a>
             <a onClick="function_AllergyIn_Query();" class="list-group-item list-group-item-action"  data-toggle="list"  role="tab" aria-controls="profile">Allergy Intolerance</a>
+            <a onClick="function_Practitioner_Query();" class="list-group-item list-group-item-action"  data-toggle="list"  role="tab" aria-controls="profile">Practitioner</a>
           </div>
         </div>
         <div class="col-8" >
           <div class="tab-content tab_1" id="tab_1" >
             <p id="tab_1_json_des"></p>
-            <pre class="tab-pane fade show active" id="tab_1_json" role="tabpanel" aria-labelledby="list-home-list" ></pre>
+            <div class="tab-pane fade show active" id="tab_1_json" role="tabpanel" aria-labelledby="list-home-list" ></div>
           </div>
           <div class="tab-content" id="tab_2" >
-            <a onclick="toggle_tabs('tab_1')" class="previous round">&#8249;</a>
+            <button onclick="toggle_tabs('tab_1')" class="btn btn-outline-dark" style="margin-bottom: 20px;">Back</button>
             <p id="tab_2_json_des"></p>
 
             <pre class="tab-pane fade show active" id="tab_2_json" role="tabpanel" aria-labelledby="list-home-list" ></pre>

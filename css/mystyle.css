@@ -35,25 +35,14 @@ pre{
     padding: 10px;
 }
 
-.previous a:hover{
-    background-color: rgb(75, 72, 72);
-    color: white;
+#tab_2_json{
+    overflow: auto;
+    height: 450px;
 }
 
-.previous {
-    text-decoration: none;
-    display: inline-block;
-    padding: 8px 16px;
-    color: #f1f1f1!important;
-    background-color: black!important;
-}
-
-.round {
-    border-radius: 50%;
-}
-
-.more_info{
-    color: red!important;
+#tab_1_json{
+    overflow: auto;
+    height: 450px;
 }
 
 .string { color: rgb(39, 58, 139); }
