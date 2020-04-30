@@ -69,8 +69,6 @@ function renderAllergyList(Allergy){
 }
 
 function renderPractitionerList(Practitioner){
-    console.log(Practitioner)
-    console.log("Practitioner")
     
     var text = "";
     text +="<table>"
@@ -149,17 +147,47 @@ function syntaxHighlight(json) {
     });
 }
 
+// function submit_app_token(){
+
+//     var app_token = document.getElementById('app_token').value;
+//     if(app_token==""){
+//         alert("Please Enter the app token");
+//     }else{
+
+
+//         myHeaders.append("x-api-key", app_token);
+//         document.getElementById('api_container').style.display='block';
+//         document.getElementById('tab_1').style.display='block';
+//         document.getElementById('tab_2').style.display='none';
+//         document.getElementById('api_credentials').style.display='none';
+//     }
+//     return false;
+// }
+
 function submit_app_token(){
 
     var app_token = document.getElementById('app_token').value;
+    myHeaders.append("x-api-key", app_token);
     if(app_token==""){
         alert("Please Enter the app token");
-    }else{
-        myHeaders.append("x-api-key", app_token);
-        document.getElementById('api_container').style.display='block';
-        document.getElementById('tab_1').style.display='block';
-        document.getElementById('tab_2').style.display='none';
-        document.getElementById('api_credentials').style.display='none';
+    }else{        
+        api = "Patient";
+        query = "?active=true";
+        fetch(url+api+query, requestOptions)
+            .then(response => {
+                if(!response.ok){
+                    alert("Please Enter Correct app token.\nStatus Code : "+ response.status);
+                    myHeaders.delete("x-api-key");
+                }else{
+                        document.getElementById('api_container').style.display='block';
+                        document.getElementById('tab_1').style.display='block';
+                        document.getElementById('tab_2').style.display='none';
+                        document.getElementById('api_credentials').style.display='none';
+                }
+            })
+            // .then(result => document.getElementById("json").innerHTML =JSON.stringify(JSON.parse(result), undefined, 4))
+            .then(result => result)
+            .catch(error => console.log(error));
     }
     return false;
 }
