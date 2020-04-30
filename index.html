@@ -21,8 +21,20 @@
           Rohan Saxena
         </span>  
     </nav>
-    <div class="container">
-      <div class="row" id="row-api">
+    <div class="container first_div" id="api_credentials">
+      <!-- <form class="form-inline" onsubmit="submit_app_token()" name="credentials_form"> -->
+        <div class="form-group mb-2">
+          <label>Application Token </label>
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+          <label for="inputPassword2" class="sr-only">Token</label>
+          <input type="password" class="form-control" id="app_token" name="app_token" placeholder="Enter the token">
+        </div>
+        <button class="btn btn-primary mb-2" onclick="submit_app_token()">Submit</button>
+      <!-- </form> -->
+    </div>
+    <div class="container first_div" id="api_container">
+      <div class="row ">
         <div class="col-4">
           <div class="list-group shadow" id="list-tab" role="tablist">
             <a onClick="functionOne();" class="list-group-item list-group-item-action "  data-toggle="list"  role="tab" aria-controls="home">Patient</a>
@@ -32,13 +44,17 @@
           </div>
         </div>
         <div class="col-8" >
-            <div class="tab-content" id="nav-tabContent" >
-              <pre class="tab-pane fade show active" id="json" role="tabpanel" aria-labelledby="list-home-list" ></pre>
-            </div>
+          <div class="tab-content" id="tab_1" >
+            <pre class="tab-pane fade show active" id="tab_1_json" role="tabpanel" aria-labelledby="list-home-list" ></pre>
           </div>
+          <div class="tab-content" id="tab_2" >
+            <pre class="tab-pane fade show active" id="tab_2_json" role="tabpanel" aria-labelledby="list-home-list" ></pre>
+          </div>
+        </div>
       </div>
     </div>
 
+      <script src="./js/login.js"></script>
       <script src="./js/scripts.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

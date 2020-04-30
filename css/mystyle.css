@@ -10,7 +10,7 @@ shadow{
     box-shadow: 0 4px 3px -3px #999;
 }
 
-#row-api{
+.first_div{
     margin-top: 100px;
 }
 
@@ -24,6 +24,10 @@ pre{
     color: blue;
     font-size: large;
     padding-right: 15px;
+}
+
+#api_container{
+    display: none;
 }
 
 .string { color: rgb(39, 58, 139); }

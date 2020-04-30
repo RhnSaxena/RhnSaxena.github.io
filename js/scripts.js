@@ -1,5 +1,4 @@
 var myHeaders = new Headers();
-myHeaders.append("x-api-key", "BiZrGMokNvaGtOLxHjURKV9ZbobVk6Zd");
 url = "https://api-dev.oninnovaccer.com/fhir/";
 var api = '';
 var query = '';
@@ -13,8 +12,8 @@ function renderJson(endpoint, requestOptions){
     fetch(endpoint, requestOptions)
         .then(response => response.text())
         // .then(result => document.getElementById("json").innerHTML =JSON.stringify(JSON.parse(result), undefined, 4))
-        .then(result => document.getElementById("json").innerHTML =syntaxHighlight(JSON.parse(result)))
-        .catch(error => document.getElementById("json").innerHTML =error);
+        .then(result => document.getElementById("tab_2_json").innerHTML =syntaxHighlight(JSON.parse(result)))
+        .catch(error => document.getElementById("tab_2_json").innerHTML =error);
 }
 
 function functionOne() {
@@ -70,4 +69,21 @@ function syntaxHighlight(json) {
         }
         return '<span class="' + cls + '">' + match + '</span>';
     });
+}
+
+
+
+function submit_app_token(){
+    var app_token = document.getElementById('app_token').value;
+
+    if(app_token==""){
+        alert("Please Enter the app token");
+    }
+
+    else{
+        myHeaders.append("x-api-key", app_token);
+        document.getElementById('api_container').style.display='block';
+        document.getElementById('api_credentials').style.display='none';
+    }
+    return false;
 }
