@@ -23,12 +23,17 @@
     </nav>
     <div class="container first_div" id="api_credentials">
       <!-- <form class="form-inline" onsubmit="submit_app_token()" name="credentials_form"> -->
-        <div class="form-group mb-2">
-          <label>Application Token </label>
+        <div>
+          <label>Client ID </label>
         </div>
-        <div class="form-group mx-sm-3 mb-2">
-          <label for="inputPassword2" class="sr-only">Token</label>
-          <input type="password" class="form-control" id="app_token" name="app_token" placeholder="Enter the token">
+        <div>
+          <input type="password" class="form-control" id="client_id" name="app_token" placeholder="Enter the token">
+        </div>
+        <div>
+          <label>Client Secret </label>
+        </div>
+        <div>
+          <input type="password" class="form-control" id="client_secret" name="app_token" placeholder="Enter the token">
         </div>
         <button class="btn btn-primary mb-2" onclick="submit_app_token()">Submit</button>
       <!-- </form> -->

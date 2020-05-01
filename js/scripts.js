@@ -256,30 +256,53 @@ function syntaxHighlight(json) {
 
 function submit_app_token(){
 
-    var app_token = document.getElementById('app_token').value;
-    myHeaders.append("x-api-key", app_token);
-    if(app_token==""){
-        alert("Please Enter the app token");
-    }else{        
-        api = "Patient";
-        query = "?active=true";
-        fetch(url+api+query, requestOptions)
-            .then(response => {
-                if(!response.ok){
-                    alert("Please Enter Correct app token.\nStatus Code : "+ response.status);
-                    myHeaders.delete("x-api-key");
-                }else{
-                        document.getElementById('api_container').style.display='block';
-                        document.getElementById('tab_1').style.display='block';
-                        document.getElementById('tab_2').style.display='none';
-                        document.getElementById('api_credentials').style.display='none';
-                }
-            })
-            // .then(result => document.getElementById("json").innerHTML =JSON.stringify(JSON.parse(result), undefined, 4))
-            .then(result => result)
-            .catch(error => console.log(error));
-    }
+    var client_id = `"${document.getElementById('client_id').value}"`;
+    var client_secret = `"${document.getElementById('client_secret').value}"`;
+    var auth_Headers = new Headers();
+    auth_Headers.append("Content-Type", "application/json");
+    auth_Headers.append("Content-Type", "text/plain");
+
+    var raw = "{"
+        + "\"client_id\":" + client_id +","
+        + "\"client_secret\":" + client_secret +","
+        + "\"grant_type\":\"client_credentials\""
+        + "}"
+    var authrequest = {
+      method: 'POST',
+      headers: auth_Headers,
+      body: raw,
+      redirect: 'follow'
+    };
+    
+    var data_token = fetch("https://api-dev.oninnovaccer.com/fhiroauth/oauth2/token", authrequest)
+    .then(response => response.text())
+    .then(result => assign_api_token(JSON.parse(result)))
+    .catch(error => console.log('error', error));
+
+
+    // data_token.then(response =>{
+    //     if(!response.ok){
+    //         alert("Please Enter Correct app token.\nStatus Code : "+ response.status);
+    //         location.reload();
+    //     }
+    // });
+    
+
+    // console.log("the data is    "+data_token["access_token"]);
+    // myHeaders.append("x-api-key", data_token["access_token"]);
+    // document.getElementById('api_container').style.display='block';
+    // document.getElementById('tab_1').style.display='block';
+    // document.getElementById('tab_2').style.display='none';
+    // document.getElementById('api_credentials').style.display='none';
     return false;
+}
+
+function assign_api_token(obj){
+        myHeaders.append("x-api-key", obj["access_token"]);
+    document.getElementById('api_container').style.display='block';
+    document.getElementById('tab_1').style.display='block';
+    document.getElementById('tab_2').style.display='none';
+    document.getElementById('api_credentials').style.display='none';
 }
 
 function toggle_tabs(tab){

@@ -21,20 +21,20 @@
 
 
 
-var param_list = {
-    "resources" : {
+// var param_list = {
+//     "resources" : {
 
-        "Patient" : {
+//         "Patient" : {
             
-            "active" : [
-                "true", "false"
-            ]
-            "maritalStatus" : [
-                "M", "S", "C"
-            ]
-            "gender" : [
-                "male","female","other"
-            ]
-        }
-    }
-}
+//             "active" : [
+//                 "true", "false"
+//             ]
+//             "maritalStatus" : [
+//                 "M", "S", "C"
+//             ]
+//             "gender" : [
+//                 "male","female","other"
+//             ]
+//         }
+//     }
+// }
