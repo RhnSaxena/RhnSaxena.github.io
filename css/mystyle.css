@@ -11,17 +11,42 @@
 }
 
 .first_div{
-    margin-top: 100px;
+    margin-top: 80px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.font_format{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 26px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: #000000;
+    font-weight: 400;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    color: #222;
+    text-shadow: 0px 1px 1.5px #555;
+}
+
+.numbering_formating{
+    color: #222;
+    text-shadow: 0px 1px 1.5px #555;
+}
+
+.api_data_render{
+    margin-left: -30px;
 }
 
 pre{
-    height: 500px;
+    height: 400px;
     padding: 5px; 
     margin: 5px; 
 }
 
 #selection_box{
-    margin-top: 30px;
     display: none;
 }
 
@@ -40,8 +65,11 @@ select{
 }
 
 .tab_1 td{
-    height: 50px;
-    padding: 10px;
+    height: 15px;
+}
+
+.json_collapse{
+    height: 300px;
 }
 
 #tab_2_json{
@@ -49,9 +77,20 @@ select{
     height: 450px;
 }
 
+.form-control{
+    width:400px;
+}
+
 #tab_1_json{
     overflow: auto;
-    height: 450px;
+    height: 500px;
+    margin-top: 10px;
+}
+
+.resource_list{
+    width: 400px;
+    height: 550px;
+    overflow: auto;
 }
 
 .string { color: rgb(39, 58, 139); }

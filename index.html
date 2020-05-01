@@ -11,7 +11,7 @@
     <link rel="icon" href="./images/title_logo.jpeg" type="image/icon type">
     <title>Innovaccer</title>
   </head>
-  <body>
+  <body >
 
     <nav class="navbar fixed-top shadow">
         <a class="navbar-brand" href="">
@@ -21,55 +21,78 @@
           Rohan Saxena
         </span>  
     </nav>
-    <div class="container first_div" id="api_credentials">
-      <!-- <form class="form-inline" onsubmit="submit_app_token()" name="credentials_form"> -->
-        <div>
-          <label>Client ID </label>
+    <div class="container first_div shadow mx-auto" style="text-align: center; width: 600px; margin-top: 150px;"  id="api_credentials">
+        <div class="row">
+          <div class="col">
+            <p class="font_format">Login</p>
+          </div>
+
         </div>
-        <div>
-          <input type="password" class="form-control" id="client_id" name="app_token" placeholder="Enter the token">
+        <div class="row mx-auto">
+          <div class="col-6">
+             <input type="password" class="form-control" id="client_id" name="app_token" placeholder="Client ID" style="align-content: center;">
+          </div>
         </div>
-        <div>
-          <label>Client Secret </label>
+        <div class="row mx-auto" style="margin-top: 10px;">
+          <div class="col-6">
+            <input type="password" class="form-control" id="client_secret" name="app_token" placeholder="Client Secret" style="align-content: center;">
+          </div>
         </div>
-        <div>
-          <input type="password" class="form-control" id="client_secret" name="app_token" placeholder="Enter the token">
+        <div class="row">
+          <div class="col">
+            <button class="btn btn-primary mb-2" style="margin-top: 15px;" onclick="submit_app_token()">Submit</button>
+          </div>
         </div>
-        <button class="btn btn-primary mb-2" onclick="submit_app_token()">Submit</button>
-      <!-- </form> -->
     </div>
-    <div class="container first_div" id="api_container">
+    <div class=" first_div" id="api_container">
+      <div class="row">
+        <div class="col-6 font_format">Resources
+          </div>
+          <div class="col-6 font_format" id="api_name">
+          </div>
+      </div>
       <div class="row ">
-        <div class="col-4">
-          <div class="list-group shadow" id="list-tab" role="tablist">
-            <a onClick="function_Patient_Query('Patient','?active=true');" class="list-group-item list-group-item-action "  data-toggle="list"  role="tab" aria-controls="home">Patient</a>
+        <div class="col-4 ">
+          <div class="list-group shadow resource_list" id="list-tab" role="tablist">
+            <a onClick="function_Patient_Query('Patient','?gender=male');" class="list-group-item list-group-item-action "  data-toggle="list"  role="tab" aria-controls="home">Patient</a>
+            <a onClick="function_AllergyIn_Query('AllergyIntolerance','?clinical-status=active');" class="list-group-item list-group-item-action"  data-toggle="list"  role="tab" aria-controls="profile">Allergy Intolerance</a>
+            <a onClick="function_Practitioner_Query('Practitioner','?active=true');" class="list-group-item list-group-item-action"  data-toggle="list"  role="tab" aria-controls="profile">Practitioner</a>
+            <a onClick="function_Patient_Query('Patient','?gender=male');" class="list-group-item list-group-item-action "  data-toggle="list"  role="tab" aria-controls="home">Patient</a>
+            <a onClick="function_AllergyIn_Query('AllergyIntolerance','?clinical-status=active');" class="list-group-item list-group-item-action"  data-toggle="list"  role="tab" aria-controls="profile">Allergy Intolerance</a>
+            <a onClick="function_Practitioner_Query('Practitioner','?active=true');" class="list-group-item list-group-item-action"  data-toggle="list"  role="tab" aria-controls="profile">Practitioner</a>
+            <a onClick="function_Patient_Query('Patient','?gender=male');" class="list-group-item list-group-item-action "  data-toggle="list"  role="tab" aria-controls="home">Patient</a>
+            <a onClick="function_AllergyIn_Query('AllergyIntolerance','?clinical-status=active');" class="list-group-item list-group-item-action"  data-toggle="list"  role="tab" aria-controls="profile">Allergy Intolerance</a>
+            <a onClick="function_Practitioner_Query('Practitioner','?active=true');" class="list-group-item list-group-item-action"  data-toggle="list"  role="tab" aria-controls="profile">Practitioner</a>
+            <a onClick="function_Patient_Query('Patient','?gender=male');" class="list-group-item list-group-item-action "  data-toggle="list"  role="tab" aria-controls="home">Patient</a>
+            <a onClick="function_AllergyIn_Query('AllergyIntolerance','?clinical-status=active');" class="list-group-item list-group-item-action"  data-toggle="list"  role="tab" aria-controls="profile">Allergy Intolerance</a>
+            <a onClick="function_Practitioner_Query('Practitioner','?active=true');" class="list-group-item list-group-item-action"  data-toggle="list"  role="tab" aria-controls="profile">Practitioner</a>
+            <a onClick="function_Patient_Query('Patient','?gender=male');" class="list-group-item list-group-item-action "  data-toggle="list"  role="tab" aria-controls="home">Patient</a>
+            <a onClick="function_AllergyIn_Query('AllergyIntolerance','?clinical-status=active');" class="list-group-item list-group-item-action"  data-toggle="list"  role="tab" aria-controls="profile">Allergy Intolerance</a>
+            <a onClick="function_Practitioner_Query('Practitioner','?active=true');" class="list-group-item list-group-item-action"  data-toggle="list"  role="tab" aria-controls="profile">Practitioner</a>            <a onClick="function_Patient_Query('Patient','?gender=male');" class="list-group-item list-group-item-action "  data-toggle="list"  role="tab" aria-controls="home">Patient</a>
             <a onClick="function_AllergyIn_Query('AllergyIntolerance','?clinical-status=active');" class="list-group-item list-group-item-action"  data-toggle="list"  role="tab" aria-controls="profile">Allergy Intolerance</a>
             <a onClick="function_Practitioner_Query('Practitioner','?active=true');" class="list-group-item list-group-item-action"  data-toggle="list"  role="tab" aria-controls="profile">Practitioner</a>
           </div>
-          
-          <div id="selection_box">
-            <p>For any specific query</p>
-            <label>Query Parameter</label>
-            <select class="form-control" id="parameters" onchange="populate_param_value()">
-            </select>
-            <label style = "margin-top: 5px;">Value</label>
-
-            <select class="form-control" id="parameters_possible_value">
-            </select>
-            <button class="btn btn-primary mb-2" style = "margin-top: 10px;" onclick="submit_query_button()">Submit</button>
-          </div>
-        
         </div>
-        <div class="col-8" >
+        <div class="col-8 api_data_render" >
           <div class="tab-content tab_1" id="tab_1" >
-            <p id="tab_1_json_des"></p>
+            <div id="selection_box">
+              <div class="row"> 
+                <div class="col-6">
+                  <label>Query Parameter
+                    <select class="form-control" id="parameters" onchange="populate_param_value()">
+                    </select></label>
+                </div>
+                <div class="col-4">
+                  <label>Value
+                  <select class="form-control" id="parameters_possible_value">
+                  </select></label>
+                </div>
+                <div class="col-2">
+                  <button class="btn btn-primary mb-2" style="margin-top: 25px;" onclick="submit_query_button()">Submit</button>
+                </div>
+              </div>
+            </div>
             <div class="tab-pane fade show active" id="tab_1_json" role="tabpanel" aria-labelledby="list-home-list" ></div>
-          </div>
-          <div class="tab-content" id="tab_2" >
-            <button onclick="toggle_tabs('tab_1')" class="btn btn-outline-dark" style="margin-bottom: 20px;">Back</button>
-            <p id="tab_2_json_des"></p>
-
-            <pre class="tab-pane fade show active" id="tab_2_json" role="tabpanel" aria-labelledby="list-home-list" ></pre>
           </div>
         </div>
       </div>
