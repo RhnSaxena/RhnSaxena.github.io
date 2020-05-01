@@ -1,12 +1,86 @@
 var myHeaders = new Headers();
 url = "https://api-dev.oninnovaccer.com/fhir/";
 var api = '';
-var query = '';
 var requestOptions = {
     method: 'GET',
     headers: myHeaders,
     redirect: 'follow'
 };
+
+var param_api='';
+var param_value='';
+
+
+var param_list = {
+    "resources" : {
+
+        "Patient" : {
+            
+            "active" : [
+                "true", "false"
+            ],
+            // "maritalStatus" : [
+            //     "M", "S", "C"
+            // ],
+            "gender" : [
+                "male","female","other"
+            ]
+        },
+        "AllergyIntolerance" : {
+            "criticality" : [
+                "high", "low", "unable-to-assess"
+            ],
+            "clinical-status" : [
+                "active", "inactive", "resolved"
+            ],
+            "severity" : [
+                "mild", "moderate", "severe"
+            ],
+            "type" : [
+                "allergy", "intolerance"
+            ]
+        }
+        
+    }
+}
+
+function populate_param(resource){
+
+    document.getElementById('selection_box').style.display='block';
+    if(!(resource===param_api)){
+        param_api=resource;
+        var select_tag = document.getElementById('parameters')
+        removeOptions(select_tag);
+        doc_frag = document.createDocumentFragment();
+        var parameter;
+        for(parameter in param_list["resources"][resource]){
+            var option = document.createElement('option');
+            option.value = parameter;
+            option.appendChild(document.createTextNode(parameter));
+            doc_frag.appendChild(option);
+        }
+        select_tag.appendChild(doc_frag);
+    }
+}
+
+function populate_param_value(){
+    param = document.getElementById('parameters').value;
+    if(!(param===param_value)){
+        param_value=param;
+        var select_tag = document.getElementById('parameters_possible_value')
+        removeOptions(select_tag);
+        doc_frag = document.createDocumentFragment();
+        var parameter;
+        for(x in param_list["resources"][param_api][param_value]){
+            var option = document.createElement('option');
+            option.value = param_list["resources"][param_api][param_value][x];
+            option.appendChild(document.createTextNode(param_list["resources"][param_api][param_value][x]));
+            doc_frag.appendChild(option);
+        }
+        select_tag.appendChild(doc_frag);
+    }
+}
+
 
 function renderJson(id){
 
@@ -66,6 +140,7 @@ function renderAllergyList(Allergy){
     text +="</table>"
     document.getElementById("tab_1_json").innerHTML = text;
     document.getElementById("tab_1_json_des").innerHTML = "These are few instances of the chosen API.";
+
 }
 
 function renderPractitionerList(Practitioner){
@@ -89,11 +164,13 @@ function renderPractitionerList(Practitioner){
     document.getElementById("tab_1_json_des").innerHTML = "These are few instances of the chosen API.";
 }
 
-function function_Patient_Query() {
+function function_Patient_Query(arg1, query) {
     toggle_tabs("tab_1");
-    api = "Patient";
-    query = "?active=true";
+    api = arg1;
     document.getElementById("tab_1_json").innerHTML = '';
+    populate_param(api);
+    populate_param_value();
+    console.log(url+api+query);
     fetch(url+api+query, requestOptions)
         .then(response => response.text())
         // .then(result => document.getElementById("json").innerHTML =JSON.stringify(JSON.parse(result), undefined, 4))
@@ -101,11 +178,12 @@ function function_Patient_Query() {
         .catch(error => document.getElementById("tab_1_json").innerHTML =error);
 }
 
-function function_AllergyIn_Query() {
+function function_AllergyIn_Query(arg1, query) {
     toggle_tabs("tab_1");
-    api = "AllergyIntolerance";
-    query = "?clinical-status=active";
+    api = arg1;
     document.getElementById("tab_1_json").innerHTML = '';
+    populate_param(api);
+    populate_param_value();
     fetch(url+api+query, requestOptions)
         .then(response => response.text())
         // .then(result => document.getElementById("json").innerHTML =JSON.stringify(JSON.parse(result), undefined, 4))
@@ -113,16 +191,28 @@ function function_AllergyIn_Query() {
         .catch(error => document.getElementById("tab_1_json").innerHTML =error);
 }
 
-function function_Practitioner_Query() {
+function function_Practitioner_Query(arg1,query) {
     toggle_tabs("tab_1");
-    api = "Practitioner";
-    query = "?active=true";
+    api = arg1;
+    populate_param(api);
+    populate_param_value();
     document.getElementById("tab_1_json").innerHTML = '';
     fetch(url+api+query, requestOptions)
         .then(response => response.text())
         // .then(result => document.getElementById("json").innerHTML =JSON.stringify(JSON.parse(result), undefined, 4))
         .then(result => renderPractitionerList(JSON.parse(result)))
         .catch(error => document.getElementById("tab_1_json").innerHTML =error);
+}
+
+function submit_query_button(){
+    var query = "?"+ document.getElementById('parameters').value+"="+document.getElementById('parameters_possible_value').value;
+    if(api==='Patient'){
+        function_Patient_Query(api,query);
+    }else if(api=='AllergyIntolerance'){
+        function_AllergyIn_Query(api,query)
+    }else{
+        function_Practitioner_Query(api,query);
+    }
 }
 
 function syntaxHighlight(json) {
@@ -203,3 +293,12 @@ function toggle_tabs(tab){
     }
     return false;
 }
+
+function removeOptions(selectElement) {
+    var i, L = selectElement.options.length - 1;
+    for(i = L; i >= 0; i--) {
+       selectElement.remove(i);
+    }
+ }
+ 
+ 

@@ -37,10 +37,23 @@
       <div class="row ">
         <div class="col-4">
           <div class="list-group shadow" id="list-tab" role="tablist">
-            <a onClick="function_Patient_Query();" class="list-group-item list-group-item-action "  data-toggle="list"  role="tab" aria-controls="home">Patient</a>
-            <a onClick="function_AllergyIn_Query();" class="list-group-item list-group-item-action"  data-toggle="list"  role="tab" aria-controls="profile">Allergy Intolerance</a>
-            <a onClick="function_Practitioner_Query();" class="list-group-item list-group-item-action"  data-toggle="list"  role="tab" aria-controls="profile">Practitioner</a>
+            <a onClick="function_Patient_Query('Patient','?active=true');" class="list-group-item list-group-item-action "  data-toggle="list"  role="tab" aria-controls="home">Patient</a>
+            <a onClick="function_AllergyIn_Query('AllergyIntolerance','?clinical-status=active');" class="list-group-item list-group-item-action"  data-toggle="list"  role="tab" aria-controls="profile">Allergy Intolerance</a>
+            <a onClick="function_Practitioner_Query('Practitioner','?active=true');" class="list-group-item list-group-item-action"  data-toggle="list"  role="tab" aria-controls="profile">Practitioner</a>
           </div>
+          
+          <div id="selection_box">
+            <p>For any specific query</p>
+            <label>Query Parameter</label>
+            <select class="form-control" id="parameters" onchange="populate_param_value()">
+            </select>
+            <label style = "margin-top: 5px;">Value</label>
+
+            <select class="form-control" id="parameters_possible_value">
+            </select>
+            <button class="btn btn-primary mb-2" style = "margin-top: 10px;" onclick="submit_query_button()">Submit</button>
+          </div>
+        
         </div>
         <div class="col-8" >
           <div class="tab-content tab_1" id="tab_1" >

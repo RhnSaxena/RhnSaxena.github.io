@@ -20,6 +20,15 @@ pre{
     margin: 5px; 
 }
 
+#selection_box{
+    margin-top: 30px;
+    display: none;
+}
+
+select{
+    width: 200px!important;
+}
+
 .navbar-text{
     color: blue;
     font-size: large;
