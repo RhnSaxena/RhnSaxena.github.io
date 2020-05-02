@@ -88,157 +88,125 @@ function populate_param_value(){
     }
 }
 
-
-function renderJson(id){
-
-    var endpoint = url + api + "\\" + id;
-    fetch(endpoint, requestOptions)
-        .then(response => response.text())
-        // .then(result => document.getElementById("json").innerHTML =JSON.stringify(JSON.parse(result), undefined, 4))
-        .then(result => document.getElementById(id).innerHTML =syntaxHighlight(JSON.parse(result)))
-        .catch(error => document.getElementById("tab_2_json").innerHTML =error);
-    // toggle_tabs("tab_2"); 
-}
-
 function renderPatientList(Patients){
 
-    
     var text = "";
-    text +="<table>"
+    text +="<div class='list-group'>"
     var patient;
     var i=1;
     for (patient in Patients["entry"][0]["resource"]){
         var target_id = "div_"+i.toString();
         var target = "#"+target_id;
-        text += "<tr> <td class='col-8'>Name : "
+        text += "<button type='button' class='list-group-item list-group-item-action json_list_button'"
+             +" data-target="+ `"${target}"`+" data-toggle='collapse' >"
+            + "<div class='col-6'>"
+            + "Name : "
             + Patients["entry"][0]["resource"][patient]["name"][0]["given"][0] +" " 
             + Patients["entry"][0]["resource"][patient]["name"][0]["family"] + "<br>Gender : "
             + Patients["entry"][0]["resource"][patient]["gender"] + "<br>Address : "
             + Patients["entry"][0]["resource"][patient]["address"][0]["city"] + ", "
-            + Patients["entry"][0]["resource"][patient]["address"][0]["state"] + "<br></td><td class='col-4'> "
-            + "<button class='btn btn-outline-danger'"
-            + " data-target="+ `"${target}"`+" type='button' data-toggle='collapse' >More Info</button>"
-            + "</td></tr><tr><td>"
+            + Patients["entry"][0]["resource"][patient]["address"][0]["state"] + "<br>"
+            + "</div><div class='col-6'>"
+            + "</div>"
+            + "</button>"
             +"<pre class='collapse json_collapse' id="+`"${target_id}"`+">"
             + syntaxHighlight(Patients["entry"][0]["resource"][patient])
-            +"</pre></td></tr>";
+            +"</pre>";
         i++;
     }
-    text +="</table>"
+    text +="</div>"
     document.getElementById("tab_1_json").innerHTML = text;
 }
 
 function renderAllergyList(Allergy){
     
     var text = "";
-    text +="<table>"
+    text +="<div class='list-group'>"
     var allergy;
     var i = 0;
     for (allergy in Allergy["entry"][0]["resource"]){
         var target_id = "div_"+i.toString();
         var target = "#"+target_id;
         var cat;
-        text += "<tr><td class='col-8'>Category : ";
-            for( cat in Allergy["entry"][0]["resource"][allergy]["category"]){
-                text+= Allergy["entry"][0]["resource"][allergy]["category"][cat] +", "
-            }
+        text += "<button type='button' class='list-group-item list-group-item-action json_list_button'"
+                +" data-target="+ `"${target}"`+" data-toggle='collapse' >"
+                + "<div class='col-6'>"
+                + "Category : ";
+        for( cat in Allergy["entry"][0]["resource"][allergy]["category"]){
+            text+= Allergy["entry"][0]["resource"][allergy]["category"][cat] +", "
+        }
         text = text.slice(0, -2);
         text += "<br>Clinical Status : "
                 + Allergy["entry"][0]["resource"][allergy]["clinicalStatus"]["coding"][0]["code"]+ "<br>Patient : " 
                 + Allergy["entry"][0]["resource"][allergy]["patient"]["reference"]+"<br>"
-                 // + "Type : " +Allergy["entry"][0]["resource"][allergy]["encounter"]["type"] +"<br> " 
-                + "</td><td class='col-4'><button class='btn btn-outline-danger'"
-                + " data-target="+ `"${target}"`+" type='button' data-toggle='collapse' >More Info</button></td></tr><tr><td>"
+                + "</div><div class='col-6'>"
+                + "</div>"
+                + "</button>"
                 +"<pre class='collapse json_collapse' id="+`"${target_id}"`+">"
                 + syntaxHighlight(Allergy["entry"][0]["resource"][allergy])
-                +"</pre></td></tr>";
-        i++;
+                +"</pre>";
+            i++;
     }
-    text +="</table>"
+    text +="</div>"
     document.getElementById("tab_1_json").innerHTML = text;
-
 }
 
 function renderPractitionerList(Practitioner){
     
     var text = "";
-    text +="<table>"
+    text +="<div class='list-group'>"
     var practitioner;
     var i =0;
     for (practitioner in Practitioner["entry"][0]["resource"]){
         var target_id = "div_"+i.toString();
         var target = "#"+target_id;
-        text += "<tr><td class='col-8'>Name : "
+        text +=  "<button type='button' class='list-group-item list-group-item-action json_list_button' "
+            + "data-target="+ `"${target}"`+" data-toggle='collapse' >"
+            + "<div class='col-6'>"
+            + "Name : "
             + Practitioner["entry"][0]["resource"][practitioner]["name"][0]["given"][0] +" " 
             + Practitioner["entry"][0]["resource"][practitioner]["name"][0]["family"] + "<br>Gender : "
             + Practitioner["entry"][0]["resource"][practitioner]["gender"] + "<br>Address : "
             + Practitioner["entry"][0]["resource"][practitioner]["address"][0]["city"] + ", "
-            + Practitioner["entry"][0]["resource"][practitioner]["address"][0]["state"] + "<br></td><td class='col-4'> "
-            + "<button class='btn btn-outline-danger' "
-            + " data-target="+ `"${target}"`+" type='button' data-toggle='collapse' >More Info</button></td></tr><tr><td>"
+            + Practitioner["entry"][0]["resource"][practitioner]["address"][0]["state"] + "<br>"
+            + "</div><div class='col-6'>"
+            + "</div>"
+            + "</button>"
             +"<pre class='collapse json_collapse' id="+`"${target_id}"`+">"
             + syntaxHighlight(Practitioner["entry"][0]["resource"][practitioner])
-            +"</pre></td></tr>";
+            +"</pre>";
         i++;
     }
-    text +="</table>"
+    text +="</div>"
     document.getElementById("tab_1_json").innerHTML = text;
 }
 
-function function_Patient_Query(arg1, query) {
-    toggle_tabs("tab_1");
+function fetch_Resource_Query(arg1, query) {
     api = arg1;
     document.getElementById("tab_1_json").innerHTML = '';
-    document.getElementById("api_name").innerHTML = 'Patient';
+    document.getElementById("api_name").innerHTML = api;
     populate_param(api);
     populate_param_value();
-    console.log(url+api+query);
     fetch(url+api+query, requestOptions)
         .then(response => response.text())
         // .then(result => document.getElementById("json").innerHTML =JSON.stringify(JSON.parse(result), undefined, 4))
-        .then(result => renderPatientList(JSON.parse(result)))
+        .then(result => render_Query(JSON.parse(result)))
         .catch(error => document.getElementById("tab_1_json").innerHTML =error);
 }
 
-function function_AllergyIn_Query(arg1, query) {
-    toggle_tabs("tab_1");
-    api = arg1;
-    document.getElementById("tab_1_json").innerHTML = '';
-    document.getElementById("api_name").innerHTML = 'Allergy Intolerance';
-
-    populate_param(api);
-    populate_param_value();
-    fetch(url+api+query, requestOptions)
-        .then(response => response.text())
-        // .then(result => document.getElementById("json").innerHTML =JSON.stringify(JSON.parse(result), undefined, 4))
-        .then(result => renderAllergyList(JSON.parse(result)))
-        .catch(error => document.getElementById("tab_1_json").innerHTML =error);
-}
-
-function function_Practitioner_Query(arg1,query) {
-    toggle_tabs("tab_1");
-    api = arg1;
-    populate_param(api);
-    populate_param_value();
-    document.getElementById("tab_1_json").innerHTML = '';
-    document.getElementById("api_name").innerHTML = 'Practitioner Intolerance';
-
-    fetch(url+api+query, requestOptions)
-        .then(response => response.text())
-        // .then(result => document.getElementById("json").innerHTML =JSON.stringify(JSON.parse(result), undefined, 4))
-        .then(result => renderPractitionerList(JSON.parse(result)))
-        .catch(error => document.getElementById("tab_1_json").innerHTML =error);
+function render_Query(data){
+    if(api==='Patient'){
+        renderPatientList(data);
+    }else if(api=='AllergyIntolerance'){
+        renderAllergyList(data)
+    }else if(api=='Practitioner'){
+        renderPractitionerList(data);
+    }
 }
 
 function submit_query_button(){
     var query = "?"+ document.getElementById('parameters').value+"="+document.getElementById('parameters_possible_value').value;
-    if(api==='Patient'){
-        function_Patient_Query(api,query);
-    }else if(api=='AllergyIntolerance'){
-        function_AllergyIn_Query(api,query)
-    }else{
-        function_Practitioner_Query(api,query);
-    }
+    fetch_Resource_Query(api, query);
 }
 
 function syntaxHighlight(json) {
@@ -262,23 +230,6 @@ function syntaxHighlight(json) {
         return '<span class="' + cls + '">' + match + '</span>';
     });
 }
-
-// function submit_app_token(){
-
-//     var app_token = document.getElementById('app_token').value;
-//     if(app_token==""){
-//         alert("Please Enter the app token");
-//     }else{
-
-
-//         myHeaders.append("x-api-key", app_token);
-//         document.getElementById('api_container').style.display='block';
-//         document.getElementById('tab_1').style.display='block';
-//         document.getElementById('tab_2').style.display='none';
-//         document.getElementById('api_credentials').style.display='none';
-//     }
-//     return false;
-// }
 
 function submit_app_token(){
 
@@ -324,23 +275,9 @@ function submit_app_token(){
 }
 
 function assign_api_token(obj){
-        myHeaders.append("x-api-key", obj["access_token"]);
+    myHeaders.append("x-api-key", obj["access_token"]);
     document.getElementById('api_container').style.display='block';
-    document.getElementById('tab_1').style.display='block';
-    // document.getElementById('tab_2').style.display='none';
     document.getElementById('api_credentials').style.display='none';
-}
-
-function toggle_tabs(tab){
-    if(tab==="tab_2"){
-        document.getElementById('tab_1').style.display='none';
-        // document.getElementById('tab_2').style.display='block';
-    }else{
-        document.getElementById('tab_1').style.display='block';
-        // document.getElementById('tab_2').style.display='none';
-        // document.getElementById("tab_2_json").innerHTML = '';
-    }
-    return false;
 }
 
 function removeOptions(selectElement) {
@@ -350,10 +287,9 @@ function removeOptions(selectElement) {
     }
  }
  
- 
  function testing(){
+    // myHeaders.append("x-api-key", data_token["access_token"]);
     // document.getElementById('api_container').style.display='block';
     // document.getElementById('tab_1').style.display='block';
-    // document.getElementById('tab_2').style.display='none';
     // document.getElementById('api_credentials').style.display='none';
  }
