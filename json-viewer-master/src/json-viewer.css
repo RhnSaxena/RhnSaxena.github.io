@@ -1,6 +1,7 @@
 .json-viewer {
-	color: #000;
+	color: rgb(192, 33, 33);
 	padding-left: 20px;
+	font-size: 14px;
 }
 
 .json-viewer ul {
@@ -16,28 +17,28 @@
 }
 
 .json-viewer .type-string {
-	color: #0B7500;
+	color: rgb(39, 58, 139);
 }
 
 .json-viewer .type-date {
-	color: #CB7500;
+	color: darkorange;
 }
 
 .json-viewer .type-boolean {
-	color: #1A01CC;
+	color: rgb(24, 133, 39);
 	font-weight: bold;
 }
 
 .json-viewer .type-number {
-	color: #1A01CC;
+	color: darkorange;
 }
 
 .json-viewer .type-null, .json-viewer .type-undefined {
-	color: #90a;
+	color: magenta;
 }
 
 .json-viewer a.list-link {
-	color: #000;
+	color: rgb(82, 22, 22);
 	text-decoration: none;
 	position: relative;
 }
