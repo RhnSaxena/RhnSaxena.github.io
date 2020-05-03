@@ -9,9 +9,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/mystyle.css">
     <link rel="icon" href="./images/title_logo.jpeg" type="image/icon type">
+    <script type="text/javascript" src="./json-viewer-master/src/json-viewer.js"></script>
+		<link rel="stylesheet" type="text/css" href="./json-viewer-master/src/json-viewer.css">
     <title>Innovaccer</title>
   </head>
-  <body >
+  <body>
+  <!-- <body onload="testing()"> -->
 
     <nav class="navbar fixed-top shadow">
         <a class="navbar-brand" href="">
@@ -66,12 +69,14 @@
                 <div class="col-6">
                   <label>Query Parameter
                     <select class="form-control" id="parameters" onchange="populate_param_value()">
-                    </select></label>
+                    </select>
+                  </label>
                 </div>
                 <div class="col-4">
                   <label>Value
                   <select class="form-control" id="parameters_possible_value">
-                  </select></label>
+                  </select>
+                </label>
                 </div>
                 <div class="col-2">
                   <button class="btn btn-primary mb-2" style="margin-top: 25px;" onclick="submit_query_button()">Submit</button>

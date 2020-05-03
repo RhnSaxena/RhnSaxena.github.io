@@ -6,7 +6,6 @@ var requestOptions = {
     headers: myHeaders,
     redirect: 'follow'
 };
-
 var param_api='';
 var param_value='';
 
@@ -88,6 +87,15 @@ function populate_param_value(){
     }
 }
 
+function renderJSONviewer(id){
+    var hash_id ="#"+id;
+    var jsonViewer = new JSONViewer();
+    var x = document.getElementById(id).innerText;
+    document.getElementById(id).innerText='';
+    jsonViewer.showJSON(JSON.parse(x),null,1);
+    document.querySelector(hash_id).appendChild(jsonViewer.getContainer());
+}
+
 function renderPatientList(Patients){
 
     var text = "";
@@ -97,8 +105,10 @@ function renderPatientList(Patients){
     for (patient in Patients["entry"][0]["resource"]){
         var target_id = "div_"+i.toString();
         var target = "#"+target_id;
+        var json_obj = JSON.stringify(Patients["entry"][0]["resource"][patient]);
         text += "<button type='button' class='list-group-item list-group-item-action json_list_button'"
-             +" data-target="+ `"${target}"`+" data-toggle='collapse' >"
+             +" data-target="+ `"${target}"`+" data-toggle='collapse' "
+             + "onclick = renderJSONviewer("+`"${target_id}"`+") >"
             + "<div class='col-6'>"
             + "Name : "
             + Patients["entry"][0]["resource"][patient]["name"][0]["given"][0] +" " 
@@ -110,7 +120,7 @@ function renderPatientList(Patients){
             + "</div>"
             + "</button>"
             +"<pre class='collapse json_collapse' id="+`"${target_id}"`+">"
-            + syntaxHighlight(Patients["entry"][0]["resource"][patient])
+            + JSON.stringify(Patients["entry"][0]["resource"][patient])
             +"</pre>";
         i++;
     }
@@ -287,9 +297,9 @@ function removeOptions(selectElement) {
     }
  }
  
- function testing(){
-    // myHeaders.append("x-api-key", data_token["access_token"]);
-    // document.getElementById('api_container').style.display='block';
-    // document.getElementById('tab_1').style.display='block';
-    // document.getElementById('api_credentials').style.display='none';
- }
+//  function testing(){
+//     myHeaders.append("x-api-key", "BiZrGMokNvaGtOLxHjURKV9ZbobVk6Zd");
+//     document.getElementById('api_container').style.display='block';
+//     document.getElementById('tab_1').style.display='block';
+//     document.getElementById('api_credentials').style.display='none';
+//  }
