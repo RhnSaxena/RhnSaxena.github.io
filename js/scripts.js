@@ -403,26 +403,17 @@ function submit_app_token(){
       redirect: 'follow'
     };
     
-    var data_token = fetch("https://api-dev.oninnovaccer.com/fhiroauth/oauth2/token", authrequest)
-    .then(response => response.text())
-    .then(result => assign_api_token(JSON.parse(result)))
+    fetch("https://api-dev.oninnovaccer.com/fhiroauth/oauth2/token", authrequest)
+    .then(response =>response.text().then(result => {
+        if(!response.ok){
+            alert("Please Enter Correct Credentials.\nStatus Code : "+ response.status);
+            location.reload();
+        }else{
+            assign_api_token(JSON.parse(result))
+        }
+    }
+    ))  
     .catch(error => console.log('error', error));
-
-
-    // data_token.then(response =>{
-    //     if(!response.ok){
-    //         alert("Please Enter Correct app token.\nStatus Code : "+ response.status);
-    //         location.reload();
-    //     }
-    // });
-    
-
-    // console.log("the data is    "+data_token["access_token"]);
-    // myHeaders.append("x-api-key", data_token["access_token"]);
-    // document.getElementById('api_container').style.display='block';
-    // document.getElementById('tab_1').style.display='block';
-    // document.getElementById('tab_2').style.display='none';
-    // document.getElementById('api_credentials').style.display='none';
     return false;
 }
 
