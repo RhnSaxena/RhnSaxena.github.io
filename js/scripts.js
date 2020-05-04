@@ -17,9 +17,6 @@ var param_list = {
             "active" : [
                 "true", "false"
             ],
-            // "maritalStatus" : [
-            //     "M", "S", "C"
-            // ],
             "gender" : [
                 "male","female","other"
             ],
@@ -39,7 +36,11 @@ var param_list = {
             ],
             "type" : [
                 "allergy", "intolerance"
-            ]
+            ],
+            "category" : [
+                "food", "medication", "environment", "biologic"
+            ],
+            "patient" : "user_input",
         },
         "Practitioner" : {
             "active" : [
@@ -48,14 +49,18 @@ var param_list = {
             "gender" : [
                 "male","female","other"
             ],
-            "address" : "user_input",
+            "address-city" : "user_input",
             "name" : "user_input",
+            "language" : "user_input",
         },
         "Condition" :{
             "clinical-status" : [
                 "active", "inactive", "resolved"
             ],
             "code" : "user_input",
+            "Patient" : "user_input",
+            "onset-date": "user_input",
+            "asserter": "user_input"
         },
         "ServiceRequest" : {
             "priority" : [
@@ -65,6 +70,7 @@ var param_list = {
                 "draft", "active", "suspended", "completed", "entered-in-error", "cancelled"
             ],
             "intent" : "user_input",
+            "encounter" : "user_input",
         },
     }
 }
@@ -158,7 +164,6 @@ function renderPatientList(Patients){
             + JSON.stringify(Patients["entry"][0]["resource"][patient])
             +"</pre>"
             +"<pre class='collapse json_collapse' id="+`"${target_id}"`+">"
-            // + JSON.stringify(Patients["entry"][0]["resource"][patient])
             +"</pre>";
         i++;
     }
@@ -197,7 +202,6 @@ function renderAllergyList(Allergy){
                 + JSON.stringify(Allergy["entry"][0]["resource"][allergy])
                 +"</pre>"
                 +"<pre class='collapse json_collapse' id="+`"${target_id}"`+">"
-                // + syntaxHighlight(Allergy["entry"][0]["resource"][allergy])
                 +"</pre>";
             i++;
     }
@@ -237,7 +241,6 @@ function renderPractitionerList(Practitioner){
             + JSON.stringify(Practitioner["entry"][0]["resource"][practitioner])
             +"</pre>"
             +"<pre class='collapse json_collapse' id="+`"${target_id}"`+">"
-            // + syntaxHighlight(Practitioner["entry"][0]["resource"][practitioner])
             +"</pre>";
         i++;
     }
@@ -276,7 +279,6 @@ function renderConditionList(Condition){
             + JSON.stringify(Condition["entry"][0]["resource"][condition])
             +"</pre>"
             +"<pre class='collapse json_collapse' id="+`"${target_id}"`+">"
-            // + syntaxHighlight(Practitioner["entry"][0]["resource"][practitioner])
             +"</pre>";
         i++;
     }
@@ -314,7 +316,6 @@ function renderServiceRequestList(ServiceRequest){
             + JSON.stringify(ServiceRequest["entry"][0]["resource"][srequest])
             +"</pre>"
             +"<pre class='collapse json_collapse' id="+`"${target_id}"`+">"
-            // + syntaxHighlight(Practitioner["entry"][0]["resource"][practitioner])
             +"</pre>";
         i++;
     }
@@ -331,7 +332,6 @@ function fetch_Resource_Query(arg1, query) {
     populate_param_value();
     fetch(url+api+query, requestOptions)
         .then(response => response.text())
-        // .then(result => document.getElementById("json").innerHTML =JSON.stringify(JSON.parse(result), undefined, 4))
         .then(result => render_Query(JSON.parse(result)))
         .catch(error => document.getElementById("tab_1_json").innerHTML =error);
 }
@@ -361,28 +361,6 @@ function submit_query_button(){
     fetch_Resource_Query(api, query);
 }
 
-function syntaxHighlight(json) {
-    if (typeof json != 'string') {
-         json = JSON.stringify(json, undefined, 4);
-    }
-    json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-    return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
-        var cls = 'number';
-        if (/^"/.test(match)) {
-            if (/:$/.test(match)) {
-                cls = 'key';
-            } else {
-                cls = 'string';
-            }
-        } else if (/true|false/.test(match)) {
-            cls = 'boolean';
-        } else if (/null/.test(match)) {
-            cls = 'null';
-        }
-        return '<span class="' + cls + '">' + match + '</span>';
-    });
-}
-
 function submit_app_token(){
 
     var client_id = `"${document.getElementById('client_id').value}"`;
@@ -409,18 +387,15 @@ function submit_app_token(){
             alert("Please Enter Correct Credentials.\nStatus Code : "+ response.status);
             location.reload();
         }else{
-            assign_api_token(JSON.parse(result))
+            var obj = JSON.parse(result);
+            myHeaders.append("x-api-key", obj["access_token"]);
+            document.getElementById('api_container').style.display='block';
+            document.getElementById('api_credentials').style.display='none';
         }
     }
     ))  
     .catch(error => console.log('error', error));
     return false;
-}
-
-function assign_api_token(obj){
-    myHeaders.append("x-api-key", obj["access_token"]);
-    document.getElementById('api_container').style.display='block';
-    document.getElementById('api_credentials').style.display='none';
 }
 
 function removeOptions(selectElement) {
@@ -429,10 +404,3 @@ function removeOptions(selectElement) {
        selectElement.remove(i);
     }
  }
- 
-//  function testing(){
-//     myHeaders.append("x-api-key", "BiZrGMokNvaGtOLxHjURKV9ZbobVk6Zd");
-//     document.getElementById('api_container').style.display='block';
-//     document.getElementById('tab_1').style.display='block';
-//     document.getElementById('api_credentials').style.display='none';
-//  }
