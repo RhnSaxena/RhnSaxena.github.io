@@ -8,7 +8,7 @@ var requestOptions = {
 };
 var param_api='';
 var param_value='';
-
+var user_input_flag;
 var param_list = {
     "resources" : {
 
@@ -22,7 +22,8 @@ var param_list = {
             // ],
             "gender" : [
                 "male","female","other"
-            ]
+            ],
+            "address" : "user_input",
         },
         "AllergyIntolerance" : {
             "criticality" : [
@@ -73,24 +74,35 @@ function populate_param_value(){
     param = document.getElementById('parameters').value;
     if(!(param===param_value)){
         param_value=param;
-        var select_tag = document.getElementById('parameters_possible_value')
-        removeOptions(select_tag);
-        doc_frag = document.createDocumentFragment();
-        var parameter;
-        for(x in param_list["resources"][param_api][param_value]){
-            var option = document.createElement('option');
-            option.value = param_list["resources"][param_api][param_value][x];
-            option.appendChild(document.createTextNode(param_list["resources"][param_api][param_value][x]));
-            doc_frag.appendChild(option);
+
+        if(!(param_list["resources"][param_api][param_value]==="user_input")){
+            user_input_flag=false;
+            document.getElementById("parameters_possible_value").style.display='block';
+            document.getElementById("parameters_user_value").style.display='none';
+            var select_tag = document.getElementById('parameters_possible_value')
+            removeOptions(select_tag);
+            doc_frag = document.createDocumentFragment();
+            for(x in param_list["resources"][param_api][param_value]){
+                var option = document.createElement('option');
+                option.value = param_list["resources"][param_api][param_value][x];
+                option.appendChild(document.createTextNode(param_list["resources"][param_api][param_value][x]));
+                doc_frag.appendChild(option);
+            }
+            select_tag.appendChild(doc_frag);
+        }else{
+            user_input_flag=true;
+            document.getElementById("parameters_possible_value").style.display='none';
+            document.getElementById("parameters_user_value").style.display='block';
         }
-        select_tag.appendChild(doc_frag);
+
     }
 }
 
 function renderJSONviewer(id){
     var hash_id ="#"+id;
+    var source = id+"#";
     var jsonViewer = new JSONViewer();
-    var x = document.getElementById(id).innerText;
+    var x = document.getElementById(source).innerHTML;
     document.getElementById(id).innerText='';
     jsonViewer.showJSON(JSON.parse(x),null,1);
     document.querySelector(hash_id).appendChild(jsonViewer.getContainer());
@@ -105,10 +117,10 @@ function renderPatientList(Patients){
     for (patient in Patients["entry"][0]["resource"]){
         var target_id = "div_"+i.toString();
         var target = "#"+target_id;
-        var json_obj = JSON.stringify(Patients["entry"][0]["resource"][patient]);
+        var source_json=target_id+"#";
         text += "<button type='button' class='list-group-item list-group-item-action json_list_button'"
-             +" data-target="+ `"${target}"`+" data-toggle='collapse' "
-             + "onclick = renderJSONviewer("+`"${target_id}"`+") >"
+            +" data-target="+ `"${target}"`+" data-toggle='collapse' "
+            + "onclick = renderJSONviewer("+`"${target_id}"`+") >"
             + "<div class='col-6'>"
             + "Name : "
             + Patients["entry"][0]["resource"][patient]["name"][0]["given"][0] +" " 
@@ -119,8 +131,11 @@ function renderPatientList(Patients){
             + "</div><div class='col-6'>"
             + "</div>"
             + "</button>"
-            +"<pre class='collapse json_collapse' id="+`"${target_id}"`+">"
+            +"<pre class='collapse json_collapse' id="+`"${source_json}"`+">"
             + JSON.stringify(Patients["entry"][0]["resource"][patient])
+            +"</pre>"
+            +"<pre class='collapse json_collapse' id="+`"${target_id}"`+">"
+            // + JSON.stringify(Patients["entry"][0]["resource"][patient])
             +"</pre>";
         i++;
     }
@@ -137,9 +152,11 @@ function renderAllergyList(Allergy){
     for (allergy in Allergy["entry"][0]["resource"]){
         var target_id = "div_"+i.toString();
         var target = "#"+target_id;
+        var source_json=target_id+"#";
         var cat;
         text += "<button type='button' class='list-group-item list-group-item-action json_list_button'"
-                +" data-target="+ `"${target}"`+" data-toggle='collapse' >"
+                +" data-target="+ `"${target}"`+" data-toggle='collapse' "
+                + "onclick = renderJSONviewer("+`"${target_id}"`+") >"
                 + "<div class='col-6'>"
                 + "Category : ";
         for( cat in Allergy["entry"][0]["resource"][allergy]["category"]){
@@ -152,8 +169,11 @@ function renderAllergyList(Allergy){
                 + "</div><div class='col-6'>"
                 + "</div>"
                 + "</button>"
+                +"<pre class='collapse json_collapse' id="+`"${source_json}"`+">"
+                + JSON.stringify(Allergy["entry"][0]["resource"][allergy])
+                +"</pre>"
                 +"<pre class='collapse json_collapse' id="+`"${target_id}"`+">"
-                + syntaxHighlight(Allergy["entry"][0]["resource"][allergy])
+                // + syntaxHighlight(Allergy["entry"][0]["resource"][allergy])
                 +"</pre>";
             i++;
     }
@@ -170,8 +190,10 @@ function renderPractitionerList(Practitioner){
     for (practitioner in Practitioner["entry"][0]["resource"]){
         var target_id = "div_"+i.toString();
         var target = "#"+target_id;
+        var source_json=target_id+"#";
         text +=  "<button type='button' class='list-group-item list-group-item-action json_list_button' "
-            + "data-target="+ `"${target}"`+" data-toggle='collapse' >"
+            +" data-target="+ `"${target}"`+" data-toggle='collapse' "
+            + "onclick = renderJSONviewer("+`"${target_id}"`+") >"
             + "<div class='col-6'>"
             + "Name : "
             + Practitioner["entry"][0]["resource"][practitioner]["name"][0]["given"][0] +" " 
@@ -182,8 +204,11 @@ function renderPractitionerList(Practitioner){
             + "</div><div class='col-6'>"
             + "</div>"
             + "</button>"
+            +"<pre class='collapse json_collapse' id="+`"${source_json}"`+">"
+            + JSON.stringify(Practitioner["entry"][0]["resource"][practitioner])
+            +"</pre>"
             +"<pre class='collapse json_collapse' id="+`"${target_id}"`+">"
-            + syntaxHighlight(Practitioner["entry"][0]["resource"][practitioner])
+            // + syntaxHighlight(Practitioner["entry"][0]["resource"][practitioner])
             +"</pre>";
         i++;
     }
@@ -215,7 +240,13 @@ function render_Query(data){
 }
 
 function submit_query_button(){
-    var query = "?"+ document.getElementById('parameters').value+"="+document.getElementById('parameters_possible_value').value;
+    var query = "?"+ document.getElementById('parameters').value+"=";
+    if(user_input_flag){
+         query +=document.getElementById('parameters_user_value').value;
+    }else{
+        query +=document.getElementById('parameters_possible_value').value;
+    }
+     
     fetch_Resource_Query(api, query);
 }
 

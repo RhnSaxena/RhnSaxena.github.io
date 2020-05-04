@@ -12,6 +12,10 @@
 	padding-left: 2em;
 }
 
+#parameters_user_value{
+	width: 200px;
+}
+
 .json-viewer .hide {
 	display: none;
 }
