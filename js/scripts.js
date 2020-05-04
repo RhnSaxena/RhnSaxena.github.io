@@ -24,6 +24,7 @@ var param_list = {
                 "male","female","other"
             ],
             "address" : "user_input",
+            "name" : "user_input",
         },
         "AllergyIntolerance" : {
             "criticality" : [
@@ -45,7 +46,9 @@ var param_list = {
             ],
             "gender" : [
                 "male","female","other"
-            ]
+            ],
+            "address" : "user_input",
+            "name" : "user_input",
         }
         
     }
