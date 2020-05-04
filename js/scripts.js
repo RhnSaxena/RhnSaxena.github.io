@@ -108,11 +108,11 @@ function populate_param_value(){
             }
             select_tag.appendChild(doc_frag);
         }else{
+            document.getElementById('parameters_user_value').value='';
             user_input_flag=true;
             document.getElementById("parameters_possible_value").style.display='none';
             document.getElementById("parameters_user_value").style.display='block';
         }
-
     }
 }
 
