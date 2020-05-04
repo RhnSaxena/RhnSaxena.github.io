@@ -25,6 +25,7 @@ var param_list = {
             ],
             "address" : "user_input",
             "name" : "user_input",
+            "language" : "user_input",
         },
         "AllergyIntolerance" : {
             "criticality" : [
@@ -49,8 +50,22 @@ var param_list = {
             ],
             "address" : "user_input",
             "name" : "user_input",
-        }
-        
+        },
+        "Condition" :{
+            "clinical-status" : [
+                "active", "inactive", "resolved"
+            ],
+            "code" : "user_input",
+        },
+        "ServiceRequest" : {
+            "priority" : [
+                "routine", "urgent", "asap", "stat"
+            ],
+            "status" : [
+                "draft", "active", "suspended", "completed", "entered-in-error", "cancelled"
+            ],
+            "intent" : "user_input",
+        },
     }
 }
 
@@ -124,14 +139,19 @@ function renderPatientList(Patients){
         text += "<button type='button' class='list-group-item list-group-item-action json_list_button'"
             +" data-target="+ `"${target}"`+" data-toggle='collapse' "
             + "onclick = renderJSONviewer("+`"${target_id}"`+") >"
-            + "<div class='col-6'>"
+            + "<div>"
             + "Name : "
             + Patients["entry"][0]["resource"][patient]["name"][0]["given"][0] +" " 
             + Patients["entry"][0]["resource"][patient]["name"][0]["family"] + "<br>Gender : "
-            + Patients["entry"][0]["resource"][patient]["gender"] + "<br>Address : "
+            + Patients["entry"][0]["resource"][patient]["gender"] + "<br>Language : "
+            if(Patients["entry"][0]["resource"][patient]["communication"] != null ){
+                text+= Patients["entry"][0]["resource"][patient]["communication"][0]["language"]["coding"]["code"] 
+            }else{
+                text+= Patients["entry"][0]["resource"][patient]["communication"] 
+            }
+            text+= "<br>Address : "
             + Patients["entry"][0]["resource"][patient]["address"][0]["city"] + ", "
             + Patients["entry"][0]["resource"][patient]["address"][0]["state"] + "<br>"
-            + "</div><div class='col-6'>"
             + "</div>"
             + "</button>"
             +"<pre class='collapse json_collapse' id="+`"${source_json}"`+">"
@@ -160,16 +180,17 @@ function renderAllergyList(Allergy){
         text += "<button type='button' class='list-group-item list-group-item-action json_list_button'"
                 +" data-target="+ `"${target}"`+" data-toggle='collapse' "
                 + "onclick = renderJSONviewer("+`"${target_id}"`+") >"
-                + "<div class='col-6'>"
+                + "<div>"
                 + "Category : ";
         for( cat in Allergy["entry"][0]["resource"][allergy]["category"]){
             text+= Allergy["entry"][0]["resource"][allergy]["category"][cat] +", "
         }
         text = text.slice(0, -2);
-        text += "<br>Clinical Status : "
+        text += "<br>Type : "
+                + Allergy["entry"][0]["resource"][allergy]["type"]
+                +"<br>Clinical Status : "
                 + Allergy["entry"][0]["resource"][allergy]["clinicalStatus"]["coding"][0]["code"]+ "<br>Patient : " 
                 + Allergy["entry"][0]["resource"][allergy]["patient"]["reference"]+"<br>"
-                + "</div><div class='col-6'>"
                 + "</div>"
                 + "</button>"
                 +"<pre class='collapse json_collapse' id="+`"${source_json}"`+">"
@@ -197,14 +218,19 @@ function renderPractitionerList(Practitioner){
         text +=  "<button type='button' class='list-group-item list-group-item-action json_list_button' "
             +" data-target="+ `"${target}"`+" data-toggle='collapse' "
             + "onclick = renderJSONviewer("+`"${target_id}"`+") >"
-            + "<div class='col-6'>"
+            + "<div>"
             + "Name : "
             + Practitioner["entry"][0]["resource"][practitioner]["name"][0]["given"][0] +" " 
             + Practitioner["entry"][0]["resource"][practitioner]["name"][0]["family"] + "<br>Gender : "
-            + Practitioner["entry"][0]["resource"][practitioner]["gender"] + "<br>Address : "
+            + Practitioner["entry"][0]["resource"][practitioner]["gender"] + "<br>Language : "
+            if(Practitioner["entry"][0]["resource"][practitioner]["communication"] != null ){
+                text+= Practitioner["entry"][0]["resource"][practitioner]["communication"][0]["language"]["coding"]["code"] 
+            }else{
+                text+= Practitioner["entry"][0]["resource"][practitioner]["communication"] 
+            }
+        text+= "<br>Address : "
             + Practitioner["entry"][0]["resource"][practitioner]["address"][0]["city"] + ", "
             + Practitioner["entry"][0]["resource"][practitioner]["address"][0]["state"] + "<br>"
-            + "</div><div class='col-6'>"
             + "</div>"
             + "</button>"
             +"<pre class='collapse json_collapse' id="+`"${source_json}"`+">"
@@ -219,7 +245,85 @@ function renderPractitionerList(Practitioner){
     document.getElementById("tab_1_json").innerHTML = text;
 }
 
+function renderConditionList(Condition){
+    
+    var text = "";
+    text +="<div class='list-group'>"
+    var condition;
+    var i =0;
+    for (condition in Condition["entry"][0]["resource"]){
+        var target_id = "div_"+i.toString();
+        var target = "#"+target_id;
+        var source_json=target_id+"#";
+        text +=  "<button type='button' class='list-group-item list-group-item-action json_list_button' "
+            +" data-target="+ `"${target}"`+" data-toggle='collapse' "
+            + "onclick = renderJSONviewer("+`"${target_id}"`+") >"
+            + "<div>"
+            + "Patient : "
+            + Condition["entry"][0]["resource"][condition]["subject"]["reference"] +"<br>On-set Date : "
+            + Condition["entry"][0]["resource"][condition]["onsetDateTime"] + "<br>Code : "
+            + Condition["entry"][0]["resource"][condition]["code"]["coding"][0]["system"] + " | "
+            + Condition["entry"][0]["resource"][condition]["code"]["coding"][0]["code"] + "<br>Asserter : ";
+            if(Condition["entry"][0]["resource"][condition]["asserter"] !=null){
+                text += Condition["entry"][0]["resource"][condition]["asserter"]["type"]+" | "
+                    + Condition["entry"][0]["resource"][condition]["asserter"]["reference"]
+            }else{
+                text += Condition["entry"][0]["resource"][condition]["asserter"];
+            }            
+        text+="</div>"
+            + "</button>"
+            +"<pre class='collapse json_collapse' id="+`"${source_json}"`+">"
+            + JSON.stringify(Condition["entry"][0]["resource"][condition])
+            +"</pre>"
+            +"<pre class='collapse json_collapse' id="+`"${target_id}"`+">"
+            // + syntaxHighlight(Practitioner["entry"][0]["resource"][practitioner])
+            +"</pre>";
+        i++;
+    }
+    text +="</div>"
+    document.getElementById("tab_1_json").innerHTML = text;
+}
+
+function renderServiceRequestList(ServiceRequest){
+    
+    var text = "";
+    text +="<div class='list-group'>"
+    var srequest;
+    var i =0;
+    for (srequest in ServiceRequest["entry"][0]["resource"]){
+        var target_id = "div_"+i.toString();
+        var target = "#"+target_id;
+        var source_json=target_id+"#";
+        text +=  "<button type='button' class='list-group-item list-group-item-action json_list_button' "
+            +" data-target="+ `"${target}"`+" data-toggle='collapse' "
+            + "onclick = renderJSONviewer("+`"${target_id}"`+") >"
+            + "<div>"
+            + "Status : "
+            + ServiceRequest["entry"][0]["resource"][srequest]["status"] +"<br>Priority : "
+            + ServiceRequest["entry"][0]["resource"][srequest]["priority"] + "<br>Intent : "
+            + ServiceRequest["entry"][0]["resource"][srequest]["intent"] + "<br>Encounter : ";
+            if(ServiceRequest["entry"][0]["resource"][srequest]["encounter"] !=null){
+                text += ServiceRequest["entry"][0]["resource"][srequest]["encounter"]["type"]+" | "
+                    + ServiceRequest["entry"][0]["resource"][srequest]["encounter"]["reference"]
+            }else{
+                text += ServiceRequest["entry"][0]["resource"][srequest]["encounter"];
+            }            
+        text+="</div>"
+            + "</button>"
+            +"<pre class='collapse json_collapse' id="+`"${source_json}"`+">"
+            + JSON.stringify(ServiceRequest["entry"][0]["resource"][srequest])
+            +"</pre>"
+            +"<pre class='collapse json_collapse' id="+`"${target_id}"`+">"
+            // + syntaxHighlight(Practitioner["entry"][0]["resource"][practitioner])
+            +"</pre>";
+        i++;
+    }
+    text +="</div>"
+    document.getElementById("tab_1_json").innerHTML = text;
+}
+
 function fetch_Resource_Query(arg1, query) {
+
     api = arg1;
     document.getElementById("tab_1_json").innerHTML = '';
     document.getElementById("api_name").innerHTML = api;
@@ -239,6 +343,10 @@ function render_Query(data){
         renderAllergyList(data)
     }else if(api=='Practitioner'){
         renderPractitionerList(data);
+    }else if(api=='Condition'){
+        renderConditionList(data);
+    }else if(api=='ServiceRequest'){
+        renderServiceRequestList(data);
     }
 }
 
