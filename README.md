@@ -15,6 +15,7 @@ Specify the directory, where the repo must be cloned.
 ## Configuration
 
 The user must configure the config file before using the application. 
+The user must specify the correct urls for `fhir_url` and `oauth_url` .
 
 # Instructions
 

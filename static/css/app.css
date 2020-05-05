@@ -5,7 +5,6 @@
 }
 
 .shadow {
-  /* background-color: rgb(226, 174, 206)!important; */
   -webkit-box-shadow: 0 4px 3px -3px #999;
   -moz-box-shadow: 0 4px 3px -3px #999;
   box-shadow: 0 4px 3px -3px #999;
@@ -99,7 +98,6 @@ select {
 }
 
 pre {
-  /* height: 400px; */
   padding: 5px;
   margin: 5px;
   color: rgb(226, 10, 10);
