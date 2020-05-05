@@ -164,12 +164,25 @@
                 <div class="col-2">
                   <button
                     class="btn btn-primary mb-2"
+                    id="add_query_button"
+                    onclick="add_query_button()"
+                  >
+                    Add
+                  </button>
+                  <button
+                    class="btn btn-primary mb-2"
                     id="submit_query_button"
                     onclick="submit_query_button()"
                   >
                     Submit
                   </button>
                 </div>
+              </div>
+              <div class="row">
+                <div class="col" id="added_queries">
+
+                </div>
+
               </div>
             </div>
             <!-- Instances List will be produced here -->
@@ -181,13 +194,9 @@
                 aria-labelledby="list-home-list"
               ></div>
               <div>
-                <div id="pagination_stats">
-
-                </div>
-                <div id="pagination_button">
-                </div>
+                <div id="pagination_stats"></div>
+                <div id="pagination_button"></div>
               </div>
-              
             </div>
           </div>
         </div>

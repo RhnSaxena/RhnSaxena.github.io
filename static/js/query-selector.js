@@ -1,4 +1,4 @@
-// The list contains the resources and their corresponding 
+// The list contains the resources and their corresponding
 // parameters and their possible values
 var param_list = {
   resources: {
@@ -51,6 +51,8 @@ var param_list = {
 // with the parameters available to
 // query the selected API resource
 function populate_param(resource) {
+  query_json = [];
+  document.getElementById("added_queries").innerHTML = "";
   document.getElementById("selection_box").style.display = "block";
   if (!(resource === param_api)) {
     param_api = resource;
@@ -108,13 +110,29 @@ function populate_param_value() {
 // Function which will be called when
 // submit query button will be clicked
 function submit_query_button() {
-  let query = "?" + document.getElementById("parameters").value + "=";
-  if (user_input_flag) {
-    query += document.getElementById("parameters_user_value").value;
-  } else {
-    query += document.getElementById("parameters_possible_value").value;
+  let query = "?";
+  let i;
+  for (i in query_json) {
+    query += query_json[i]["param"] + "=" + query_json[i]["value"] + "&";
   }
+  query = query.slice(0, -1);
   fetch_Resource_Query(api, query, 1);
+}
+
+// The function adds the query to the array
+// to be sent to fetch the query
+function add_query_button() {
+  let query_param = document.getElementById("parameters").value;
+  let query_param_value;
+  if (user_input_flag) {
+    query_param_value = document.getElementById("parameters_user_value").value;
+  } else {
+    query_param_value = document.getElementById("parameters_possible_value")
+      .value;
+  }
+  query_json.push({ param: query_param, value: query_param_value });
+  document.getElementById("added_queries").innerHTML +=
+    " " + query_param + " : " + query_param_value;
 }
 
 // Function to flush the previously present
@@ -126,3 +144,7 @@ function removeOptions(selectElement) {
     selectElement.remove(i);
   }
 }
+
+// Function to store the selected queries to
+// form complex query
+var query_json = [];

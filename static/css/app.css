@@ -74,7 +74,12 @@
 #selection_box {
   display: none;
 }
-
+#submit_query_button {
+  margin-top: 20px;
+}
+#add_query_button {
+  margin-top: 20px;
+}
 select {
   width: 200px !important;
 }
@@ -112,7 +117,7 @@ pre {
   margin-top: 10px;
 }
 
-#pagination_stats{
+#pagination_stats {
   float: left;
   display: none;
   margin-top: 10px;

@@ -138,7 +138,6 @@ function renderPatientList(Patients) {
   }
   text += "</div>";
   document.getElementById("tab_1_json").innerHTML = text;
-  
 }
 
 // Function to generate list for AllergyIntolerance FHIR API
