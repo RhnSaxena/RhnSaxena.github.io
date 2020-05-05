@@ -1,23 +1,38 @@
+// This global variable is for the headers to be used
+// for executing the GET requests
 var myHeaders = new Headers();
 
+// This global variable is for
+// identifying the API resource selected
 var api = "";
+
+// This gloabl variable is for the request options
+// to be used while executing the GET Requests
 var requestOptions = {
   method: "GET",
   headers: myHeaders,
   redirect: "follow",
 };
+
+// This global variable is used to
+// identify parameter used to query
 var param_api = "";
+
+// This global variable is used to
+// know the value specified for the parameter
+// while querying
 var param_value = "";
+
+// This global variable is used as flag for
+// user_input values
 var user_input_flag;
+
+// This global variable stores the query params
 var query;
 
-function testing() {
-  myHeaders.append("x-api-key", "BiZrGMokNvaGtOLxHjURKV9ZbobVk6Zd");
-  document.getElementById("api_container").style.display = "block";
-  document.getElementById("api_credentials").style.display = "none";
-}
-
 // Function to fetch query
+// This function fetches query, call the functions to
+// initiate the select tags and create pagination buttons
 function fetch_Resource_Query(arg1, param, page) {
   query = param;
   let page_query = "&_page=" + page + "&_count=" + pagination_page_size;

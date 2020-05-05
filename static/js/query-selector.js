@@ -1,3 +1,5 @@
+// The list contains the resources and their corresponding 
+// parameters and their possible values
 var param_list = {
   resources: {
     Patient: {
@@ -45,6 +47,9 @@ var param_list = {
   },
 };
 
+// Function to populate the select tag
+// with the parameters available to
+// query the selected API resource
 function populate_param(resource) {
   document.getElementById("selection_box").style.display = "block";
   if (!(resource === param_api)) {
@@ -63,6 +68,9 @@ function populate_param(resource) {
   }
 }
 
+// Function to populate the select tag
+// with the possible parameters values to
+// query the selected API resource
 function populate_param_value() {
   param = document.getElementById("parameters").value;
   if (!(param === param_value)) {
@@ -97,6 +105,8 @@ function populate_param_value() {
   }
 }
 
+// Function which will be called when
+// submit query button will be clicked
 function submit_query_button() {
   let query = "?" + document.getElementById("parameters").value + "=";
   if (user_input_flag) {
@@ -107,6 +117,8 @@ function submit_query_button() {
   fetch_Resource_Query(api, query, 1);
 }
 
+// Function to flush the previously present
+// Options in the select tag
 function removeOptions(selectElement) {
   let i,
     L = selectElement.options.length - 1;
