@@ -1,7 +1,7 @@
 # Smart FHIR InAPI App
 
 The app is an implementation of the Innovaccer's FHIR InAPI Resources.
-A sample APP is hosted <a href="./index.html">here</a>.
+A sample APP is hosted <a href="https://rhnsaxena.github.io/index.html">here</a>.
 
 # Getting Started
 
