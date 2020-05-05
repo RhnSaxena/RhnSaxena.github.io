@@ -4,26 +4,26 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/mystyle.css">
-    <link rel="icon" href="./images/title_logo.jpeg" type="image/icon type">
-    <script type="text/javascript" src="./json-viewer-master/src/json-viewer.js"></script>
-		<link rel="stylesheet" type="text/css" href="./json-viewer-master/src/json-viewer.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="./static/css/mystyle.css">
+    <link rel="stylesheet" type="text/css" href="./static/js/json-viewer.css">
+    <!-- Title Bar Logo -->
+    <link rel="icon" href="./static/images/title_logo.jpeg" type="image/icon type">
     <title>Innovaccer</title>
   </head>
   <body>
 
     <nav class="navbar fixed-top shadow">
         <a class="navbar-brand" href="">
-          <img src="./images/logo.svg" alt="">
+          <img src="./static/images/logo.svg" alt="">
         </a>
         <span class="navbar-text">
           Rohan Saxena
         </span>  
     </nav>
-    <div class="container first_div shadow mx-auto" style="text-align: center; width: 600px; margin-top: 150px;"  id="api_credentials">
+    <div class="container first_div shadow mx-auto" id="api_credentials">
         <div class="row">
           <div class="col">
             <p class="font_format">Login</p>
@@ -32,17 +32,17 @@
         </div>
         <div class="row mx-auto">
           <div class="col-6">
-             <input type="password" class="form-control" id="client_id" name="app_token" placeholder="Client ID" style="align-content: center;">
+             <input type="password" class="form-control" id="client_id" name="app_token" placeholder="Client ID">
           </div>
         </div>
         <div class="row mx-auto" style="margin-top: 10px;">
           <div class="col-6">
-            <input type="password" class="form-control" id="client_secret" name="app_token" placeholder="Client Secret" style="align-content: center;">
+            <input type="password" class="form-control" id="client_secret" name="app_token" placeholder="Client Secret">
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <button class="btn btn-primary mb-2" style="margin-top: 15px;" onclick="submit_app_token()">Submit</button>
+            <button class="btn btn-primary mb-2" id="submit_api_credentials" onclick="submit_app_token()">Submit</button>
           </div>
         </div>
     </div>
@@ -81,7 +81,7 @@
                 </label>
                 </div>
                 <div class="col-2">
-                  <button class="btn btn-primary mb-2" style="margin-top: 25px;" onclick="submit_query_button()">Submit</button>
+                  <button class="btn btn-primary mb-2" id="submit_query_button" onclick="submit_query_button()">Submit</button>
                 </div>
               </div>
             </div>
@@ -90,7 +90,8 @@
         </div>
       </div>
     </div>
-      <script src="./js/scripts.js"></script>
+    <script type="text/javascript" src="./static/js/scripts.js"></script>
+    <script type="text/javascript" src="./static/js/json-viewer.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
