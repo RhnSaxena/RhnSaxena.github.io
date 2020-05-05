@@ -35,6 +35,6 @@ The Query Parameter drop down list has the available parameters. The user must e
 
 
 # Licensing
-![License: MIT](./LICENSE)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 This software is licensed under the MIT License and the terms are mentioned in the file named <a href="./LICENSE">LICENSE</a> in this directory.
