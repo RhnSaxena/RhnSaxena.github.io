@@ -1,5 +1,5 @@
 var myHeaders = new Headers();
-url = "https://api-dev.oninnovaccer.com/fhir/";
+
 var api = "";
 var requestOptions = {
   method: "GET",
@@ -9,124 +9,75 @@ var requestOptions = {
 var param_api = "";
 var param_value = "";
 var user_input_flag;
-var param_list = {
-  resources: {
-    Patient: {
-      active: ["true", "false"],
-      gender: ["male", "female", "other"],
-      address: "user_input",
-      name: "user_input",
-      language: "user_input",
-    },
-    AllergyIntolerance: {
-      criticality: ["high", "low", "unable-to-assess"],
-      "clinical-status": ["active", "inactive", "resolved"],
-      severity: ["mild", "moderate", "severe"],
-      type: ["allergy", "intolerance"],
-      category: ["food", "medication", "environment", "biologic"],
-      patient: "user_input",
-    },
-    Practitioner: {
-      active: ["true", "false"],
-      gender: ["male", "female", "other"],
-      "address-city": "user_input",
-      name: "user_input",
-      language: "user_input",
-    },
-    Condition: {
-      "clinical-status": ["active", "inactive", "resolved"],
-      code: "user_input",
-      Patient: "user_input",
-      "onset-date": "user_input",
-      asserter: "user_input",
-    },
-    ServiceRequest: {
-      priority: ["routine", "urgent", "asap", "stat"],
-      status: [
-        "draft",
-        "active",
-        "suspended",
-        "completed",
-        "entered-in-error",
-        "cancelled",
-      ],
-      intent: "user_input",
-      encounter: "user_input",
-    },
-  },
-};
+var query;
 
-function populate_param(resource) {
-  document.getElementById("selection_box").style.display = "block";
-  if (!(resource === param_api)) {
-    param_api = resource;
-    let select_tag = document.getElementById("parameters");
-    removeOptions(select_tag);
-    doc_frag = document.createDocumentFragment();
-    let parameter;
-    for (parameter in param_list["resources"][resource]) {
-      let option = document.createElement("option");
-      option.value = parameter;
-      option.appendChild(document.createTextNode(parameter));
-      doc_frag.appendChild(option);
-    }
-    select_tag.appendChild(doc_frag);
+function testing() {
+  myHeaders.append("x-api-key", "BiZrGMokNvaGtOLxHjURKV9ZbobVk6Zd");
+  document.getElementById("api_container").style.display = "block";
+  document.getElementById("api_credentials").style.display = "none";
+}
+
+// Function to fetch query
+function fetch_Resource_Query(arg1, param, page) {
+  query = param;
+  let page_query = "&_page=" + page + "&_count=" + pagination_page_size;
+  api = arg1;
+  document.getElementById("pagination_button").style.display = "none";
+  document.getElementById("pagination_stats").style.display = "none";
+  document.getElementById("tab_1_json").innerHTML = "";
+  document.getElementById("api_name").innerHTML = api;
+  populate_param(api);
+  populate_param_value();
+  fetch(fhir_url + api + param + page_query, requestOptions)
+    .then((response) => response.text())
+    .then((result) => {
+      total_count = parseInt(JSON.parse(result)["totalCount"]);
+      render_Query(JSON.parse(result));
+      createButtons(page);
+    })
+    .catch(
+      (error) => (document.getElementById("tab_1_json").innerHTML = error)
+    );
+}
+
+// Function to route the data to
+// the respective render function
+function render_Query(data) {
+  if (api === "Patient") {
+    renderPatientList(data);
+  } else if (api == "AllergyIntolerance") {
+    renderAllergyList(data);
+  } else if (api == "Practitioner") {
+    renderPractitionerList(data);
+  } else if (api == "Condition") {
+    renderConditionList(data);
+  } else if (api == "ServiceRequest") {
+    renderServiceRequestList(data);
   }
 }
 
-function populate_param_value() {
-  param = document.getElementById("parameters").value;
-  if (!(param === param_value)) {
-    param_value = param;
-
-    if (!(param_list["resources"][param_api][param_value] === "user_input")) {
-      user_input_flag = false;
-      document.getElementById("parameters_possible_value").style.display =
-        "block";
-      document.getElementById("parameters_user_value").style.display = "none";
-      var select_tag = document.getElementById("parameters_possible_value");
-      removeOptions(select_tag);
-      doc_frag = document.createDocumentFragment();
-      for (x in param_list["resources"][param_api][param_value]) {
-        var option = document.createElement("option");
-        option.value = param_list["resources"][param_api][param_value][x];
-        option.appendChild(
-          document.createTextNode(
-            param_list["resources"][param_api][param_value][x]
-          )
-        );
-        doc_frag.appendChild(option);
-      }
-      select_tag.appendChild(doc_frag);
-    } else {
-      document.getElementById("parameters_user_value").value = "";
-      user_input_flag = true;
-      document.getElementById("parameters_possible_value").style.display =
-        "none";
-      document.getElementById("parameters_user_value").style.display = "block";
-    }
-  }
-}
-
+// Function to create the JSONviewer collapsable
+// JSON container
 function renderJSONviewer(id) {
-  var hash_id = "#" + id;
-  var source = id + "#";
-  var jsonViewer = new JSONViewer();
-  var x = document.getElementById(source).innerHTML;
+  let target = "#" + id;
+  let source = id + "#";
+  let jsonViewer = new JSONViewer();
+  let x = document.getElementById(source).innerHTML;
   document.getElementById(id).innerText = "";
   jsonViewer.showJSON(JSON.parse(x), null, 1);
-  document.querySelector(hash_id).appendChild(jsonViewer.getContainer());
+  document.querySelector(target).appendChild(jsonViewer.getContainer());
 }
 
+// Function to generate list for Patient FHIR API
 function renderPatientList(Patients) {
-  var text = "";
+  let text = "";
   text += "<div class='list-group'>";
-  var patient;
-  var i = 1;
+  let patient;
+  let i = 1;
   for (patient in Patients["entry"][0]["resource"]) {
-    var target_id = "div_" + i.toString();
-    var target = "#" + target_id;
-    var source_json = target_id + "#";
+    let target_id = "div_" + i.toString();
+    let target = "#" + target_id;
+    let source_json = target_id + "#";
     text +=
       "<button type='button' class='list-group-item list-group-item-action json_list_button'" +
       " data-target=" +
@@ -172,18 +123,21 @@ function renderPatientList(Patients) {
   }
   text += "</div>";
   document.getElementById("tab_1_json").innerHTML = text;
+  
 }
 
+// Function to generate list for AllergyIntolerance FHIR API
+
 function renderAllergyList(Allergy) {
-  var text = "";
+  let text = "";
   text += "<div class='list-group'>";
-  var allergy;
-  var i = 0;
+  let allergy;
+  let i = 0;
   for (allergy in Allergy["entry"][0]["resource"]) {
-    var target_id = "div_" + i.toString();
-    var target = "#" + target_id;
-    var source_json = target_id + "#";
-    var cat;
+    let target_id = "div_" + i.toString();
+    let target = "#" + target_id;
+    let source_json = target_id + "#";
+    let cat;
     text +=
       "<button type='button' class='list-group-item list-group-item-action json_list_button'" +
       " data-target=" +
@@ -223,17 +177,19 @@ function renderAllergyList(Allergy) {
   }
   text += "</div>";
   document.getElementById("tab_1_json").innerHTML = text;
+  document.getElementById("pagination_button").style.display = "block";
 }
 
+// Function to generate list for Practitioner FHIR API
 function renderPractitionerList(Practitioner) {
-  var text = "";
+  let text = "";
   text += "<div class='list-group'>";
-  var practitioner;
-  var i = 0;
+  let practitioner;
+  let i = 0;
   for (practitioner in Practitioner["entry"][0]["resource"]) {
-    var target_id = "div_" + i.toString();
-    var target = "#" + target_id;
-    var source_json = target_id + "#";
+    let target_id = "div_" + i.toString();
+    let target = "#" + target_id;
+    let source_json = target_id + "#";
     text +=
       "<button type='button' class='list-group-item list-group-item-action json_list_button' " +
       " data-target=" +
@@ -287,17 +243,19 @@ function renderPractitionerList(Practitioner) {
   }
   text += "</div>";
   document.getElementById("tab_1_json").innerHTML = text;
+  document.getElementById("pagination_button").style.display = "block";
 }
 
+// Function to generate list for Condition FHIR API
 function renderConditionList(Condition) {
-  var text = "";
+  let text = "";
   text += "<div class='list-group'>";
-  var condition;
-  var i = 0;
+  let condition;
+  let i = 0;
   for (condition in Condition["entry"][0]["resource"]) {
-    var target_id = "div_" + i.toString();
-    var target = "#" + target_id;
-    var source_json = target_id + "#";
+    let target_id = "div_" + i.toString();
+    let target = "#" + target_id;
+    let source_json = target_id + "#";
     text +=
       "<button type='button' class='list-group-item list-group-item-action json_list_button' " +
       " data-target=" +
@@ -344,17 +302,19 @@ function renderConditionList(Condition) {
   }
   text += "</div>";
   document.getElementById("tab_1_json").innerHTML = text;
+  document.getElementById("pagination_button").style.display = "block";
 }
 
+// Function to generate list for ServiceRequest FHIR API
 function renderServiceRequestList(ServiceRequest) {
-  var text = "";
+  let text = "";
   text += "<div class='list-group'>";
-  var srequest;
-  var i = 0;
+  let srequest;
+  let i = 0;
   for (srequest in ServiceRequest["entry"][0]["resource"]) {
-    var target_id = "div_" + i.toString();
-    var target = "#" + target_id;
-    var source_json = target_id + "#";
+    let target_id = "div_" + i.toString();
+    let target = "#" + target_id;
+    let source_json = target_id + "#";
     text +=
       "<button type='button' class='list-group-item list-group-item-action json_list_button' " +
       " data-target=" +
@@ -397,96 +357,5 @@ function renderServiceRequestList(ServiceRequest) {
   }
   text += "</div>";
   document.getElementById("tab_1_json").innerHTML = text;
-}
-
-function fetch_Resource_Query(arg1, query) {
-  api = arg1;
-  document.getElementById("tab_1_json").innerHTML = "";
-  document.getElementById("api_name").innerHTML = api;
-  populate_param(api);
-  populate_param_value();
-  fetch(url + api + query, requestOptions)
-    .then((response) => response.text())
-    .then((result) => render_Query(JSON.parse(result)))
-    .catch(
-      (error) => (document.getElementById("tab_1_json").innerHTML = error)
-    );
-}
-
-function render_Query(data) {
-  if (api === "Patient") {
-    renderPatientList(data);
-  } else if (api == "AllergyIntolerance") {
-    renderAllergyList(data);
-  } else if (api == "Practitioner") {
-    renderPractitionerList(data);
-  } else if (api == "Condition") {
-    renderConditionList(data);
-  } else if (api == "ServiceRequest") {
-    renderServiceRequestList(data);
-  }
-}
-
-function submit_query_button() {
-  var query = "?" + document.getElementById("parameters").value + "=";
-  if (user_input_flag) {
-    query += document.getElementById("parameters_user_value").value;
-  } else {
-    query += document.getElementById("parameters_possible_value").value;
-  }
-  fetch_Resource_Query(api, query);
-}
-
-function submit_app_token() {
-  let client_id = `"${document.getElementById("client_id").value}"`;
-  let client_secret = `"${document.getElementById("client_secret").value}"`;
-  let auth_Headers = new Headers();
-  auth_Headers.append("Content-Type", "application/json");
-  auth_Headers.append("Content-Type", "text/plain");
-
-  let raw =
-    "{" +
-    '"client_id":' +
-    client_id +
-    "," +
-    '"client_secret":' +
-    client_secret +
-    "," +
-    '"grant_type":"client_credentials"' +
-    "}";
-  let authrequest = {
-    method: "POST",
-    headers: auth_Headers,
-    body: raw,
-    redirect: "follow",
-  };
-
-  fetch(
-    "https://api-dev.oninnovaccer.com/fhiroauth/oauth2/token",
-    authrequest
-  ).then((response) =>
-    response.text().then((result) => {
-      if (!response.ok) {
-        alert(
-          "Please Enter Correct Credentials.\nStatus Code : " + response.status
-        );
-        location.reload();
-      } else {
-        let obj = JSON.parse(result);
-        myHeaders.append("x-api-key", obj["access_token"]);
-        document.getElementById("api_container").style.display = "block";
-        document.getElementById("api_credentials").style.display = "none";
-      }
-    })
-  );
-  // .catch(error => console.log('error', error));
-  return false;
-}
-
-function removeOptions(selectElement) {
-  let i,
-    L = selectElement.options.length - 1;
-  for (i = L; i >= 0; i--) {
-    selectElement.remove(i);
-  }
+  document.getElementById("pagination_button").style.display = "block";
 }
