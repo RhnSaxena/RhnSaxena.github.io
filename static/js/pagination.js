@@ -28,6 +28,9 @@ function createButtons(N) {
   let value = N;
   let i = 0;
 
+  if(count>no_of_pages){
+    count=no_of_pages;
+  }
   let currentPage = N,
     range = count,
     totalPages = no_of_pages,
