@@ -120,3 +120,12 @@ pre {
   display: none;
   margin-top: 10px;
 }
+
+.query_delete{
+  margin: 5px;
+}
+
+.query_delete_close{
+  border: none;
+  background-color: inherit;
+}

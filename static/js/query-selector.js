@@ -112,6 +112,9 @@ function populate_param_value() {
 function submit_query_button() {
   let query = "?";
   let i;
+  if(query_json.length==0){
+    add_query_button();
+  }
   for (i in query_json) {
     query += query_json[i]["param"] + "=" + query_json[i]["value"] + "&";
   }
@@ -130,9 +133,28 @@ function add_query_button() {
     query_param_value = document.getElementById("parameters_possible_value")
       .value;
   }
-  query_json.push({ param: query_param, value: query_param_value });
-  document.getElementById("added_queries").innerHTML +=
-    " " + query_param + " : " + query_param_value;
+  let record = { param: query_param, value: query_param_value };
+  query_json.push(record);
+  create_buttons();
+}
+
+function create_buttons() {
+  document.getElementById("added_queries").innerHTML = "";
+  for (i in query_json) {
+    document.getElementById("added_queries").innerHTML +=
+      "<p class='btn btn-primary query_delete'>" +
+      query_json[i]["value"] +
+      "<button type='button' class='query_delete_close' onclick=" +
+      "delete_query(" +
+      i +
+      ")" +
+      "><span aria-hidden='true'>&times;</span></button></p> ";
+  }
+}
+
+function delete_query(id) {
+  let x = query_json.splice(id, 1);
+  create_buttons();
 }
 
 // Function to flush the previously present
