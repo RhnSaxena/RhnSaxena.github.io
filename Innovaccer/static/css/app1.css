@@ -1,0 +1,42 @@
+.navbar-text {
+  color: blue;
+  font-size: large;
+  padding-right: 15px;
+}
+
+.shadow {
+  -webkit-box-shadow: 0 4px 3px -3px #999;
+  -moz-box-shadow: 0 4px 3px -3px #999;
+  box-shadow: 0 4px 3px -3px #999;
+}
+
+#container-full {
+  margin-top: 7%;
+}
+
+.row {
+  width: 100%;
+}
+
+.resources-column {
+  border: 1px;
+  border-style: solid;
+  border-color: rgb(247, 230, 227);
+  border-radius: 7px;
+  background-color: rgb(252, 237, 236);
+}
+
+.list-group-item {
+  border: none;
+}
+
+.list-group-item.active {
+  z-index: 2;
+  color: rgb(199, 69, 30);
+  background-color: white;
+  border-color: white;
+}
+
+.container-fluid {
+  margin: 10px;
+}

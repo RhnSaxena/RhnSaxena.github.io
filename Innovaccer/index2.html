@@ -1,0 +1,2176 @@
+<html>
+
+
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="https://d2uelhfk503lgh.cloudfront.net/static/icons/default_favicon.e6672964bf5e.ico" alt="" type="image/x-icon">
+  <link rel="icon" href="https://d2uelhfk503lgh.cloudfront.net/static/icons/default_favicon.e6672964bf5e.ico" alt="" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" />
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel = "stylesheet" type = "text/css" href="https://d2uelhfk503lgh.cloudfront.net/static/css/style.b92bd69ed086.css" />
+  <link rel = "stylesheet" type = "text/css" href="https://d2uelhfk503lgh.cloudfront.net/static/css/docs.6980dbc0bbdb.css" />
+  <link rel = "stylesheet" type = "text/css" href="https://d2uelhfk503lgh.cloudfront.net/static/css/redoc.619e4f394b93.css" />
+  <link rel = "stylesheet" type = "text/css" href="https://d2uelhfk503lgh.cloudfront.net/static/css/home.c5adb560575f.css" />
+  <link rel = "stylesheet" type = "text/css" href="https://d2uelhfk503lgh.cloudfront.net/static/css/footer.ea49b51ed1d0.css" />
+  <link rel = "stylesheet" type = "text/css" href="https://d2uelhfk503lgh.cloudfront.net/static/css/admin.ea906587532e.css" />
+  <link rel = "stylesheet" type = "text/css" href="https://d2uelhfk503lgh.cloudfront.net/static/css/dashboard.b2f5e0802969.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <title>InAPI</title>
+</head>
+
+<body>
+  
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+      aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href=/>
+      <img src="https://d2uelhfk503lgh.cloudfront.net/static/images/logo.332cc13db9da.svg" class="navbar-brand-image d-inline-block align-top"
+        alt="innovaccer logo">
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item nav-item-red ">
+          <a class="nav-link navbar-left-item" href=/documentation/overview>Documentation</a>
+        </li>
+        <li class="nav-item nav-item-red active">
+          <a class=" nav-link navbar-left-item" href=/sandbox/overview>Sandbox</a>
+        </li>
+        <li class="nav-item nav-item-red ">
+          <a class="nav-link navbar-left-item" href=/marketplace>Marketplace</a>
+        </li>
+        
+        <li class="nav-item nav-item-red ">
+          <a class="nav-link navbar-left-item" href=/dashboard/apps/ tabindex="-1">Dashboard</a>
+        </li>
+        
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item">
+          <div class="nav-item dropdown">
+            <div class="navbar-user" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              Rohan Saxena &nbsp;&nbsp;<img src="https://d2uelhfk503lgh.cloudfront.net/static/images/down_arrow.8fcb35fb4c81.svg">
+            </div>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <!-- <a class="dropdown-item" href="#">Action</a> -->
+              <!-- <a class="dropdown-item" href="#">Another action</a> -->
+              <!-- <div class="dropdown-divider"></div> -->
+              <a class="dropdown-item navbar-dropdown-items" href=/users/signout/>Logout</a>
+            </div>
+          </div>
+        </li>
+
+        
+    </div>
+  </nav>
+  
+
+  
+
+<link rel="stylesheet" type="text/css" href="https://d2uelhfk503lgh.cloudfront.net/static/css/sandbox_api.cd2d2e641932.css" />
+<link rel="stylesheet" type="text/css" href="https://d2uelhfk503lgh.cloudfront.net/static/css/sandbox_mobile.87e77f63bf8f.css" />
+
+<script>
+        var loaderUrl = "https://d2uelhfk503lgh.cloudfront.net/static/images/loader.01a8876d4a2d.gif"
+</script>
+<script src="https://d2uelhfk503lgh.cloudfront.net/static/js/sandbox.c0c93f6e9cb4.js"></script>
+
+<div id="sandbox-page-container" class="docs-container sandbox-container">
+    <div class="docs-list sandbox-docs-list">
+        <div class="heading sandbox-heading">
+            <div class="text sandbox-text">
+                InAPI Sandbox
+            </div>
+        </div>
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <a data-toggle="collapse" href="#fhirresources">
+                            FHIR Resources
+                            <i class="fa fa-chevron-down"></i>
+                        </a>
+                    </div>
+                </div>
+                <div id="fhirresources" class="panel-collapse collapse show">
+                    <div class="list-group">
+                        <a href=/sandbox/overview
+                            class="list-group-item "><i
+                                class="fa fa-caret-right"></i>FHIR v4.0.1 Standards</a>
+
+                        <div id="fhir-api-list">
+                            
+                            <a id="api-list-parent-0" class="list-group-item "
+                            href="/sandbox/fhir/AllergyIntolerance">
+                                <i class="fa fa-caret-right"></i>
+                                AllergyIntolerance
+                            </a>
+                            <div id="0" class="panel-collapse collapse ">
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(0)">
+                                    
+                                    Find AllergyIntolerance by params
+                                    
+                                </a>
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(1)">
+                                    
+                                    Find AllergyIntolerance by id
+                                    
+                                </a>
+                                
+                            </div>
+                            
+                            <a id="api-list-parent-1" class="list-group-item active sandbox-active-list-item"
+                            href="/sandbox/fhir/Appointment">
+                                <i class="fa fa-caret-right"></i>
+                                Appointment
+                            </a>
+                            <div id="1" class="panel-collapse collapse show">
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(0)">
+                                    
+                                    Find Appointment by params
+                                    
+                                </a>
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(1)">
+                                    
+                                    Find Appointment by id
+                                    
+                                </a>
+                                
+                            </div>
+                            
+                            <a id="api-list-parent-2" class="list-group-item "
+                            href="/sandbox/fhir/ClinicalImpression">
+                                <i class="fa fa-caret-right"></i>
+                                ClinicalImpression
+                            </a>
+                            <div id="2" class="panel-collapse collapse ">
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(0)">
+                                    
+                                    Find ClinicalImpression by params
+                                    
+                                </a>
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(1)">
+                                    
+                                    Find ClinicalImpression by id
+                                    
+                                </a>
+                                
+                            </div>
+                            
+                            <a id="api-list-parent-3" class="list-group-item "
+                            href="/sandbox/fhir/Condition">
+                                <i class="fa fa-caret-right"></i>
+                                Condition
+                            </a>
+                            <div id="3" class="panel-collapse collapse ">
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(0)">
+                                    
+                                    Find Condition by params
+                                    
+                                </a>
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(1)">
+                                    
+                                    Find Condition by id
+                                    
+                                </a>
+                                
+                            </div>
+                            
+                            <a id="api-list-parent-4" class="list-group-item "
+                            href="/sandbox/fhir/Coverage">
+                                <i class="fa fa-caret-right"></i>
+                                Coverage
+                            </a>
+                            <div id="4" class="panel-collapse collapse ">
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(0)">
+                                    
+                                    Find Coverage by params
+                                    
+                                </a>
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(1)">
+                                    
+                                    Find Coverage by id
+                                    
+                                </a>
+                                
+                            </div>
+                            
+                            <a id="api-list-parent-5" class="list-group-item "
+                            href="/sandbox/fhir/DeviceRequest">
+                                <i class="fa fa-caret-right"></i>
+                                DeviceRequest
+                            </a>
+                            <div id="5" class="panel-collapse collapse ">
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(0)">
+                                    
+                                    Find DeviceRequest by params
+                                    
+                                </a>
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(1)">
+                                    
+                                    Find DeviceRequest by id
+                                    
+                                </a>
+                                
+                            </div>
+                            
+                            <a id="api-list-parent-6" class="list-group-item "
+                            href="/sandbox/fhir/DocumentReference">
+                                <i class="fa fa-caret-right"></i>
+                                DocumentReference
+                            </a>
+                            <div id="6" class="panel-collapse collapse ">
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(0)">
+                                    
+                                    Find DocumentReference by params
+                                    
+                                </a>
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(1)">
+                                    
+                                    Find DocumentReference by id
+                                    
+                                </a>
+                                
+                            </div>
+                            
+                            <a id="api-list-parent-7" class="list-group-item "
+                            href="/sandbox/fhir/Encounter">
+                                <i class="fa fa-caret-right"></i>
+                                Encounter
+                            </a>
+                            <div id="7" class="panel-collapse collapse ">
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(0)">
+                                    
+                                    Find Encounter by params
+                                    
+                                </a>
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(1)">
+                                    
+                                    Find Encounter by id
+                                    
+                                </a>
+                                
+                            </div>
+                            
+                            <a id="api-list-parent-8" class="list-group-item "
+                            href="/sandbox/fhir/FamilyMemberHistory">
+                                <i class="fa fa-caret-right"></i>
+                                FamilyMemberHistory
+                            </a>
+                            <div id="8" class="panel-collapse collapse ">
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(0)">
+                                    
+                                    Find FamilyMemberHistory by params
+                                    
+                                </a>
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(1)">
+                                    
+                                    Find FamilyMemberHistory by id
+                                    
+                                </a>
+                                
+                            </div>
+                            
+                            <a id="api-list-parent-9" class="list-group-item "
+                            href="/sandbox/fhir/Immunization">
+                                <i class="fa fa-caret-right"></i>
+                                Immunization
+                            </a>
+                            <div id="9" class="panel-collapse collapse ">
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(0)">
+                                    
+                                    Find Immunization by params
+                                    
+                                </a>
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(1)">
+                                    
+                                    Find Immunization by id
+                                    
+                                </a>
+                                
+                            </div>
+                            
+                            <a id="api-list-parent-10" class="list-group-item "
+                            href="/sandbox/fhir/Location">
+                                <i class="fa fa-caret-right"></i>
+                                Location
+                            </a>
+                            <div id="10" class="panel-collapse collapse ">
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(0)">
+                                    
+                                    Find Location by params
+                                    
+                                </a>
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(1)">
+                                    
+                                    Find Location by id
+                                    
+                                </a>
+                                
+                            </div>
+                            
+                            <a id="api-list-parent-11" class="list-group-item "
+                            href="/sandbox/fhir/Medication">
+                                <i class="fa fa-caret-right"></i>
+                                Medication
+                            </a>
+                            <div id="11" class="panel-collapse collapse ">
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(0)">
+                                    
+                                    Find Medication by params
+                                    
+                                </a>
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(1)">
+                                    
+                                    Find Medication by id
+                                    
+                                </a>
+                                
+                            </div>
+                            
+                            <a id="api-list-parent-12" class="list-group-item "
+                            href="/sandbox/fhir/MedicationAdministration">
+                                <i class="fa fa-caret-right"></i>
+                                MedicationAdministration
+                            </a>
+                            <div id="12" class="panel-collapse collapse ">
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(0)">
+                                    
+                                    Find MedicationAdministration by params
+                                    
+                                </a>
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(1)">
+                                    
+                                    Find MedicationAdministration by id
+                                    
+                                </a>
+                                
+                            </div>
+                            
+                            <a id="api-list-parent-13" class="list-group-item "
+                            href="/sandbox/fhir/MedicationDispense">
+                                <i class="fa fa-caret-right"></i>
+                                MedicationDispense
+                            </a>
+                            <div id="13" class="panel-collapse collapse ">
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(0)">
+                                    
+                                    Find MedicationDispense by params
+                                    
+                                </a>
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(1)">
+                                    
+                                    Find MedicationDispense by id
+                                    
+                                </a>
+                                
+                            </div>
+                            
+                            <a id="api-list-parent-14" class="list-group-item "
+                            href="/sandbox/fhir/MedicationRequest">
+                                <i class="fa fa-caret-right"></i>
+                                MedicationRequest
+                            </a>
+                            <div id="14" class="panel-collapse collapse ">
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(0)">
+                                    
+                                    Find MedicationRequest by params
+                                    
+                                </a>
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(1)">
+                                    
+                                    Find MedicationRequest by id
+                                    
+                                </a>
+                                
+                            </div>
+                            
+                            <a id="api-list-parent-15" class="list-group-item "
+                            href="/sandbox/fhir/Observation">
+                                <i class="fa fa-caret-right"></i>
+                                Observation
+                            </a>
+                            <div id="15" class="panel-collapse collapse ">
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(0)">
+                                    
+                                    Find Observation by params
+                                    
+                                </a>
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(1)">
+                                    
+                                    Find Observation by id
+                                    
+                                </a>
+                                
+                            </div>
+                            
+                            <a id="api-list-parent-16" class="list-group-item "
+                            href="/sandbox/fhir/Organization">
+                                <i class="fa fa-caret-right"></i>
+                                Organization
+                            </a>
+                            <div id="16" class="panel-collapse collapse ">
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(0)">
+                                    
+                                    Find Organization by params
+                                    
+                                </a>
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(1)">
+                                    
+                                    Find Organization by id
+                                    
+                                </a>
+                                
+                            </div>
+                            
+                            <a id="api-list-parent-17" class="list-group-item "
+                            href="/sandbox/fhir/Patient">
+                                <i class="fa fa-caret-right"></i>
+                                Patient
+                            </a>
+                            <div id="17" class="panel-collapse collapse ">
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(0)">
+                                    
+                                    Find Patient by params
+                                    
+                                </a>
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(1)">
+                                    
+                                    Find Patient by id
+                                    
+                                </a>
+                                
+                            </div>
+                            
+                            <a id="api-list-parent-18" class="list-group-item "
+                            href="/sandbox/fhir/Practitioner">
+                                <i class="fa fa-caret-right"></i>
+                                Practitioner
+                            </a>
+                            <div id="18" class="panel-collapse collapse ">
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(0)">
+                                    
+                                    Find Practitioner by params
+                                    
+                                </a>
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(1)">
+                                    
+                                    Find Practitioner by id
+                                    
+                                </a>
+                                
+                            </div>
+                            
+                            <a id="api-list-parent-19" class="list-group-item "
+                            href="/sandbox/fhir/PractitionerRole">
+                                <i class="fa fa-caret-right"></i>
+                                PractitionerRole
+                            </a>
+                            <div id="19" class="panel-collapse collapse ">
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(0)">
+                                    
+                                    Find PractitionerRole by params
+                                    
+                                </a>
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(1)">
+                                    
+                                    Find PractitionerRole by id
+                                    
+                                </a>
+                                
+                            </div>
+                            
+                            <a id="api-list-parent-20" class="list-group-item "
+                            href="/sandbox/fhir/Procedure">
+                                <i class="fa fa-caret-right"></i>
+                                Procedure
+                            </a>
+                            <div id="20" class="panel-collapse collapse ">
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(0)">
+                                    
+                                    Find Procedure by params
+                                    
+                                </a>
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(1)">
+                                    
+                                    Find Procedure by id
+                                    
+                                </a>
+                                
+                            </div>
+                            
+                            <a id="api-list-parent-21" class="list-group-item "
+                            href="/sandbox/fhir/Questionnaire">
+                                <i class="fa fa-caret-right"></i>
+                                Questionnaire
+                            </a>
+                            <div id="21" class="panel-collapse collapse ">
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(0)">
+                                    
+                                    Find Questionnaire by params
+                                    
+                                </a>
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(1)">
+                                    
+                                    Find Questionnaire by id
+                                    
+                                </a>
+                                
+                            </div>
+                            
+                            <a id="api-list-parent-22" class="list-group-item "
+                            href="/sandbox/fhir/QuestionnaireResponse">
+                                <i class="fa fa-caret-right"></i>
+                                QuestionnaireResponse
+                            </a>
+                            <div id="22" class="panel-collapse collapse ">
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(0)">
+                                    
+                                    Find QuestionnaireResponse by params
+                                    
+                                </a>
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(1)">
+                                    
+                                    Find QuestionnaireResponse by id
+                                    
+                                </a>
+                                
+                            </div>
+                            
+                            <a id="api-list-parent-23" class="list-group-item "
+                            href="/sandbox/fhir/RelatedPerson">
+                                <i class="fa fa-caret-right"></i>
+                                RelatedPerson
+                            </a>
+                            <div id="23" class="panel-collapse collapse ">
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(0)">
+                                    
+                                    Find RelatedPerson by params
+                                    
+                                </a>
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(1)">
+                                    
+                                    Find RelatedPerson by id
+                                    
+                                </a>
+                                
+                            </div>
+                            
+                            <a id="api-list-parent-24" class="list-group-item "
+                            href="/sandbox/fhir/ServiceRequest">
+                                <i class="fa fa-caret-right"></i>
+                                ServiceRequest
+                            </a>
+                            <div id="24" class="panel-collapse collapse ">
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(0)">
+                                    
+                                    Find ServiceRequest by params
+                                    
+                                </a>
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(1)">
+                                    
+                                    Find ServiceRequest by id
+                                    
+                                </a>
+                                
+                            </div>
+                            
+                            <a id="api-list-parent-25" class="list-group-item "
+                            href="/sandbox/fhir/specimen">
+                                <i class="fa fa-caret-right"></i>
+                                specimen
+                            </a>
+                            <div id="25" class="panel-collapse collapse ">
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(0)">
+                                    
+                                    Find specimen by params
+                                    
+                                </a>
+                                
+                                <a class="list-group-item sub-item " onclick="sandboxModule.onClickAPIListItem(1)">
+                                    
+                                    Find Specimen by id
+                                    
+                                </a>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="search-api-div" class="docs-detail-container">
+        <input class="api-search-input" placeholder="Search InAPI endpoints" />
+        <img class="api-search-icon" src="https://d2uelhfk503lgh.cloudfront.net/static/images/api-search.b5c2f863fc80.svg" />
+        
+
+<script defer src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+<script src="https://d2uelhfk503lgh.cloudfront.net/static/js/renderjson.6a71f6832cf1.js"></script>
+
+<div id="sandbox-window" class="overview-container sandbox-api-detail-container">
+    <div class="fhir-main-heading">
+        FHIR Resources
+        
+    </div>
+    <div class="api-name-heading">
+        Appointment
+    </div>
+    <div class="api-desc">
+        Retrieves a list of Appointment for all the patient making the request. We have two endpoints to either get a
+        specified value by id or a list of values with varying parameters.
+    </div>
+    <div class="api-category-section">
+        
+        <div class="api-category-box">
+            <span class="category-text">
+                Find Appointment based on parameters
+            </span>
+            <div class="category-text category-desc">
+                Multiple params values can be provided
+            </div>
+            <span class="api-desc-badge">
+                <span class="api-badge-text">GET</span>
+            </span>
+            <span class="api-key category-key">
+                /Appointment
+            </span>
+        </div>
+        
+        <div class="api-category-box">
+            <span class="category-text">
+                Find Appointment by id
+            </span>
+            <div class="category-text category-desc">
+                Returns a Appointment by id
+            </div>
+            <span class="api-desc-badge">
+                <span class="api-badge-text">GET</span>
+            </span>
+            <span class="api-key category-key">
+                /Appointment/{id}
+            </span>
+        </div>
+        
+
+    </div>
+
+    
+    <div class="api-summary" id="section-0">
+        Find Appointment based on parameters
+    </div>
+    <div class="api-desc-box">
+        <div class="desc-row">
+            <span>
+                <span class="api-desc-badge">
+                    <span class="api-badge-text">GET</span>
+                </span>
+                <span class="api-key">
+                    /Appointment
+                </span>
+            </span>
+            <span id="test-endpoint-btn-0" class="test-endpoint-btn"
+                onclick="sandboxModule.showEditableParams(0)">Test this endpoint</span>
+        </div>
+        <div class="desc-lower-row">
+            <div class="desc-result-row">
+                <span class="api-desc-badge max-badge">
+                    <span class="api-badge-text max-badge-text">MAX</span>
+                </span>
+                <span class="result-key-desc">
+                    Max results per page: 100
+                </span>
+                <br />
+                <span class="api-desc-badge result-badge">
+                    <span class="api-badge-text result-badge-text">Result</span>
+                </span>
+                <span class="result-key-desc">
+                    Multiple params values can be provided
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div id="query-param-heading-0" class="api-summary">
+        Query Parameters
+    </div>
+    <div id="query-params-box-0" class="row query-params-box">
+        
+        <div class="params-section col-xl-6 col-lg-6 col-md-6">
+            <div class="param-type">
+                
+                <span class="required-text">
+                    (Required)
+                </span>
+                
+                <span class="query-text">(query)</span>
+            </div>
+            <div class="param-text">
+                Content-Type
+            </div>
+            <div class="type-badge">
+                string
+            </div>
+            <div class="params-desc">
+                FHIR Content Type
+            </div>
+        </div>
+        
+        <div class="params-section col-xl-6 col-lg-6 col-md-6">
+            <div class="param-type">
+                
+                <span class="required-text">
+                    (Required)
+                </span>
+                
+                <span class="query-text">(query)</span>
+            </div>
+            <div class="param-text">
+                X-API-KEY
+            </div>
+            <div class="type-badge">
+                string
+            </div>
+            <div class="params-desc">
+                Developer key
+            </div>
+        </div>
+        
+        <div class="params-section col-xl-6 col-lg-6 col-md-6">
+            <div class="param-type">
+                
+                <span class="query-text">(query)</span>
+            </div>
+            <div class="param-text">
+                actor
+            </div>
+            <div class="type-badge">
+                string
+            </div>
+            <div class="params-desc">
+                Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#reference">reference</a>. Any one of the individuals participating in the appointment
+            </div>
+        </div>
+        
+        <div class="params-section col-xl-6 col-lg-6 col-md-6">
+            <div class="param-type">
+                
+                <span class="query-text">(query)</span>
+            </div>
+            <div class="param-text">
+                appointment-type
+            </div>
+            <div class="type-badge">
+                string
+            </div>
+            <div class="params-desc">
+                All searches are case insensitive.Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#token">token</a>. The style of appointment or patient that has been booked in the slot (not service type)
+            </div>
+        </div>
+        
+        <div class="params-section col-xl-6 col-lg-6 col-md-6">
+            <div class="param-type">
+                
+                <span class="query-text">(query)</span>
+            </div>
+            <div class="param-text">
+                based-on
+            </div>
+            <div class="type-badge">
+                string
+            </div>
+            <div class="params-desc">
+                Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#reference">reference</a>. The service request this appointment is allocated to assess
+            </div>
+        </div>
+        
+        <div class="params-section col-xl-6 col-lg-6 col-md-6">
+            <div class="param-type">
+                
+                <span class="query-text">(query)</span>
+            </div>
+            <div class="param-text">
+                date
+            </div>
+            <div class="type-badge">
+                string
+            </div>
+            <div class="params-desc">
+                Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#date">date</a>.lt, gt, ge, le, eq, ne Supported. Appointment date/time.
+            </div>
+        </div>
+        
+        <div class="params-section col-xl-6 col-lg-6 col-md-6">
+            <div class="param-type">
+                
+                <span class="query-text">(query)</span>
+            </div>
+            <div class="param-text">
+                identifier
+            </div>
+            <div class="type-badge">
+                string
+            </div>
+            <div class="params-desc">
+                All searches are case insensitive.Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#token">token</a>. An Identifier of the Appointment
+            </div>
+        </div>
+        
+        <div class="params-section col-xl-6 col-lg-6 col-md-6">
+            <div class="param-type">
+                
+                <span class="query-text">(query)</span>
+            </div>
+            <div class="param-text">
+                location
+            </div>
+            <div class="type-badge">
+                string
+            </div>
+            <div class="params-desc">
+                Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#reference">reference</a>. This location is listed in the participants of the appointment
+            </div>
+        </div>
+        
+        <div class="params-section col-xl-6 col-lg-6 col-md-6">
+            <div class="param-type">
+                
+                <span class="query-text">(query)</span>
+            </div>
+            <div class="param-text">
+                part-status
+            </div>
+            <div class="type-badge">
+                string
+            </div>
+            <div class="params-desc">
+                All searches are case insensitive.Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#token">token</a>. The Participation status of the subject, or other participant on the appointment. Can be used to locate participants that have not responded to meeting requests.
+            </div>
+        </div>
+        
+        <div class="params-section col-xl-6 col-lg-6 col-md-6">
+            <div class="param-type">
+                
+                <span class="query-text">(query)</span>
+            </div>
+            <div class="param-text">
+                patient
+            </div>
+            <div class="type-badge">
+                string
+            </div>
+            <div class="params-desc">
+                Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#reference">reference</a>. One of the individuals of the appointment is this patient
+            </div>
+        </div>
+        
+        <div class="params-section col-xl-6 col-lg-6 col-md-6">
+            <div class="param-type">
+                
+                <span class="query-text">(query)</span>
+            </div>
+            <div class="param-text">
+                practitioner
+            </div>
+            <div class="type-badge">
+                string
+            </div>
+            <div class="params-desc">
+                Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#reference">reference</a>. One of the individuals of the appointment is this practitioner
+            </div>
+        </div>
+        
+        <div class="params-section col-xl-6 col-lg-6 col-md-6">
+            <div class="param-type">
+                
+                <span class="query-text">(query)</span>
+            </div>
+            <div class="param-text">
+                reason-code
+            </div>
+            <div class="type-badge">
+                string
+            </div>
+            <div class="params-desc">
+                All searches are case insensitive.Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#token">token</a>. Coded reason this appointment is scheduled
+            </div>
+        </div>
+        
+        <div class="params-section col-xl-6 col-lg-6 col-md-6">
+            <div class="param-type">
+                
+                <span class="query-text">(query)</span>
+            </div>
+            <div class="param-text">
+                reason-reference
+            </div>
+            <div class="type-badge">
+                string
+            </div>
+            <div class="params-desc">
+                Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#reference">reference</a>. Reason the appointment is to take place (resource)
+            </div>
+        </div>
+        
+        <div class="params-section col-xl-6 col-lg-6 col-md-6">
+            <div class="param-type">
+                
+                <span class="query-text">(query)</span>
+            </div>
+            <div class="param-text">
+                service-category
+            </div>
+            <div class="type-badge">
+                string
+            </div>
+            <div class="params-desc">
+                All searches are case insensitive.Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#token">token</a>. A broad categorization of the service that is to be performed during this appointment
+            </div>
+        </div>
+        
+        <div class="params-section col-xl-6 col-lg-6 col-md-6">
+            <div class="param-type">
+                
+                <span class="query-text">(query)</span>
+            </div>
+            <div class="param-text">
+                service-type
+            </div>
+            <div class="type-badge">
+                string
+            </div>
+            <div class="params-desc">
+                All searches are case insensitive.Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#token">token</a>. The specific service that is to be performed during this appointment
+            </div>
+        </div>
+        
+        <div class="params-section col-xl-6 col-lg-6 col-md-6">
+            <div class="param-type">
+                
+                <span class="query-text">(query)</span>
+            </div>
+            <div class="param-text">
+                specialty
+            </div>
+            <div class="type-badge">
+                string
+            </div>
+            <div class="params-desc">
+                All searches are case insensitive.Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#token">token</a>. The specialty of a practitioner that would be required to perform the service requested in this appointment
+            </div>
+        </div>
+        
+        <div class="params-section col-xl-6 col-lg-6 col-md-6">
+            <div class="param-type">
+                
+                <span class="query-text">(query)</span>
+            </div>
+            <div class="param-text">
+                status
+            </div>
+            <div class="type-badge">
+                string
+            </div>
+            <div class="params-desc">
+                All searches are case insensitive.Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#token">token</a>. The overall status of the appointment
+            </div>
+        </div>
+        
+        <div class="params-section col-xl-6 col-lg-6 col-md-6">
+            <div class="param-type">
+                
+                <span class="query-text">(query)</span>
+            </div>
+            <div class="param-text">
+                supporting-info
+            </div>
+            <div class="type-badge">
+                string
+            </div>
+            <div class="params-desc">
+                Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#reference">reference</a>. Additional information to support the appointment
+            </div>
+        </div>
+        
+    </div>
+    <div id="editable-params-box-0" class="params-section editable-params-box">
+        <div class="header-section">
+            <span class="header-text">Testing Appointment endpoint</span>
+            <span class="cancel-btn" onclick="sandboxModule.onCancelApiCall(0)">Cancel</span>
+            <span class="cancel-btn-mobile" onclick="sandboxModule.onCancelApiCall(0)"><i class="fa fa-chevron-up"></i></span>
+        </div>
+        
+        <script id="0-form" type="application/json">[{"name": "Content-Type", "in": "header", "description": "FHIR Content Type", "required": true, "style": "simple", "explode": false, "schema": {"type": "string", "default": "application/fhir+json; fhirVersion=4.0"}, "descHTML": "FHIR Content Type"}, {"name": "X-API-KEY", "in": "header", "description": "Developer key", "required": true, "style": "simple", "explode": false, "schema": {"type": "string", "default": "testing"}, "descHTML": "Developer key"}, {"name": "actor", "in": "query", "description": "Type: [reference](https://www.hl7.org/fhir/search.html#reference). Any one of the individuals participating in the appointment", "required": false, "style": "form", "explode": true, "schema": {"type": "string"}, "example": "PractitionerRole/f386433c-5a43-4639-9e19-44370b7f4fd2", "descHTML": "Type: \u003Ca target=\"_blank\" href=\"https://www.hl7.org/fhir/search.html#reference\"\u003Ereference\u003C/a\u003E. Any one of the individuals participating in the appointment"}, {"name": "appointment-type", "in": "query", "description": "All searches are case insensitive.Type: [token](https://www.hl7.org/fhir/search.html#token). The style of appointment or patient that has been booked in the slot (not service type)", "required": false, "style": "form", "explode": true, "schema": {"type": "string"}, "example": "PPS|physical", "descHTML": "All searches are case insensitive.Type: \u003Ca target=\"_blank\" href=\"https://www.hl7.org/fhir/search.html#token\"\u003Etoken\u003C/a\u003E. The style of appointment or patient that has been booked in the slot (not service type)"}, {"name": "based-on", "in": "query", "description": "Type: [reference](https://www.hl7.org/fhir/search.html#reference). The service request this appointment is allocated to assess", "required": false, "style": "form", "explode": true, "schema": {"type": "string"}, "example": "ServiceRequest/037a894d-4957-499e-83dc-da0e4a89dbc6", "descHTML": "Type: \u003Ca target=\"_blank\" href=\"https://www.hl7.org/fhir/search.html#reference\"\u003Ereference\u003C/a\u003E. The service request this appointment is allocated to assess"}, {"name": "date", "in": "query", "description": "Type: [date](https://www.hl7.org/fhir/search.html#date).lt, gt, ge, le, eq, ne Supported. Appointment date/time.", "required": false, "style": "form", "explode": true, "schema": {"pattern": "^(ge|le|eq|lt|gt|ne)\\d{4}-\\d{2}-\\d{2}$", "type": "string"}, "example": "eq1952-10-22", "descHTML": "Type: \u003Ca target=\"_blank\" href=\"https://www.hl7.org/fhir/search.html#date\"\u003Edate\u003C/a\u003E.lt, gt, ge, le, eq, ne Supported. Appointment date/time."}, {"name": "identifier", "in": "query", "description": "All searches are case insensitive.Type: [token](https://www.hl7.org/fhir/search.html#token). An Identifier of the Appointment", "required": false, "style": "form", "explode": true, "schema": {"type": "string"}, "example": "16212531", "descHTML": "All searches are case insensitive.Type: \u003Ca target=\"_blank\" href=\"https://www.hl7.org/fhir/search.html#token\"\u003Etoken\u003C/a\u003E. An Identifier of the Appointment"}, {"name": "location", "in": "query", "description": "Type: [reference](https://www.hl7.org/fhir/search.html#reference). This location is listed in the participants of the appointment", "required": false, "style": "form", "explode": true, "schema": {"type": "string"}, "descHTML": "Type: \u003Ca target=\"_blank\" href=\"https://www.hl7.org/fhir/search.html#reference\"\u003Ereference\u003C/a\u003E. This location is listed in the participants of the appointment"}, {"name": "part-status", "in": "query", "description": "All searches are case insensitive.Type: [token](https://www.hl7.org/fhir/search.html#token). The Participation status of the subject, or other participant on the appointment. Can be used to locate participants that have not responded to meeting requests.", "required": false, "style": "form", "explode": true, "schema": {"type": "string"}, "example": "tentative", "descHTML": "All searches are case insensitive.Type: \u003Ca target=\"_blank\" href=\"https://www.hl7.org/fhir/search.html#token\"\u003Etoken\u003C/a\u003E. The Participation status of the subject, or other participant on the appointment. Can be used to locate participants that have not responded to meeting requests."}, {"name": "patient", "in": "query", "description": "Type: [reference](https://www.hl7.org/fhir/search.html#reference). One of the individuals of the appointment is this patient", "required": false, "style": "form", "explode": true, "schema": {"type": "string"}, "example": "Patient/9b746e17-d404-4bbc-9666-5a91bc5f9b70", "descHTML": "Type: \u003Ca target=\"_blank\" href=\"https://www.hl7.org/fhir/search.html#reference\"\u003Ereference\u003C/a\u003E. One of the individuals of the appointment is this patient"}, {"name": "practitioner", "in": "query", "description": "Type: [reference](https://www.hl7.org/fhir/search.html#reference). One of the individuals of the appointment is this practitioner", "required": false, "style": "form", "explode": true, "schema": {"type": "string"}, "example": "PractitionerRole/f386433c-5a43-4639-9e19-44370b7f4fd2", "descHTML": "Type: \u003Ca target=\"_blank\" href=\"https://www.hl7.org/fhir/search.html#reference\"\u003Ereference\u003C/a\u003E. One of the individuals of the appointment is this practitioner"}, {"name": "reason-code", "in": "query", "description": "All searches are case insensitive.Type: [token](https://www.hl7.org/fhir/search.html#token). Coded reason this appointment is scheduled", "required": false, "style": "form", "explode": true, "schema": {"type": "string"}, "example": "PPS|illness", "descHTML": "All searches are case insensitive.Type: \u003Ca target=\"_blank\" href=\"https://www.hl7.org/fhir/search.html#token\"\u003Etoken\u003C/a\u003E. Coded reason this appointment is scheduled"}, {"name": "reason-reference", "in": "query", "description": "Type: [reference](https://www.hl7.org/fhir/search.html#reference). Reason the appointment is to take place (resource)", "required": false, "style": "form", "explode": true, "schema": {"type": "string"}, "descHTML": "Type: \u003Ca target=\"_blank\" href=\"https://www.hl7.org/fhir/search.html#reference\"\u003Ereference\u003C/a\u003E. Reason the appointment is to take place (resource)"}, {"name": "service-category", "in": "query", "description": "All searches are case insensitive.Type: [token](https://www.hl7.org/fhir/search.html#token). A broad categorization of the service that is to be performed during this appointment", "required": false, "style": "form", "explode": true, "schema": {"type": "string"}, "descHTML": "All searches are case insensitive.Type: \u003Ca target=\"_blank\" href=\"https://www.hl7.org/fhir/search.html#token\"\u003Etoken\u003C/a\u003E. A broad categorization of the service that is to be performed during this appointment"}, {"name": "service-type", "in": "query", "description": "All searches are case insensitive.Type: [token](https://www.hl7.org/fhir/search.html#token). The specific service that is to be performed during this appointment", "required": false, "style": "form", "explode": true, "schema": {"type": "string"}, "descHTML": "All searches are case insensitive.Type: \u003Ca target=\"_blank\" href=\"https://www.hl7.org/fhir/search.html#token\"\u003Etoken\u003C/a\u003E. The specific service that is to be performed during this appointment"}, {"name": "specialty", "in": "query", "description": "All searches are case insensitive.Type: [token](https://www.hl7.org/fhir/search.html#token). The specialty of a practitioner that would be required to perform the service requested in this appointment", "required": false, "style": "form", "explode": true, "schema": {"type": "string"}, "example": "TTYPE|heart-spec", "descHTML": "All searches are case insensitive.Type: \u003Ca target=\"_blank\" href=\"https://www.hl7.org/fhir/search.html#token\"\u003Etoken\u003C/a\u003E. The specialty of a practitioner that would be required to perform the service requested in this appointment"}, {"name": "status", "in": "query", "description": "All searches are case insensitive.Type: [token](https://www.hl7.org/fhir/search.html#token). The overall status of the appointment", "required": false, "style": "form", "explode": true, "schema": {"type": "string"}, "example": "cancelled", "descHTML": "All searches are case insensitive.Type: \u003Ca target=\"_blank\" href=\"https://www.hl7.org/fhir/search.html#token\"\u003Etoken\u003C/a\u003E. The overall status of the appointment"}, {"name": "supporting-info", "in": "query", "description": "Type: [reference](https://www.hl7.org/fhir/search.html#reference). Additional information to support the appointment", "required": false, "style": "form", "explode": true, "schema": {"type": "string"}, "descHTML": "Type: \u003Ca target=\"_blank\" href=\"https://www.hl7.org/fhir/search.html#reference\"\u003Ereference\u003C/a\u003E. Additional information to support the appointment"}]</script>
+        <form id="api-form-0" host=https://api-dev.oninnovaccer.com/fhir>
+            
+            <div class="editable-control-div">
+                <div class="control-label-section">
+                    <span class="param-name">Content-Type</span>
+                    <span class="query-text">(query)</span>
+                    <span class="type-badge">
+                        string
+                    </span>
+                    <div class="params-desc">
+                        FHIR Content Type
+                    </div>
+                </div>
+                <div class="control-section" id="form-control-0-0">
+                    <input id="input-0-0"
+                        placeholder="application/fhir+json; fhirVersion=4.0"
+                        in="header" name="Content-Type" />
+                </div>
+            </div>
+            
+            <div class="editable-control-div">
+                <div class="control-label-section">
+                    <span class="param-name">X-API-KEY</span>
+                    <span class="query-text">(query)</span>
+                    <span class="type-badge">
+                        string
+                    </span>
+                    <div class="params-desc">
+                        Developer key
+                    </div>
+                </div>
+                <div class="control-section" id="form-control-0-1">
+                    <input id="input-0-1"
+                        placeholder="testing"
+                        in="header" name="X-API-KEY" />
+                </div>
+            </div>
+            
+            <div class="editable-control-div">
+                <div class="control-label-section">
+                    <span class="param-name">actor</span>
+                    <span class="query-text">(query)</span>
+                    <span class="type-badge">
+                        string
+                    </span>
+                    <div class="params-desc">
+                        Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#reference">reference</a>. Any one of the individuals participating in the appointment
+                    </div>
+                </div>
+                <div class="control-section" id="form-control-0-2">
+                    <input id="input-0-2"
+                        placeholder="PractitionerRole/f386433c-5a43-4639-9e19-44370b7f4fd2"
+                        in="query" name="actor" />
+                </div>
+            </div>
+            
+            <div class="editable-control-div">
+                <div class="control-label-section">
+                    <span class="param-name">appointment-type</span>
+                    <span class="query-text">(query)</span>
+                    <span class="type-badge">
+                        string
+                    </span>
+                    <div class="params-desc">
+                        All searches are case insensitive.Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#token">token</a>. The style of appointment or patient that has been booked in the slot (not service type)
+                    </div>
+                </div>
+                <div class="control-section" id="form-control-0-3">
+                    <input id="input-0-3"
+                        placeholder="PPS|physical"
+                        in="query" name="appointment-type" />
+                </div>
+            </div>
+            
+            <div class="editable-control-div">
+                <div class="control-label-section">
+                    <span class="param-name">based-on</span>
+                    <span class="query-text">(query)</span>
+                    <span class="type-badge">
+                        string
+                    </span>
+                    <div class="params-desc">
+                        Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#reference">reference</a>. The service request this appointment is allocated to assess
+                    </div>
+                </div>
+                <div class="control-section" id="form-control-0-4">
+                    <input id="input-0-4"
+                        placeholder="ServiceRequest/037a894d-4957-499e-83dc-da0e4a89dbc6"
+                        in="query" name="based-on" />
+                </div>
+            </div>
+            
+            <div class="editable-control-div">
+                <div class="control-label-section">
+                    <span class="param-name">date</span>
+                    <span class="query-text">(query)</span>
+                    <span class="type-badge">
+                        string
+                    </span>
+                    <div class="params-desc">
+                        Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#date">date</a>.lt, gt, ge, le, eq, ne Supported. Appointment date/time.
+                    </div>
+                </div>
+                <div class="control-section" id="form-control-0-5">
+                    <input id="input-0-5"
+                        placeholder="eq1952-10-22"
+                        in="query" name="date" />
+                </div>
+            </div>
+            
+            <div class="editable-control-div">
+                <div class="control-label-section">
+                    <span class="param-name">identifier</span>
+                    <span class="query-text">(query)</span>
+                    <span class="type-badge">
+                        string
+                    </span>
+                    <div class="params-desc">
+                        All searches are case insensitive.Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#token">token</a>. An Identifier of the Appointment
+                    </div>
+                </div>
+                <div class="control-section" id="form-control-0-6">
+                    <input id="input-0-6"
+                        placeholder="16212531"
+                        in="query" name="identifier" />
+                </div>
+            </div>
+            
+            <div class="editable-control-div">
+                <div class="control-label-section">
+                    <span class="param-name">location</span>
+                    <span class="query-text">(query)</span>
+                    <span class="type-badge">
+                        string
+                    </span>
+                    <div class="params-desc">
+                        Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#reference">reference</a>. This location is listed in the participants of the appointment
+                    </div>
+                </div>
+                <div class="control-section" id="form-control-0-7">
+                    <input id="input-0-7"
+                        placeholder="'active 'Type: [reference](https://www.hl7.org/fhir/search.html#reference). This location is listed in the participants of the appointment"
+                        in="query" name="location" />
+                </div>
+            </div>
+            
+            <div class="editable-control-div">
+                <div class="control-label-section">
+                    <span class="param-name">part-status</span>
+                    <span class="query-text">(query)</span>
+                    <span class="type-badge">
+                        string
+                    </span>
+                    <div class="params-desc">
+                        All searches are case insensitive.Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#token">token</a>. The Participation status of the subject, or other participant on the appointment. Can be used to locate participants that have not responded to meeting requests.
+                    </div>
+                </div>
+                <div class="control-section" id="form-control-0-8">
+                    <input id="input-0-8"
+                        placeholder="tentative"
+                        in="query" name="part-status" />
+                </div>
+            </div>
+            
+            <div class="editable-control-div">
+                <div class="control-label-section">
+                    <span class="param-name">patient</span>
+                    <span class="query-text">(query)</span>
+                    <span class="type-badge">
+                        string
+                    </span>
+                    <div class="params-desc">
+                        Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#reference">reference</a>. One of the individuals of the appointment is this patient
+                    </div>
+                </div>
+                <div class="control-section" id="form-control-0-9">
+                    <input id="input-0-9"
+                        placeholder="Patient/9b746e17-d404-4bbc-9666-5a91bc5f9b70"
+                        in="query" name="patient" />
+                </div>
+            </div>
+            
+            <div class="editable-control-div">
+                <div class="control-label-section">
+                    <span class="param-name">practitioner</span>
+                    <span class="query-text">(query)</span>
+                    <span class="type-badge">
+                        string
+                    </span>
+                    <div class="params-desc">
+                        Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#reference">reference</a>. One of the individuals of the appointment is this practitioner
+                    </div>
+                </div>
+                <div class="control-section" id="form-control-0-10">
+                    <input id="input-0-10"
+                        placeholder="PractitionerRole/f386433c-5a43-4639-9e19-44370b7f4fd2"
+                        in="query" name="practitioner" />
+                </div>
+            </div>
+            
+            <div class="editable-control-div">
+                <div class="control-label-section">
+                    <span class="param-name">reason-code</span>
+                    <span class="query-text">(query)</span>
+                    <span class="type-badge">
+                        string
+                    </span>
+                    <div class="params-desc">
+                        All searches are case insensitive.Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#token">token</a>. Coded reason this appointment is scheduled
+                    </div>
+                </div>
+                <div class="control-section" id="form-control-0-11">
+                    <input id="input-0-11"
+                        placeholder="PPS|illness"
+                        in="query" name="reason-code" />
+                </div>
+            </div>
+            
+            <div class="editable-control-div">
+                <div class="control-label-section">
+                    <span class="param-name">reason-reference</span>
+                    <span class="query-text">(query)</span>
+                    <span class="type-badge">
+                        string
+                    </span>
+                    <div class="params-desc">
+                        Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#reference">reference</a>. Reason the appointment is to take place (resource)
+                    </div>
+                </div>
+                <div class="control-section" id="form-control-0-12">
+                    <input id="input-0-12"
+                        placeholder="'active 'Type: [reference](https://www.hl7.org/fhir/search.html#reference). Reason the appointment is to take place (resource)"
+                        in="query" name="reason-reference" />
+                </div>
+            </div>
+            
+            <div class="editable-control-div">
+                <div class="control-label-section">
+                    <span class="param-name">service-category</span>
+                    <span class="query-text">(query)</span>
+                    <span class="type-badge">
+                        string
+                    </span>
+                    <div class="params-desc">
+                        All searches are case insensitive.Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#token">token</a>. A broad categorization of the service that is to be performed during this appointment
+                    </div>
+                </div>
+                <div class="control-section" id="form-control-0-13">
+                    <input id="input-0-13"
+                        placeholder="'active 'All searches are case insensitive.Type: [token](https://www.hl7.org/fhir/search.html#token). A broad categorization of the service that is to be performed during this appointment"
+                        in="query" name="service-category" />
+                </div>
+            </div>
+            
+            <div class="editable-control-div">
+                <div class="control-label-section">
+                    <span class="param-name">service-type</span>
+                    <span class="query-text">(query)</span>
+                    <span class="type-badge">
+                        string
+                    </span>
+                    <div class="params-desc">
+                        All searches are case insensitive.Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#token">token</a>. The specific service that is to be performed during this appointment
+                    </div>
+                </div>
+                <div class="control-section" id="form-control-0-14">
+                    <input id="input-0-14"
+                        placeholder="'active 'All searches are case insensitive.Type: [token](https://www.hl7.org/fhir/search.html#token). The specific service that is to be performed during this appointment"
+                        in="query" name="service-type" />
+                </div>
+            </div>
+            
+            <div class="editable-control-div">
+                <div class="control-label-section">
+                    <span class="param-name">specialty</span>
+                    <span class="query-text">(query)</span>
+                    <span class="type-badge">
+                        string
+                    </span>
+                    <div class="params-desc">
+                        All searches are case insensitive.Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#token">token</a>. The specialty of a practitioner that would be required to perform the service requested in this appointment
+                    </div>
+                </div>
+                <div class="control-section" id="form-control-0-15">
+                    <input id="input-0-15"
+                        placeholder="TTYPE|heart-spec"
+                        in="query" name="specialty" />
+                </div>
+            </div>
+            
+            <div class="editable-control-div">
+                <div class="control-label-section">
+                    <span class="param-name">status</span>
+                    <span class="query-text">(query)</span>
+                    <span class="type-badge">
+                        string
+                    </span>
+                    <div class="params-desc">
+                        All searches are case insensitive.Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#token">token</a>. The overall status of the appointment
+                    </div>
+                </div>
+                <div class="control-section" id="form-control-0-16">
+                    <input id="input-0-16"
+                        placeholder="cancelled"
+                        in="query" name="status" />
+                </div>
+            </div>
+            
+            <div class="editable-control-div">
+                <div class="control-label-section">
+                    <span class="param-name">supporting-info</span>
+                    <span class="query-text">(query)</span>
+                    <span class="type-badge">
+                        string
+                    </span>
+                    <div class="params-desc">
+                        Type: <a target="_blank" href="https://www.hl7.org/fhir/search.html#reference">reference</a>. Additional information to support the appointment
+                    </div>
+                </div>
+                <div class="control-section" id="form-control-0-17">
+                    <input id="input-0-17"
+                        placeholder="'active 'Type: [reference](https://www.hl7.org/fhir/search.html#reference). Additional information to support the appointment"
+                        in="query" name="supporting-info" />
+                </div>
+            </div>
+            
+            <input type="hidden" name="uri" value="/Appointment" />
+            <input type="hidden" name="method" value="get" />
+        </form>
+        
+        <div class=" api-call-btn-div">
+            <button class="api-call-btn" onclick="sandboxModule.makeAPICall(0)"><span>make api
+                    call</span></button>
+        </div>
+
+        <div id="server-response-box-0" class="server-response-section">
+            <div class="api-response-heading-bar">
+                <span class="api-response-text">
+                    API response from server
+                </span>
+            </div>
+            <div id="server-200-0" class="response-status-div">
+                <div class="api-desc-badge result-badge response-badge-width">
+                    <span class="api-badge-text result-badge-text">200</span>
+                </div>
+                <span class="result-key-desc">
+                    Success outcome
+                </span>
+            </div>
+            <div id="server-400-0" class="response-status-div">
+                <div class="api-desc-badge max-badge response-badge-width">
+                    <span class="api-badge-text max-badge-text">400</span>
+                </div>
+                <span class="result-key-desc">
+                    Failure outcome
+                </span>
+            </div>
+            <div id="server-404-0" class="response-status-div">
+                <div class="api-desc-badge max-badge response-badge-width">
+                    <span class="api-badge-text max-badge-text">404</span>
+                </div>
+                <span class="result-key-desc">
+                    Resource not available
+                </span>
+            </div>
+            <div id="server-error-0" class="response-status-div">
+                <div class="api-desc-badge max-badge response-badge-width">
+                    <span id="err-badge-0" class="api-badge-text max-badge-text">
+                    </span>
+                </div>
+                <span id="err-desc-0" class="result-key-desc">
+                </span>
+            </div>
+
+            <div id="api-server-response-0" class="api-response">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="response-schema-0" class="response-schema">
+        <div class="api-summary">
+            Responses
+        </div>
+        
+        
+        
+        
+        <script id="0-example-0" type="application/json">{"type": "200", "schema": {"type": "object", "properties": {"resourceType": {"type": "string", "example": "Bundle"}, "link": {"type": "array", "items": {"type": "object", "properties": {"relation": {"type": "string", "example": "self"}, "url": {"type": "string", "example": "fhirapi/DeviceRequest?patient=P1234567890"}}}}, "type": {"type": "string", "example": "searchset", "enum": ["document", "message", "transaction", "transaction-response", "batch", "batch-response", "history", "searchset", "collection"]}, "total": {"type": "integer", "example": 3}, "entry": {"type": "array", "items": {"type": "object", "properties": {"resource": {"type": "object", "properties": {"appointmentType": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "asserter": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "basedOn": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "cancellationReason": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "category": {"type": "string", "example": "asdf"}, "clinical_status": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "code": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "comment": {"type": "string", "example": "asdf"}, "created": {"type": "string", "example": "asdf"}, "criticality": {"type": "string", "example": "asdf"}, "description": {"type": "string", "example": "asdf"}, "empi": {"type": "string", "example": "asdf"}, "encounter": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "end": {"type": "string", "example": "asdf"}, "id": {"type": "string", "example": "asdf"}, "identifier": {"type": "object", "properties": {"assigner": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "period": {"type": "object", "properties": {"end": {"type": "string", "example": "asdf"}, "start": {"type": "string", "example": "asdf"}}}, "system": {"type": "string", "example": "asdf"}, "type": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "use": {"type": "string", "example": "asdf"}, "value": {"type": "string", "example": "asdf"}}}, "lastOccurance": {"type": "string", "example": "asdf"}, "meta": {"type": "object", "properties": {"author": {"type": "object", "properties": {"date": {"type": "string", "example": "asdf"}, "id": {"type": "string", "example": "asdf"}, "name": {"type": "string", "example": "asdf"}, "reason": {"type": "string", "example": "asdf"}}}, "lastUpdated": {"type": "string", "example": "asdf"}, "source": {"type": "string", "example": "asdf"}, "status": {"type": "string", "example": "asdf"}, "versionId": {"type": "string", "example": "asdf"}}}, "minutesDuration": {"type": "integer"}, "note": {"type": "object", "properties": {"authorReference": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}, "time": {"type": "string", "example": "asdf"}}}, "onsetAge": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "comparator": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "unit": {"type": "string", "example": "asdf"}, "value": {"type": "number"}}}, "onsetDateTime": {"type": "string", "example": "asdf"}, "onsetPeriod": {"type": "object", "properties": {"end": {"type": "string", "example": "asdf"}, "start": {"type": "string", "example": "asdf"}}}, "onsetRange": {"type": "object", "properties": {"high": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "comparator": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "unit": {"type": "string", "example": "asdf"}, "value": {"type": "number"}}}, "low": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "comparator": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "unit": {"type": "string", "example": "asdf"}, "value": {"type": "number"}}}}}, "onsetString": {"type": "string", "example": "asdf"}, "participant": {"type": "array", "items": {"type": "object", "properties": {"actor": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "period": {"type": "object", "properties": {"end": {"type": "string", "example": "asdf"}, "start": {"type": "string", "example": "asdf"}}}, "required": {"type": "string", "example": "asdf"}, "status": {"type": "string", "example": "asdf"}, "type": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}}}}, "patient": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "patientInstruction": {"type": "string", "example": "asdf"}, "priority": {"type": "integer"}, "reaction": {"type": "array", "items": {"type": "object", "properties": {"description": {"type": "string", "example": "asdf"}, "exposureRoute": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "id": {"type": "string", "example": "asdf"}, "manifestation": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "note": {"type": "object", "properties": {"authorReference": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}, "time": {"type": "string", "example": "asdf"}}}, "onset": {"type": "string", "example": "asdf"}, "severity": {"type": "string", "example": "asdf"}, "substance": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}}}}, "reasonCode": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "reasonReference": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "recordedDate": {"type": "string", "example": "asdf"}, "recorder": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "serviceCategory": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "serviceType": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "speciality": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "start": {"type": "string", "example": "asdf"}, "status": {"type": "string", "example": "asdf"}, "supportingInformation": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "type": {"type": "string", "example": "asdf"}, "verificationStatus": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}}}, "search": {"type": "object", "properties": {"mode": {"type": "string", "example": "match", "enum": ["match", "include", "outcome"]}, "score": {"type": "number", "example": 0.3}}}, "link": {"type": "array", "items": {"type": "object", "properties": {"relation": {"type": "string", "example": "self"}, "url": {"example": "fhirapi/DeviceRequest/dvcr1234", "type": "string"}}}}, "fullUrl": {"example": "fhirapi/DeviceRequest/dvcr", "type": "string"}}}}}}, "examples": {"200": {"resourceType": "Bundle", "link": [{"relation": "self", "url": "fhirapi/DeviceRequest?patient=P1234567890"}], "type": "searchset", "total": 3, "entry": [{"resource": {"appointmentType": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "asserter": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "basedOn": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "cancellationReason": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "category": "asdf", "clinical_status": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "code": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "comment": "asdf", "created": "asdf", "criticality": "asdf", "description": "asdf", "empi": "asdf", "encounter": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "end": "asdf", "id": "asdf", "identifier": {"assigner": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "period": {"end": "asdf", "start": "asdf"}, "system": "asdf", "type": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "use": "asdf", "value": "asdf"}, "lastOccurance": "asdf", "meta": {"author": {"date": "asdf", "id": "asdf", "name": "asdf", "reason": "asdf"}, "lastUpdated": "asdf", "source": "asdf", "status": "asdf", "versionId": "asdf"}, "minutesDuration": 1234, "note": {"authorReference": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "text": "asdf", "time": "asdf"}, "onsetAge": {"code": "asdf", "comparator": "asdf", "system": "asdf", "unit": "asdf", "value": 1234}, "onsetDateTime": "asdf", "onsetPeriod": {"end": "asdf", "start": "asdf"}, "onsetRange": {"high": {"code": "asdf", "comparator": "asdf", "system": "asdf", "unit": "asdf", "value": 1234}, "low": {"code": "asdf", "comparator": "asdf", "system": "asdf", "unit": "asdf", "value": 1234}}, "onsetString": "asdf", "participant": [{"actor": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "period": {"end": "asdf", "start": "asdf"}, "required": "asdf", "status": "asdf", "type": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}}], "patient": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "patientInstruction": "asdf", "priority": 1234, "reaction": [{"description": "asdf", "exposureRoute": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "id": "asdf", "manifestation": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "note": {"authorReference": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "text": "asdf", "time": "asdf"}, "onset": "asdf", "severity": "asdf", "substance": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}}], "reasonCode": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "reasonReference": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "recordedDate": "asdf", "recorder": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "serviceCategory": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "serviceType": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "speciality": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "start": "asdf", "status": "asdf", "supportingInformation": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "type": "asdf", "verificationStatus": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}}, "search": {"mode": "match", "score": 0.3}, "link": [{"relation": "self", "url": "fhirapi/DeviceRequest/dvcr1234"}], "fullUrl": "fhirapi/DeviceRequest/dvcr"}]}}, "description": "successful operation"}</script>
+        <div>
+            <div class="schema-header  response-tab-link active" data-toggle="collapse" data-target="#schema-table-0-0">
+                    <span
+                    class="response-tab-badge ">
+                    <span class="response-tab-badge-text">
+                        200
+                    </span>
+                </span>
+                <span class="schema-tab-text ">
+                        successful operation
+                </span>
+                <i class="fa fa-chevron-up schema-expand-icon " onclick="sandboxModule.showSchemaTable(0, 0, '0-example-0')"></i>
+            </div>
+            <div class="schema-table" id="schema-table-0-0">
+                
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        <script id="1-example-0" type="application/json">{"type": "400", "schema": {"type": "object", "properties": {"resourceType": {"type": "string"}, "id": {"type": "string"}, "issue": {"type": "array", "items": {"type": "object", "properties": {"severity": {"type": "string"}, "location": {"type": "array", "items": {"type": "string"}}, "code": {"type": "string"}, "diagnostics": {"type": "string"}, "details": {"type": "object", "properties": {"text": {"type": "string"}, "coding": {"type": "array", "items": {"type": "object", "properties": {"system": {"type": "string"}, "code": {"type": "string"}, "display": {"type": "string"}}}}}}}}}}}, "examples": {"InvalidPageExample": {"value": {"resourceType": "OperationOutcome", "id": "request.id", "issue": [{"severity": "fatal", "location": ["http.ID"], "code": "processing", "diagnostics": "Invalid Page", "details": {"text": "Invalid Page", "coding": [{"system": "urn:oid:1.2.840.114350.1.13.0.1.7.2.657369", "code": "4101", "display": "Invalid Page"}]}}]}}, "InvalidPageNumberExample": {"value": {"resourceType": "OperationOutcome", "id": "request_id", "issue": [{"severity": "fatal", "location": ["http.ID"], "code": "processing", "diagnostics": "Invalid Page Number", "details": {"text": "Invalid Page Number", "coding": [{"system": "urn:oid:1.2.840.114350.1.13.0.1.7.2.657369", "code": "4110", "display": "Invalid Page Number"}]}}]}}, "InvalidPageSizeExample": {"value": {"resourceType": "OperationOutcome", "id": "request_id", "issue": [{"severity": "fatal", "location": ["http.ID"], "code": "processing", "diagnostics": "Invalid Page Size", "details": {"text": "Invalid Page Size", "coding": [{"system": "urn:oid:1.2.840.114350.1.13.0.1.7.2.657369", "code": "4110", "display": "Invalid Page Size"}]}}]}}, "InvalidSearchParameterExample": {"value": {"resourceType": "OperationOutcome", "id": "request.id", "issue": [{"severity": "fatal", "location": ["http.ID"], "code": "processing", "diagnostics": "Invalid parameter: param_name", "details": {"text": "The resource request contained an invalid parameter", "coding": [{"system": "urn:oid:1.2.840.114350.1.13.0.1.7.2.657369", "code": "4100", "display": "The resource request contained an invalid parameter"}]}}]}}, "NoParameterSpecifiedExample": {"value": {"resourceType": "OperationOutcome", "id": "request.id", "issue": [{"severity": "fatal", "location": ["http.ID"], "code": "processing", "diagnostics": "No parameters are provided in the search request", "details": {"text": "No parameters are provided in the search request", "coding": [{"system": "urn:oid:1.2.840.114350.1.13.0.1.7.2.657369", "code": "4110", "display": "No parameters are provided in the search request"}]}}]}}}, "description": "No Parameters Sent or Inavlid Parameters!"}</script>
+        <div>
+            <div class="schema-header red-header response-tab-link active" data-toggle="collapse" data-target="#schema-table-1-0">
+                    <span
+                    class="response-tab-badge badge-red">
+                    <span class="response-tab-badge-text">
+                        400
+                    </span>
+                </span>
+                <span class="schema-tab-text red-text-color">
+                        No Parameters Sent or Inavlid Parameters!
+                </span>
+                <i class="fa fa-chevron-up schema-expand-icon red-icon" onclick="sandboxModule.showSchemaTable(1, 0, '1-example-0')"></i>
+            </div>
+            <div class="schema-table" id="schema-table-1-0">
+                
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        <script id="2-example-0" type="application/json">{"type": "404", "schema": {"type": "object", "properties": {"resourceType": {"type": "string"}, "id": {"type": "string"}, "issue": {"type": "array", "items": {"type": "object", "properties": {"severity": {"type": "string"}, "location": {"type": "array", "items": {"type": "string"}}, "code": {"type": "string"}, "diagnostics": {"type": "string"}, "details": {"type": "object", "properties": {"text": {"type": "string"}, "coding": {"type": "array", "items": {"type": "object", "properties": {"system": {"type": "string"}, "code": {"type": "string"}, "display": {"type": "string"}}}}}}}}}}}, "examples": {"InvalidIdExample": {"value": {"resourceType": "OperationOutcome", "id": "request.id", "issue": [{"severity": "fatal", "location": ["http.ID"], "code": "processing", "diagnostics": "Invalid Value: the_invalid_id ", "details": {"text": "The read resource request contained an invalid ID.", "coding": [{"system": "urn:oid:1.2.840.114350.1.13.0.1.7.2.657369", "code": "4102", "display": "The read resource request contained an invalid ID."}]}}]}}}, "description": "Invalid Resource ID"}</script>
+        <div>
+            <div class="schema-header red-header response-tab-link active" data-toggle="collapse" data-target="#schema-table-2-0">
+                    <span
+                    class="response-tab-badge badge-red">
+                    <span class="response-tab-badge-text">
+                        404
+                    </span>
+                </span>
+                <span class="schema-tab-text red-text-color">
+                        Invalid Resource ID
+                </span>
+                <i class="fa fa-chevron-up schema-expand-icon red-icon" onclick="sandboxModule.showSchemaTable(2, 0, '2-example-0')"></i>
+            </div>
+            <div class="schema-table" id="schema-table-2-0">
+                
+            </div>
+        </div>
+        
+        
+        
+        
+    </div>
+
+    <div class="api-summary">
+        Example Request
+    </div>
+
+    <div class="example-request-box">
+        <div class="example-tab-section">
+            <div class="tab-mobile-section" onblur="sandboxModule.hideCollapsibleList('example-request-0')">
+                <span class="active-tab-text-mobile" id="request-selected-tab-mobile-0"></span>
+                <img src="https://d2uelhfk503lgh.cloudfront.net/static/icons/icon-menu.cf3656d5dffc.svg" class="example-request-menu-icon" data-toggle="collapse" data-target="#example-request-0"></img>
+            </div>
+            
+            <ul id="example-request-0" class="example-tablist panel-collapse collapse show">
+                
+                <li>
+                    <a id="Javascript-0" class="Javascript"
+                        onclick="sandboxModule.showExampleRequestTemplate({&#x27;lang&#x27;: &#x27;Javascript&#x27;, &#x27;source&#x27;: &#x27;var data = null;\n\nvar xhr = new XMLHttpRequest();\nxhr.withCredentials = true;\n\nxhr.addEventListener(&quot;readystatechange&quot;, function () {\n  if (this.readyState === this.DONE) {\n    console.log(this.responseText);\n  }\n});\n\nxhr.open(&quot;GET&quot;, &quot;https://api-dev.oninnovaccer.com/fhir/Appointment?actor=SOME_STRING_VALUE&amp;appointment-type=SOME_STRING_VALUE&amp;based-on=SOME_STRING_VALUE&amp;date=SOME_STRING_VALUE&amp;identifier=SOME_STRING_VALUE&amp;location=SOME_STRING_VALUE&amp;part-status=SOME_STRING_VALUE&amp;patient=SOME_STRING_VALUE&amp;practitioner=SOME_STRING_VALUE&amp;reason-code=SOME_STRING_VALUE&amp;reason-reference=SOME_STRING_VALUE&amp;service-category=SOME_STRING_VALUE&amp;service-type=SOME_STRING_VALUE&amp;specialty=SOME_STRING_VALUE&amp;status=SOME_STRING_VALUE&amp;supporting-info=SOME_STRING_VALUE&quot;);\nxhr.setRequestHeader(&quot;content-type&quot;, &quot;SOME_STRING_VALUE&quot;);\nxhr.setRequestHeader(&quot;x-api-key&quot;, &quot;SOME_STRING_VALUE&quot;);\n\nxhr.send(data);&#x27;}, 0)">Javascript</a>
+                </li>
+                
+                <li>
+                    <a id="Python-0" class="Python"
+                        onclick="sandboxModule.showExampleRequestTemplate({&#x27;lang&#x27;: &#x27;Python&#x27;, &#x27;source&#x27;: &#x27;import http.client\n\nconn = http.client.HTTPSConnection(&quot;api-dev.oninnovaccer.com&quot;)\n\nheaders = {\n    \&#x27;content-type\&#x27;: &quot;SOME_STRING_VALUE&quot;,\n    \&#x27;x-api-key\&#x27;: &quot;SOME_STRING_VALUE&quot;\n    }\n\nconn.request(&quot;GET&quot;, &quot;fhir/Appointment?actor=SOME_STRING_VALUE&amp;appointment-type=SOME_STRING_VALUE&amp;based-on=SOME_STRING_VALUE&amp;date=SOME_STRING_VALUE&amp;identifier=SOME_STRING_VALUE&amp;location=SOME_STRING_VALUE&amp;part-status=SOME_STRING_VALUE&amp;patient=SOME_STRING_VALUE&amp;practitioner=SOME_STRING_VALUE&amp;reason-code=SOME_STRING_VALUE&amp;reason-reference=SOME_STRING_VALUE&amp;service-category=SOME_STRING_VALUE&amp;service-type=SOME_STRING_VALUE&amp;specialty=SOME_STRING_VALUE&amp;status=SOME_STRING_VALUE&amp;supporting-info=SOME_STRING_VALUE&quot;, headers=headers)\n\nres = conn.getresponse()\ndata = res.read()\n\nprint(data.decode(&quot;utf-8&quot;))&#x27;}, 0)">Python</a>
+                </li>
+                
+                <li>
+                    <a id="Ruby-0" class="Ruby"
+                        onclick="sandboxModule.showExampleRequestTemplate({&#x27;lang&#x27;: &#x27;Ruby&#x27;, &#x27;source&#x27;: &#x27;require \&#x27;uri\&#x27;\nrequire \&#x27;net/http\&#x27;\nrequire \&#x27;openssl\&#x27;\n\nurl = URI(&quot;https://api-dev.oninnovaccer.com/fhir/Appointment?actor=SOME_STRING_VALUE&amp;appointment-type=SOME_STRING_VALUE&amp;based-on=SOME_STRING_VALUE&amp;date=SOME_STRING_VALUE&amp;identifier=SOME_STRING_VALUE&amp;location=SOME_STRING_VALUE&amp;part-status=SOME_STRING_VALUE&amp;patient=SOME_STRING_VALUE&amp;practitioner=SOME_STRING_VALUE&amp;reason-code=SOME_STRING_VALUE&amp;reason-reference=SOME_STRING_VALUE&amp;service-category=SOME_STRING_VALUE&amp;service-type=SOME_STRING_VALUE&amp;specialty=SOME_STRING_VALUE&amp;status=SOME_STRING_VALUE&amp;supporting-info=SOME_STRING_VALUE&quot;)\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\nhttp.verify_mode = OpenSSL::SSL::VERIFY_NONE\n\nrequest = Net::HTTP::Get.new(url)\nrequest[&quot;content-type&quot;] = \&#x27;SOME_STRING_VALUE\&#x27;\nrequest[&quot;x-api-key&quot;] = \&#x27;SOME_STRING_VALUE\&#x27;\n\nresponse = http.request(request)\nputs response.read_body&#x27;}, 0)">Ruby</a>
+                </li>
+                
+                <li>
+                    <a id="Shell-0" class="Shell"
+                        onclick="sandboxModule.showExampleRequestTemplate({&#x27;lang&#x27;: &#x27;Shell&#x27;, &#x27;source&#x27;: &quot;curl --request GET \\\n  --url &#x27;https://api-dev.oninnovaccer.com/fhir/Appointment?actor=SOME_STRING_VALUE&amp;appointment-type=SOME_STRING_VALUE&amp;based-on=SOME_STRING_VALUE&amp;date=SOME_STRING_VALUE&amp;identifier=SOME_STRING_VALUE&amp;location=SOME_STRING_VALUE&amp;part-status=SOME_STRING_VALUE&amp;patient=SOME_STRING_VALUE&amp;practitioner=SOME_STRING_VALUE&amp;reason-code=SOME_STRING_VALUE&amp;reason-reference=SOME_STRING_VALUE&amp;service-category=SOME_STRING_VALUE&amp;service-type=SOME_STRING_VALUE&amp;specialty=SOME_STRING_VALUE&amp;status=SOME_STRING_VALUE&amp;supporting-info=SOME_STRING_VALUE&#x27; \\\n  --header &#x27;content-type: SOME_STRING_VALUE&#x27; \\\n  --header &#x27;x-api-key: SOME_STRING_VALUE&#x27;&quot;}, 0)">Shell</a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <div id="tabcontent-0" class="tab-content request-tab-content">
+            <pre>
+                <code class="highlight-block hljs">
+                      
+                </code>
+            </pre>
+            <button id="copy-btn-0" class="copy-example-btn"
+                onclick="sandboxModule.copyExampleCode(0)">
+                <span class="request-response-btns-text">Copy code</span>
+            </button>
+        </div>
+
+    </div>
+
+    <div class="api-summary">
+        Responses
+    </div>
+
+    <div class="example-request-box response-box" id="example-response-box">
+        <div class="example-tab-section">
+            <div class="tab-mobile-section" onblur="sandboxModule.hideCollapsibleList('example-request-0')">
+                <span class="active-tab-text-mobile" id="response-selected-tab-mobile-0"></span>
+                <img src="https://d2uelhfk503lgh.cloudfront.net/static/icons/icon-menu.cf3656d5dffc.svg" class="example-request-menu-icon" data-toggle="collapse" data-target="#example-response-0"></img>
+            </div>
+
+            <ul id="example-response-0" class="example-tablist panel-collapse collapse show">
+                
+                <li>
+                    
+                    
+                    
+                    <script id="0-example-0" type="application/json">{"type": "200", "schema": {"type": "object", "properties": {"resourceType": {"type": "string", "example": "Bundle"}, "link": {"type": "array", "items": {"type": "object", "properties": {"relation": {"type": "string", "example": "self"}, "url": {"type": "string", "example": "fhirapi/DeviceRequest?patient=P1234567890"}}}}, "type": {"type": "string", "example": "searchset", "enum": ["document", "message", "transaction", "transaction-response", "batch", "batch-response", "history", "searchset", "collection"]}, "total": {"type": "integer", "example": 3}, "entry": {"type": "array", "items": {"type": "object", "properties": {"resource": {"type": "object", "properties": {"appointmentType": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "asserter": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "basedOn": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "cancellationReason": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "category": {"type": "string", "example": "asdf"}, "clinical_status": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "code": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "comment": {"type": "string", "example": "asdf"}, "created": {"type": "string", "example": "asdf"}, "criticality": {"type": "string", "example": "asdf"}, "description": {"type": "string", "example": "asdf"}, "empi": {"type": "string", "example": "asdf"}, "encounter": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "end": {"type": "string", "example": "asdf"}, "id": {"type": "string", "example": "asdf"}, "identifier": {"type": "object", "properties": {"assigner": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "period": {"type": "object", "properties": {"end": {"type": "string", "example": "asdf"}, "start": {"type": "string", "example": "asdf"}}}, "system": {"type": "string", "example": "asdf"}, "type": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "use": {"type": "string", "example": "asdf"}, "value": {"type": "string", "example": "asdf"}}}, "lastOccurance": {"type": "string", "example": "asdf"}, "meta": {"type": "object", "properties": {"author": {"type": "object", "properties": {"date": {"type": "string", "example": "asdf"}, "id": {"type": "string", "example": "asdf"}, "name": {"type": "string", "example": "asdf"}, "reason": {"type": "string", "example": "asdf"}}}, "lastUpdated": {"type": "string", "example": "asdf"}, "source": {"type": "string", "example": "asdf"}, "status": {"type": "string", "example": "asdf"}, "versionId": {"type": "string", "example": "asdf"}}}, "minutesDuration": {"type": "integer"}, "note": {"type": "object", "properties": {"authorReference": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}, "time": {"type": "string", "example": "asdf"}}}, "onsetAge": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "comparator": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "unit": {"type": "string", "example": "asdf"}, "value": {"type": "number"}}}, "onsetDateTime": {"type": "string", "example": "asdf"}, "onsetPeriod": {"type": "object", "properties": {"end": {"type": "string", "example": "asdf"}, "start": {"type": "string", "example": "asdf"}}}, "onsetRange": {"type": "object", "properties": {"high": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "comparator": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "unit": {"type": "string", "example": "asdf"}, "value": {"type": "number"}}}, "low": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "comparator": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "unit": {"type": "string", "example": "asdf"}, "value": {"type": "number"}}}}}, "onsetString": {"type": "string", "example": "asdf"}, "participant": {"type": "array", "items": {"type": "object", "properties": {"actor": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "period": {"type": "object", "properties": {"end": {"type": "string", "example": "asdf"}, "start": {"type": "string", "example": "asdf"}}}, "required": {"type": "string", "example": "asdf"}, "status": {"type": "string", "example": "asdf"}, "type": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}}}}, "patient": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "patientInstruction": {"type": "string", "example": "asdf"}, "priority": {"type": "integer"}, "reaction": {"type": "array", "items": {"type": "object", "properties": {"description": {"type": "string", "example": "asdf"}, "exposureRoute": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "id": {"type": "string", "example": "asdf"}, "manifestation": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "note": {"type": "object", "properties": {"authorReference": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}, "time": {"type": "string", "example": "asdf"}}}, "onset": {"type": "string", "example": "asdf"}, "severity": {"type": "string", "example": "asdf"}, "substance": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}}}}, "reasonCode": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "reasonReference": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "recordedDate": {"type": "string", "example": "asdf"}, "recorder": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "serviceCategory": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "serviceType": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "speciality": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "start": {"type": "string", "example": "asdf"}, "status": {"type": "string", "example": "asdf"}, "supportingInformation": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "type": {"type": "string", "example": "asdf"}, "verificationStatus": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}}}, "search": {"type": "object", "properties": {"mode": {"type": "string", "example": "match", "enum": ["match", "include", "outcome"]}, "score": {"type": "number", "example": 0.3}}}, "link": {"type": "array", "items": {"type": "object", "properties": {"relation": {"type": "string", "example": "self"}, "url": {"example": "fhirapi/DeviceRequest/dvcr1234", "type": "string"}}}}, "fullUrl": {"example": "fhirapi/DeviceRequest/dvcr", "type": "string"}}}}}}, "examples": {"200": {"resourceType": "Bundle", "link": [{"relation": "self", "url": "fhirapi/DeviceRequest?patient=P1234567890"}], "type": "searchset", "total": 3, "entry": [{"resource": {"appointmentType": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "asserter": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "basedOn": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "cancellationReason": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "category": "asdf", "clinical_status": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "code": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "comment": "asdf", "created": "asdf", "criticality": "asdf", "description": "asdf", "empi": "asdf", "encounter": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "end": "asdf", "id": "asdf", "identifier": {"assigner": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "period": {"end": "asdf", "start": "asdf"}, "system": "asdf", "type": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "use": "asdf", "value": "asdf"}, "lastOccurance": "asdf", "meta": {"author": {"date": "asdf", "id": "asdf", "name": "asdf", "reason": "asdf"}, "lastUpdated": "asdf", "source": "asdf", "status": "asdf", "versionId": "asdf"}, "minutesDuration": 1234, "note": {"authorReference": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "text": "asdf", "time": "asdf"}, "onsetAge": {"code": "asdf", "comparator": "asdf", "system": "asdf", "unit": "asdf", "value": 1234}, "onsetDateTime": "asdf", "onsetPeriod": {"end": "asdf", "start": "asdf"}, "onsetRange": {"high": {"code": "asdf", "comparator": "asdf", "system": "asdf", "unit": "asdf", "value": 1234}, "low": {"code": "asdf", "comparator": "asdf", "system": "asdf", "unit": "asdf", "value": 1234}}, "onsetString": "asdf", "participant": [{"actor": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "period": {"end": "asdf", "start": "asdf"}, "required": "asdf", "status": "asdf", "type": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}}], "patient": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "patientInstruction": "asdf", "priority": 1234, "reaction": [{"description": "asdf", "exposureRoute": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "id": "asdf", "manifestation": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "note": {"authorReference": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "text": "asdf", "time": "asdf"}, "onset": "asdf", "severity": "asdf", "substance": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}}], "reasonCode": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "reasonReference": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "recordedDate": "asdf", "recorder": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "serviceCategory": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "serviceType": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "speciality": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "start": "asdf", "status": "asdf", "supportingInformation": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "type": "asdf", "verificationStatus": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}}, "search": {"mode": "match", "score": 0.3}, "link": [{"relation": "self", "url": "fhirapi/DeviceRequest/dvcr1234"}], "fullUrl": "fhirapi/DeviceRequest/dvcr"}]}}, "description": "successful operation"}</script>
+                    <a id="200-0" class="response-tab-link"
+                        onclick="sandboxModule.showJSONResponse(0, '0-example-0')">
+                        <span
+                            class="response-tab-badge ">
+                            <span class="response-tab-badge-text">
+                                200
+                            </span>
+                        </span>
+                        <span class="response-tab-text">
+                            
+                                successful operation
+                            
+                        </span>
+                    </a>
+                    
+                    
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <script id="1-example-0" type="application/json">{"type": "400", "schema": {"type": "object", "properties": {"resourceType": {"type": "string"}, "id": {"type": "string"}, "issue": {"type": "array", "items": {"type": "object", "properties": {"severity": {"type": "string"}, "location": {"type": "array", "items": {"type": "string"}}, "code": {"type": "string"}, "diagnostics": {"type": "string"}, "details": {"type": "object", "properties": {"text": {"type": "string"}, "coding": {"type": "array", "items": {"type": "object", "properties": {"system": {"type": "string"}, "code": {"type": "string"}, "display": {"type": "string"}}}}}}}}}}}, "examples": {"InvalidPageExample": {"value": {"resourceType": "OperationOutcome", "id": "request.id", "issue": [{"severity": "fatal", "location": ["http.ID"], "code": "processing", "diagnostics": "Invalid Page", "details": {"text": "Invalid Page", "coding": [{"system": "urn:oid:1.2.840.114350.1.13.0.1.7.2.657369", "code": "4101", "display": "Invalid Page"}]}}]}}, "InvalidPageNumberExample": {"value": {"resourceType": "OperationOutcome", "id": "request_id", "issue": [{"severity": "fatal", "location": ["http.ID"], "code": "processing", "diagnostics": "Invalid Page Number", "details": {"text": "Invalid Page Number", "coding": [{"system": "urn:oid:1.2.840.114350.1.13.0.1.7.2.657369", "code": "4110", "display": "Invalid Page Number"}]}}]}}, "InvalidPageSizeExample": {"value": {"resourceType": "OperationOutcome", "id": "request_id", "issue": [{"severity": "fatal", "location": ["http.ID"], "code": "processing", "diagnostics": "Invalid Page Size", "details": {"text": "Invalid Page Size", "coding": [{"system": "urn:oid:1.2.840.114350.1.13.0.1.7.2.657369", "code": "4110", "display": "Invalid Page Size"}]}}]}}, "InvalidSearchParameterExample": {"value": {"resourceType": "OperationOutcome", "id": "request.id", "issue": [{"severity": "fatal", "location": ["http.ID"], "code": "processing", "diagnostics": "Invalid parameter: param_name", "details": {"text": "The resource request contained an invalid parameter", "coding": [{"system": "urn:oid:1.2.840.114350.1.13.0.1.7.2.657369", "code": "4100", "display": "The resource request contained an invalid parameter"}]}}]}}, "NoParameterSpecifiedExample": {"value": {"resourceType": "OperationOutcome", "id": "request.id", "issue": [{"severity": "fatal", "location": ["http.ID"], "code": "processing", "diagnostics": "No parameters are provided in the search request", "details": {"text": "No parameters are provided in the search request", "coding": [{"system": "urn:oid:1.2.840.114350.1.13.0.1.7.2.657369", "code": "4110", "display": "No parameters are provided in the search request"}]}}]}}}, "description": "No Parameters Sent or Inavlid Parameters!"}</script>
+                    <a id="400-0" class="response-tab-link"
+                        onclick="sandboxModule.showJSONResponse(0, '1-example-0')">
+                        <span
+                            class="response-tab-badge badge-red">
+                            <span class="response-tab-badge-text">
+                                400
+                            </span>
+                        </span>
+                        <span class="response-tab-text">
+                            
+                                Invalid Parameters
+                            
+                        </span>
+                    </a>
+                    
+                    
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <script id="2-example-0" type="application/json">{"type": "404", "schema": {"type": "object", "properties": {"resourceType": {"type": "string"}, "id": {"type": "string"}, "issue": {"type": "array", "items": {"type": "object", "properties": {"severity": {"type": "string"}, "location": {"type": "array", "items": {"type": "string"}}, "code": {"type": "string"}, "diagnostics": {"type": "string"}, "details": {"type": "object", "properties": {"text": {"type": "string"}, "coding": {"type": "array", "items": {"type": "object", "properties": {"system": {"type": "string"}, "code": {"type": "string"}, "display": {"type": "string"}}}}}}}}}}}, "examples": {"InvalidIdExample": {"value": {"resourceType": "OperationOutcome", "id": "request.id", "issue": [{"severity": "fatal", "location": ["http.ID"], "code": "processing", "diagnostics": "Invalid Value: the_invalid_id ", "details": {"text": "The read resource request contained an invalid ID.", "coding": [{"system": "urn:oid:1.2.840.114350.1.13.0.1.7.2.657369", "code": "4102", "display": "The read resource request contained an invalid ID."}]}}]}}}, "description": "Invalid Resource ID"}</script>
+                    <a id="404-0" class="response-tab-link"
+                        onclick="sandboxModule.showJSONResponse(0, '2-example-0')">
+                        <span
+                            class="response-tab-badge badge-red">
+                            <span class="response-tab-badge-text">
+                                404
+                            </span>
+                        </span>
+                        <span class="response-tab-text">
+                            
+                                Invalid Resource ID
+                            
+                        </span>
+                    </a>
+                    
+                    
+                    
+                </li>
+                
+            </ul>
+        </div>
+
+        <div id="json-response-div-0" class="response-content-section">
+            <div id="jsonResponse-0" class="tab-content response-tab-content 0">
+
+            </div>
+            <div class="response-btns-section">
+                <button id="copy-response-btn-0" class="response-section-btn"
+                    onclick="sandboxModule.copyResponseJson(0)">
+                    <span class="request-response-btns-text">Copy code</span>
+                </button>
+                <button id="expand-response-btn-0" class="response-section-btn"
+                    onclick="sandboxModule.expandOrCollapseAllJSONKeys(0, 'all')">
+                    <span class="request-response-btns-text">Expand all</span>
+                </button>
+                <button id="collapse-response-btn-0" class="response-section-btn"
+                    onclick="sandboxModule.expandOrCollapseAllJSONKeys(0)">
+                    <span class="request-response-btns-text">Collapse all</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="api-summary" id="section-1">
+        Find Appointment by id
+    </div>
+    <div class="api-desc-box">
+        <div class="desc-row">
+            <span>
+                <span class="api-desc-badge">
+                    <span class="api-badge-text">GET</span>
+                </span>
+                <span class="api-key">
+                    /Appointment/{id}
+                </span>
+            </span>
+            <span id="test-endpoint-btn-1" class="test-endpoint-btn"
+                onclick="sandboxModule.showEditableParams(1)">Test this endpoint</span>
+        </div>
+        <div class="desc-lower-row">
+            <div class="desc-result-row">
+                <span class="api-desc-badge max-badge">
+                    <span class="api-badge-text max-badge-text">MAX</span>
+                </span>
+                <span class="result-key-desc">
+                    Max results per page: 100
+                </span>
+                <br />
+                <span class="api-desc-badge result-badge">
+                    <span class="api-badge-text result-badge-text">Result</span>
+                </span>
+                <span class="result-key-desc">
+                    Returns a Appointment by id
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div id="query-param-heading-1" class="api-summary">
+        Query Parameters
+    </div>
+    <div id="query-params-box-1" class="row query-params-box">
+        
+        <div class="params-section col-xl-6 col-lg-6 col-md-6">
+            <div class="param-type">
+                
+                <span class="required-text">
+                    (Required)
+                </span>
+                
+                <span class="query-text">(query)</span>
+            </div>
+            <div class="param-text">
+                Content-Type
+            </div>
+            <div class="type-badge">
+                string
+            </div>
+            <div class="params-desc">
+                FHIR Content Type
+            </div>
+        </div>
+        
+        <div class="params-section col-xl-6 col-lg-6 col-md-6">
+            <div class="param-type">
+                
+                <span class="required-text">
+                    (Required)
+                </span>
+                
+                <span class="query-text">(query)</span>
+            </div>
+            <div class="param-text">
+                X-API-KEY
+            </div>
+            <div class="type-badge">
+                string
+            </div>
+            <div class="params-desc">
+                Developer key
+            </div>
+        </div>
+        
+        <div class="params-section col-xl-6 col-lg-6 col-md-6">
+            <div class="param-type">
+                
+                <span class="required-text">
+                    (Required)
+                </span>
+                
+                <span class="query-text">(query)</span>
+            </div>
+            <div class="param-text">
+                id
+            </div>
+            <div class="type-badge">
+                string
+            </div>
+            <div class="params-desc">
+                ID of Appointment to return
+            </div>
+        </div>
+        
+    </div>
+    <div id="editable-params-box-1" class="params-section editable-params-box">
+        <div class="header-section">
+            <span class="header-text">Testing Appointment endpoint</span>
+            <span class="cancel-btn" onclick="sandboxModule.onCancelApiCall(1)">Cancel</span>
+            <span class="cancel-btn-mobile" onclick="sandboxModule.onCancelApiCall(1)"><i class="fa fa-chevron-up"></i></span>
+        </div>
+        
+        <script id="1-form" type="application/json">[{"name": "Content-Type", "in": "header", "description": "FHIR Content Type", "required": true, "style": "simple", "explode": false, "schema": {"type": "string", "default": "application/fhir+json; fhirVersion=4.0"}, "descHTML": "FHIR Content Type"}, {"name": "X-API-KEY", "in": "header", "description": "Developer key", "required": true, "style": "simple", "explode": false, "schema": {"type": "string", "default": "testing"}, "descHTML": "Developer key"}, {"name": "id", "in": "path", "description": "ID of Appointment to return", "required": true, "style": "simple", "explode": false, "schema": {"type": "string"}, "example": "5d78462f-0c7e-46c3-9ac9-5b22256aba7e", "descHTML": "ID of Appointment to return"}]</script>
+        <form id="api-form-1" host=https://api-dev.oninnovaccer.com/fhir>
+            
+            <div class="editable-control-div">
+                <div class="control-label-section">
+                    <span class="param-name">Content-Type</span>
+                    <span class="query-text">(query)</span>
+                    <span class="type-badge">
+                        string
+                    </span>
+                    <div class="params-desc">
+                        FHIR Content Type
+                    </div>
+                </div>
+                <div class="control-section" id="form-control-1-0">
+                    <input id="input-1-0"
+                        placeholder="application/fhir+json; fhirVersion=4.0"
+                        in="header" name="Content-Type" />
+                </div>
+            </div>
+            
+            <div class="editable-control-div">
+                <div class="control-label-section">
+                    <span class="param-name">X-API-KEY</span>
+                    <span class="query-text">(query)</span>
+                    <span class="type-badge">
+                        string
+                    </span>
+                    <div class="params-desc">
+                        Developer key
+                    </div>
+                </div>
+                <div class="control-section" id="form-control-1-1">
+                    <input id="input-1-1"
+                        placeholder="testing"
+                        in="header" name="X-API-KEY" />
+                </div>
+            </div>
+            
+            <div class="editable-control-div">
+                <div class="control-label-section">
+                    <span class="param-name">id</span>
+                    <span class="query-text">(query)</span>
+                    <span class="type-badge">
+                        string
+                    </span>
+                    <div class="params-desc">
+                        ID of Appointment to return
+                    </div>
+                </div>
+                <div class="control-section" id="form-control-1-2">
+                    <input id="input-1-2"
+                        placeholder="5d78462f-0c7e-46c3-9ac9-5b22256aba7e"
+                        in="path" name="id" />
+                </div>
+            </div>
+            
+            <input type="hidden" name="uri" value="/Appointment/{id}" />
+            <input type="hidden" name="method" value="get" />
+        </form>
+        
+        <div class=" api-call-btn-div">
+            <button class="api-call-btn" onclick="sandboxModule.makeAPICall(1)"><span>make api
+                    call</span></button>
+        </div>
+
+        <div id="server-response-box-1" class="server-response-section">
+            <div class="api-response-heading-bar">
+                <span class="api-response-text">
+                    API response from server
+                </span>
+            </div>
+            <div id="server-200-1" class="response-status-div">
+                <div class="api-desc-badge result-badge response-badge-width">
+                    <span class="api-badge-text result-badge-text">200</span>
+                </div>
+                <span class="result-key-desc">
+                    Success outcome
+                </span>
+            </div>
+            <div id="server-400-1" class="response-status-div">
+                <div class="api-desc-badge max-badge response-badge-width">
+                    <span class="api-badge-text max-badge-text">400</span>
+                </div>
+                <span class="result-key-desc">
+                    Failure outcome
+                </span>
+            </div>
+            <div id="server-404-1" class="response-status-div">
+                <div class="api-desc-badge max-badge response-badge-width">
+                    <span class="api-badge-text max-badge-text">404</span>
+                </div>
+                <span class="result-key-desc">
+                    Resource not available
+                </span>
+            </div>
+            <div id="server-error-1" class="response-status-div">
+                <div class="api-desc-badge max-badge response-badge-width">
+                    <span id="err-badge-1" class="api-badge-text max-badge-text">
+                    </span>
+                </div>
+                <span id="err-desc-1" class="result-key-desc">
+                </span>
+            </div>
+
+            <div id="api-server-response-1" class="api-response">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="response-schema-1" class="response-schema">
+        <div class="api-summary">
+            Responses
+        </div>
+        
+        
+        
+        
+        <script id="0-example-1" type="application/json">{"type": "200", "schema": {"type": "object", "properties": {"appointmentType": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "asserter": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "basedOn": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "cancellationReason": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "category": {"type": "string", "example": "asdf"}, "clinical_status": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "code": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "comment": {"type": "string", "example": "asdf"}, "created": {"type": "string", "example": "asdf"}, "criticality": {"type": "string", "example": "asdf"}, "description": {"type": "string", "example": "asdf"}, "empi": {"type": "string", "example": "asdf"}, "encounter": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "end": {"type": "string", "example": "asdf"}, "id": {"type": "string", "example": "asdf"}, "identifier": {"type": "object", "properties": {"assigner": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "period": {"type": "object", "properties": {"end": {"type": "string", "example": "asdf"}, "start": {"type": "string", "example": "asdf"}}}, "system": {"type": "string", "example": "asdf"}, "type": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "use": {"type": "string", "example": "asdf"}, "value": {"type": "string", "example": "asdf"}}}, "lastOccurance": {"type": "string", "example": "asdf"}, "meta": {"type": "object", "properties": {"author": {"type": "object", "properties": {"date": {"type": "string", "example": "asdf"}, "id": {"type": "string", "example": "asdf"}, "name": {"type": "string", "example": "asdf"}, "reason": {"type": "string", "example": "asdf"}}}, "lastUpdated": {"type": "string", "example": "asdf"}, "source": {"type": "string", "example": "asdf"}, "status": {"type": "string", "example": "asdf"}, "versionId": {"type": "string", "example": "asdf"}}}, "minutesDuration": {"type": "integer"}, "note": {"type": "object", "properties": {"authorReference": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}, "time": {"type": "string", "example": "asdf"}}}, "onsetAge": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "comparator": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "unit": {"type": "string", "example": "asdf"}, "value": {"type": "number"}}}, "onsetDateTime": {"type": "string", "example": "asdf"}, "onsetPeriod": {"type": "object", "properties": {"end": {"type": "string", "example": "asdf"}, "start": {"type": "string", "example": "asdf"}}}, "onsetRange": {"type": "object", "properties": {"high": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "comparator": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "unit": {"type": "string", "example": "asdf"}, "value": {"type": "number"}}}, "low": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "comparator": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "unit": {"type": "string", "example": "asdf"}, "value": {"type": "number"}}}}}, "onsetString": {"type": "string", "example": "asdf"}, "participant": {"type": "array", "items": {"type": "object", "properties": {"actor": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "period": {"type": "object", "properties": {"end": {"type": "string", "example": "asdf"}, "start": {"type": "string", "example": "asdf"}}}, "required": {"type": "string", "example": "asdf"}, "status": {"type": "string", "example": "asdf"}, "type": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}}}}, "patient": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "patientInstruction": {"type": "string", "example": "asdf"}, "priority": {"type": "integer"}, "reaction": {"type": "array", "items": {"type": "object", "properties": {"description": {"type": "string", "example": "asdf"}, "exposureRoute": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "id": {"type": "string", "example": "asdf"}, "manifestation": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "note": {"type": "object", "properties": {"authorReference": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}, "time": {"type": "string", "example": "asdf"}}}, "onset": {"type": "string", "example": "asdf"}, "severity": {"type": "string", "example": "asdf"}, "substance": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}}}}, "reasonCode": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "reasonReference": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "recordedDate": {"type": "string", "example": "asdf"}, "recorder": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "serviceCategory": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "serviceType": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "speciality": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "start": {"type": "string", "example": "asdf"}, "status": {"type": "string", "example": "asdf"}, "supportingInformation": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "type": {"type": "string", "example": "asdf"}, "verificationStatus": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}}}, "examples": {"200": {"appointmentType": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "asserter": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "basedOn": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "cancellationReason": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "category": "asdf", "clinical_status": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "code": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "comment": "asdf", "created": "asdf", "criticality": "asdf", "description": "asdf", "empi": "asdf", "encounter": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "end": "asdf", "id": "asdf", "identifier": {"assigner": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "period": {"end": "asdf", "start": "asdf"}, "system": "asdf", "type": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "use": "asdf", "value": "asdf"}, "lastOccurance": "asdf", "meta": {"author": {"date": "asdf", "id": "asdf", "name": "asdf", "reason": "asdf"}, "lastUpdated": "asdf", "source": "asdf", "status": "asdf", "versionId": "asdf"}, "minutesDuration": 1234, "note": {"authorReference": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "text": "asdf", "time": "asdf"}, "onsetAge": {"code": "asdf", "comparator": "asdf", "system": "asdf", "unit": "asdf", "value": 1234}, "onsetDateTime": "asdf", "onsetPeriod": {"end": "asdf", "start": "asdf"}, "onsetRange": {"high": {"code": "asdf", "comparator": "asdf", "system": "asdf", "unit": "asdf", "value": 1234}, "low": {"code": "asdf", "comparator": "asdf", "system": "asdf", "unit": "asdf", "value": 1234}}, "onsetString": "asdf", "participant": [{"actor": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "period": {"end": "asdf", "start": "asdf"}, "required": "asdf", "status": "asdf", "type": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}}], "patient": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "patientInstruction": "asdf", "priority": 1234, "reaction": [{"description": "asdf", "exposureRoute": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "id": "asdf", "manifestation": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "note": {"authorReference": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "text": "asdf", "time": "asdf"}, "onset": "asdf", "severity": "asdf", "substance": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}}], "reasonCode": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "reasonReference": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "recordedDate": "asdf", "recorder": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "serviceCategory": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "serviceType": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "speciality": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "start": "asdf", "status": "asdf", "supportingInformation": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "type": "asdf", "verificationStatus": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}}}, "description": "successful operation"}</script>
+        <div>
+            <div class="schema-header  response-tab-link active" data-toggle="collapse" data-target="#schema-table-0-1">
+                    <span
+                    class="response-tab-badge ">
+                    <span class="response-tab-badge-text">
+                        200
+                    </span>
+                </span>
+                <span class="schema-tab-text ">
+                        successful operation
+                </span>
+                <i class="fa fa-chevron-up schema-expand-icon " onclick="sandboxModule.showSchemaTable(0, 1, '0-example-1')"></i>
+            </div>
+            <div class="schema-table" id="schema-table-0-1">
+                
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        <script id="1-example-1" type="application/json">{"type": "400", "schema": {"type": "object", "properties": {"resourceType": {"type": "string"}, "id": {"type": "string"}, "issue": {"type": "array", "items": {"type": "object", "properties": {"severity": {"type": "string"}, "location": {"type": "array", "items": {"type": "string"}}, "code": {"type": "string"}, "diagnostics": {"type": "string"}, "details": {"type": "object", "properties": {"text": {"type": "string"}, "coding": {"type": "array", "items": {"type": "object", "properties": {"system": {"type": "string"}, "code": {"type": "string"}, "display": {"type": "string"}}}}}}}}}}}, "examples": {"InvalidPageExample": {"value": {"resourceType": "OperationOutcome", "id": "request.id", "issue": [{"severity": "fatal", "location": ["http.ID"], "code": "processing", "diagnostics": "Invalid Page", "details": {"text": "Invalid Page", "coding": [{"system": "urn:oid:1.2.840.114350.1.13.0.1.7.2.657369", "code": "4101", "display": "Invalid Page"}]}}]}}, "InvalidPageNumberExample": {"value": {"resourceType": "OperationOutcome", "id": "request_id", "issue": [{"severity": "fatal", "location": ["http.ID"], "code": "processing", "diagnostics": "Invalid Page Number", "details": {"text": "Invalid Page Number", "coding": [{"system": "urn:oid:1.2.840.114350.1.13.0.1.7.2.657369", "code": "4110", "display": "Invalid Page Number"}]}}]}}, "InvalidPageSizeExample": {"value": {"resourceType": "OperationOutcome", "id": "request_id", "issue": [{"severity": "fatal", "location": ["http.ID"], "code": "processing", "diagnostics": "Invalid Page Size", "details": {"text": "Invalid Page Size", "coding": [{"system": "urn:oid:1.2.840.114350.1.13.0.1.7.2.657369", "code": "4110", "display": "Invalid Page Size"}]}}]}}, "InvalidSearchParameterExample": {"value": {"resourceType": "OperationOutcome", "id": "request.id", "issue": [{"severity": "fatal", "location": ["http.ID"], "code": "processing", "diagnostics": "Invalid parameter: param_name", "details": {"text": "The resource request contained an invalid parameter", "coding": [{"system": "urn:oid:1.2.840.114350.1.13.0.1.7.2.657369", "code": "4100", "display": "The resource request contained an invalid parameter"}]}}]}}, "NoParameterSpecifiedExample": {"value": {"resourceType": "OperationOutcome", "id": "request.id", "issue": [{"severity": "fatal", "location": ["http.ID"], "code": "processing", "diagnostics": "No parameters are provided in the search request", "details": {"text": "No parameters are provided in the search request", "coding": [{"system": "urn:oid:1.2.840.114350.1.13.0.1.7.2.657369", "code": "4110", "display": "No parameters are provided in the search request"}]}}]}}}, "description": "No Parameters Sent or Inavlid Parameters!"}</script>
+        <div>
+            <div class="schema-header red-header response-tab-link active" data-toggle="collapse" data-target="#schema-table-1-1">
+                    <span
+                    class="response-tab-badge badge-red">
+                    <span class="response-tab-badge-text">
+                        400
+                    </span>
+                </span>
+                <span class="schema-tab-text red-text-color">
+                        No Parameters Sent or Inavlid Parameters!
+                </span>
+                <i class="fa fa-chevron-up schema-expand-icon red-icon" onclick="sandboxModule.showSchemaTable(1, 1, '1-example-1')"></i>
+            </div>
+            <div class="schema-table" id="schema-table-1-1">
+                
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        <script id="2-example-1" type="application/json">{"type": "404", "schema": {"type": "object", "properties": {"resourceType": {"type": "string"}, "id": {"type": "string"}, "issue": {"type": "array", "items": {"type": "object", "properties": {"severity": {"type": "string"}, "location": {"type": "array", "items": {"type": "string"}}, "code": {"type": "string"}, "diagnostics": {"type": "string"}, "details": {"type": "object", "properties": {"text": {"type": "string"}, "coding": {"type": "array", "items": {"type": "object", "properties": {"system": {"type": "string"}, "code": {"type": "string"}, "display": {"type": "string"}}}}}}}}}}}, "examples": {"InvalidIdExample": {"value": {"resourceType": "OperationOutcome", "id": "request.id", "issue": [{"severity": "fatal", "location": ["http.ID"], "code": "processing", "diagnostics": "Invalid Value: the_invalid_id ", "details": {"text": "The read resource request contained an invalid ID.", "coding": [{"system": "urn:oid:1.2.840.114350.1.13.0.1.7.2.657369", "code": "4102", "display": "The read resource request contained an invalid ID."}]}}]}}}, "description": "Invalid Resource ID"}</script>
+        <div>
+            <div class="schema-header red-header response-tab-link active" data-toggle="collapse" data-target="#schema-table-2-1">
+                    <span
+                    class="response-tab-badge badge-red">
+                    <span class="response-tab-badge-text">
+                        404
+                    </span>
+                </span>
+                <span class="schema-tab-text red-text-color">
+                        Invalid Resource ID
+                </span>
+                <i class="fa fa-chevron-up schema-expand-icon red-icon" onclick="sandboxModule.showSchemaTable(2, 1, '2-example-1')"></i>
+            </div>
+            <div class="schema-table" id="schema-table-2-1">
+                
+            </div>
+        </div>
+        
+        
+        
+        
+    </div>
+
+    <div class="api-summary">
+        Example Request
+    </div>
+
+    <div class="example-request-box">
+        <div class="example-tab-section">
+            <div class="tab-mobile-section" onblur="sandboxModule.hideCollapsibleList('example-request-1')">
+                <span class="active-tab-text-mobile" id="request-selected-tab-mobile-1"></span>
+                <img src="https://d2uelhfk503lgh.cloudfront.net/static/icons/icon-menu.cf3656d5dffc.svg" class="example-request-menu-icon" data-toggle="collapse" data-target="#example-request-1"></img>
+            </div>
+            
+            <ul id="example-request-1" class="example-tablist panel-collapse collapse show">
+                
+                <li>
+                    <a id="Javascript-1" class="Javascript"
+                        onclick="sandboxModule.showExampleRequestTemplate({&#x27;lang&#x27;: &#x27;Javascript&#x27;, &#x27;source&#x27;: &#x27;var data = null;\n\nvar xhr = new XMLHttpRequest();\nxhr.withCredentials = true;\n\nxhr.addEventListener(&quot;readystatechange&quot;, function () {\n  if (this.readyState === this.DONE) {\n    console.log(this.responseText);\n  }\n});\n\nxhr.open(&quot;GET&quot;, &quot;https://api-dev.oninnovaccer.com/fhir/Appointment/%7Bid%7D&quot;);\nxhr.setRequestHeader(&quot;content-type&quot;, &quot;SOME_STRING_VALUE&quot;);\nxhr.setRequestHeader(&quot;x-api-key&quot;, &quot;SOME_STRING_VALUE&quot;);\n\nxhr.send(data);&#x27;}, 1)">Javascript</a>
+                </li>
+                
+                <li>
+                    <a id="Python-1" class="Python"
+                        onclick="sandboxModule.showExampleRequestTemplate({&#x27;lang&#x27;: &#x27;Python&#x27;, &#x27;source&#x27;: &#x27;import http.client\n\nconn = http.client.HTTPSConnection(&quot;api-dev.oninnovaccer.com&quot;)\n\nheaders = {\n    \&#x27;content-type\&#x27;: &quot;SOME_STRING_VALUE&quot;,\n    \&#x27;x-api-key\&#x27;: &quot;SOME_STRING_VALUE&quot;\n    }\n\nconn.request(&quot;GET&quot;, &quot;fhir/Appointment/%7Bid%7D&quot;, headers=headers)\n\nres = conn.getresponse()\ndata = res.read()\n\nprint(data.decode(&quot;utf-8&quot;))&#x27;}, 1)">Python</a>
+                </li>
+                
+                <li>
+                    <a id="Ruby-1" class="Ruby"
+                        onclick="sandboxModule.showExampleRequestTemplate({&#x27;lang&#x27;: &#x27;Ruby&#x27;, &#x27;source&#x27;: &#x27;require \&#x27;uri\&#x27;\nrequire \&#x27;net/http\&#x27;\nrequire \&#x27;openssl\&#x27;\n\nurl = URI(&quot;https://api-dev.oninnovaccer.com/fhir/Appointment/%7Bid%7D&quot;)\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\nhttp.verify_mode = OpenSSL::SSL::VERIFY_NONE\n\nrequest = Net::HTTP::Get.new(url)\nrequest[&quot;content-type&quot;] = \&#x27;SOME_STRING_VALUE\&#x27;\nrequest[&quot;x-api-key&quot;] = \&#x27;SOME_STRING_VALUE\&#x27;\n\nresponse = http.request(request)\nputs response.read_body&#x27;}, 1)">Ruby</a>
+                </li>
+                
+                <li>
+                    <a id="Shell-1" class="Shell"
+                        onclick="sandboxModule.showExampleRequestTemplate({&#x27;lang&#x27;: &#x27;Shell&#x27;, &#x27;source&#x27;: &quot;curl --request GET \\\n  --url https://api-dev.oninnovaccer.com/fhir/Appointment/%7Bid%7D \\\n  --header &#x27;content-type: SOME_STRING_VALUE&#x27; \\\n  --header &#x27;x-api-key: SOME_STRING_VALUE&#x27;&quot;}, 1)">Shell</a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <div id="tabcontent-1" class="tab-content request-tab-content">
+            <pre>
+                <code class="highlight-block hljs">
+                      
+                </code>
+            </pre>
+            <button id="copy-btn-1" class="copy-example-btn"
+                onclick="sandboxModule.copyExampleCode(1)">
+                <span class="request-response-btns-text">Copy code</span>
+            </button>
+        </div>
+
+    </div>
+
+    <div class="api-summary">
+        Responses
+    </div>
+
+    <div class="example-request-box response-box" id="example-response-box">
+        <div class="example-tab-section">
+            <div class="tab-mobile-section" onblur="sandboxModule.hideCollapsibleList('example-request-1')">
+                <span class="active-tab-text-mobile" id="response-selected-tab-mobile-1"></span>
+                <img src="https://d2uelhfk503lgh.cloudfront.net/static/icons/icon-menu.cf3656d5dffc.svg" class="example-request-menu-icon" data-toggle="collapse" data-target="#example-response-1"></img>
+            </div>
+
+            <ul id="example-response-1" class="example-tablist panel-collapse collapse show">
+                
+                <li>
+                    
+                    
+                    
+                    <script id="0-example-1" type="application/json">{"type": "200", "schema": {"type": "object", "properties": {"appointmentType": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "asserter": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "basedOn": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "cancellationReason": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "category": {"type": "string", "example": "asdf"}, "clinical_status": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "code": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "comment": {"type": "string", "example": "asdf"}, "created": {"type": "string", "example": "asdf"}, "criticality": {"type": "string", "example": "asdf"}, "description": {"type": "string", "example": "asdf"}, "empi": {"type": "string", "example": "asdf"}, "encounter": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "end": {"type": "string", "example": "asdf"}, "id": {"type": "string", "example": "asdf"}, "identifier": {"type": "object", "properties": {"assigner": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "period": {"type": "object", "properties": {"end": {"type": "string", "example": "asdf"}, "start": {"type": "string", "example": "asdf"}}}, "system": {"type": "string", "example": "asdf"}, "type": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "use": {"type": "string", "example": "asdf"}, "value": {"type": "string", "example": "asdf"}}}, "lastOccurance": {"type": "string", "example": "asdf"}, "meta": {"type": "object", "properties": {"author": {"type": "object", "properties": {"date": {"type": "string", "example": "asdf"}, "id": {"type": "string", "example": "asdf"}, "name": {"type": "string", "example": "asdf"}, "reason": {"type": "string", "example": "asdf"}}}, "lastUpdated": {"type": "string", "example": "asdf"}, "source": {"type": "string", "example": "asdf"}, "status": {"type": "string", "example": "asdf"}, "versionId": {"type": "string", "example": "asdf"}}}, "minutesDuration": {"type": "integer"}, "note": {"type": "object", "properties": {"authorReference": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}, "time": {"type": "string", "example": "asdf"}}}, "onsetAge": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "comparator": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "unit": {"type": "string", "example": "asdf"}, "value": {"type": "number"}}}, "onsetDateTime": {"type": "string", "example": "asdf"}, "onsetPeriod": {"type": "object", "properties": {"end": {"type": "string", "example": "asdf"}, "start": {"type": "string", "example": "asdf"}}}, "onsetRange": {"type": "object", "properties": {"high": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "comparator": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "unit": {"type": "string", "example": "asdf"}, "value": {"type": "number"}}}, "low": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "comparator": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "unit": {"type": "string", "example": "asdf"}, "value": {"type": "number"}}}}}, "onsetString": {"type": "string", "example": "asdf"}, "participant": {"type": "array", "items": {"type": "object", "properties": {"actor": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "period": {"type": "object", "properties": {"end": {"type": "string", "example": "asdf"}, "start": {"type": "string", "example": "asdf"}}}, "required": {"type": "string", "example": "asdf"}, "status": {"type": "string", "example": "asdf"}, "type": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}}}}, "patient": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "patientInstruction": {"type": "string", "example": "asdf"}, "priority": {"type": "integer"}, "reaction": {"type": "array", "items": {"type": "object", "properties": {"description": {"type": "string", "example": "asdf"}, "exposureRoute": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "id": {"type": "string", "example": "asdf"}, "manifestation": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "note": {"type": "object", "properties": {"authorReference": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}, "time": {"type": "string", "example": "asdf"}}}, "onset": {"type": "string", "example": "asdf"}, "severity": {"type": "string", "example": "asdf"}, "substance": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}}}}, "reasonCode": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "reasonReference": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "recordedDate": {"type": "string", "example": "asdf"}, "recorder": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "serviceCategory": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "serviceType": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "speciality": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}, "start": {"type": "string", "example": "asdf"}, "status": {"type": "string", "example": "asdf"}, "supportingInformation": {"type": "object", "properties": {"display": {"type": "string", "example": "asdf"}, "reference": {"type": "string", "example": "asdf"}, "type": {"type": "string", "example": "asdf"}}}, "type": {"type": "string", "example": "asdf"}, "verificationStatus": {"type": "object", "properties": {"coding": {"type": "object", "properties": {"code": {"type": "string", "example": "asdf"}, "display": {"type": "string", "example": "asdf"}, "system": {"type": "string", "example": "asdf"}, "userSelected": {"type": "boolean", "example": false}, "version": {"type": "string", "example": "asdf"}}}, "text": {"type": "string", "example": "asdf"}}}}}, "examples": {"200": {"appointmentType": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "asserter": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "basedOn": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "cancellationReason": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "category": "asdf", "clinical_status": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "code": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "comment": "asdf", "created": "asdf", "criticality": "asdf", "description": "asdf", "empi": "asdf", "encounter": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "end": "asdf", "id": "asdf", "identifier": {"assigner": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "period": {"end": "asdf", "start": "asdf"}, "system": "asdf", "type": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "use": "asdf", "value": "asdf"}, "lastOccurance": "asdf", "meta": {"author": {"date": "asdf", "id": "asdf", "name": "asdf", "reason": "asdf"}, "lastUpdated": "asdf", "source": "asdf", "status": "asdf", "versionId": "asdf"}, "minutesDuration": 1234, "note": {"authorReference": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "text": "asdf", "time": "asdf"}, "onsetAge": {"code": "asdf", "comparator": "asdf", "system": "asdf", "unit": "asdf", "value": 1234}, "onsetDateTime": "asdf", "onsetPeriod": {"end": "asdf", "start": "asdf"}, "onsetRange": {"high": {"code": "asdf", "comparator": "asdf", "system": "asdf", "unit": "asdf", "value": 1234}, "low": {"code": "asdf", "comparator": "asdf", "system": "asdf", "unit": "asdf", "value": 1234}}, "onsetString": "asdf", "participant": [{"actor": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "period": {"end": "asdf", "start": "asdf"}, "required": "asdf", "status": "asdf", "type": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}}], "patient": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "patientInstruction": "asdf", "priority": 1234, "reaction": [{"description": "asdf", "exposureRoute": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "id": "asdf", "manifestation": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "note": {"authorReference": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "text": "asdf", "time": "asdf"}, "onset": "asdf", "severity": "asdf", "substance": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}}], "reasonCode": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "reasonReference": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "recordedDate": "asdf", "recorder": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "serviceCategory": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "serviceType": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "speciality": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}, "start": "asdf", "status": "asdf", "supportingInformation": {"display": "asdf", "reference": "asdf", "type": "asdf"}, "type": "asdf", "verificationStatus": {"coding": {"code": "asdf", "display": "asdf", "system": "asdf", "userSelected": false, "version": "asdf"}, "text": "asdf"}}}, "description": "successful operation"}</script>
+                    <a id="200-1" class="response-tab-link"
+                        onclick="sandboxModule.showJSONResponse(1, '0-example-1')">
+                        <span
+                            class="response-tab-badge ">
+                            <span class="response-tab-badge-text">
+                                200
+                            </span>
+                        </span>
+                        <span class="response-tab-text">
+                            
+                                successful operation
+                            
+                        </span>
+                    </a>
+                    
+                    
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <script id="1-example-1" type="application/json">{"type": "400", "schema": {"type": "object", "properties": {"resourceType": {"type": "string"}, "id": {"type": "string"}, "issue": {"type": "array", "items": {"type": "object", "properties": {"severity": {"type": "string"}, "location": {"type": "array", "items": {"type": "string"}}, "code": {"type": "string"}, "diagnostics": {"type": "string"}, "details": {"type": "object", "properties": {"text": {"type": "string"}, "coding": {"type": "array", "items": {"type": "object", "properties": {"system": {"type": "string"}, "code": {"type": "string"}, "display": {"type": "string"}}}}}}}}}}}, "examples": {"InvalidPageExample": {"value": {"resourceType": "OperationOutcome", "id": "request.id", "issue": [{"severity": "fatal", "location": ["http.ID"], "code": "processing", "diagnostics": "Invalid Page", "details": {"text": "Invalid Page", "coding": [{"system": "urn:oid:1.2.840.114350.1.13.0.1.7.2.657369", "code": "4101", "display": "Invalid Page"}]}}]}}, "InvalidPageNumberExample": {"value": {"resourceType": "OperationOutcome", "id": "request_id", "issue": [{"severity": "fatal", "location": ["http.ID"], "code": "processing", "diagnostics": "Invalid Page Number", "details": {"text": "Invalid Page Number", "coding": [{"system": "urn:oid:1.2.840.114350.1.13.0.1.7.2.657369", "code": "4110", "display": "Invalid Page Number"}]}}]}}, "InvalidPageSizeExample": {"value": {"resourceType": "OperationOutcome", "id": "request_id", "issue": [{"severity": "fatal", "location": ["http.ID"], "code": "processing", "diagnostics": "Invalid Page Size", "details": {"text": "Invalid Page Size", "coding": [{"system": "urn:oid:1.2.840.114350.1.13.0.1.7.2.657369", "code": "4110", "display": "Invalid Page Size"}]}}]}}, "InvalidSearchParameterExample": {"value": {"resourceType": "OperationOutcome", "id": "request.id", "issue": [{"severity": "fatal", "location": ["http.ID"], "code": "processing", "diagnostics": "Invalid parameter: param_name", "details": {"text": "The resource request contained an invalid parameter", "coding": [{"system": "urn:oid:1.2.840.114350.1.13.0.1.7.2.657369", "code": "4100", "display": "The resource request contained an invalid parameter"}]}}]}}, "NoParameterSpecifiedExample": {"value": {"resourceType": "OperationOutcome", "id": "request.id", "issue": [{"severity": "fatal", "location": ["http.ID"], "code": "processing", "diagnostics": "No parameters are provided in the search request", "details": {"text": "No parameters are provided in the search request", "coding": [{"system": "urn:oid:1.2.840.114350.1.13.0.1.7.2.657369", "code": "4110", "display": "No parameters are provided in the search request"}]}}]}}}, "description": "No Parameters Sent or Inavlid Parameters!"}</script>
+                    <a id="400-1" class="response-tab-link"
+                        onclick="sandboxModule.showJSONResponse(1, '1-example-1')">
+                        <span
+                            class="response-tab-badge badge-red">
+                            <span class="response-tab-badge-text">
+                                400
+                            </span>
+                        </span>
+                        <span class="response-tab-text">
+                            
+                                Invalid Parameters
+                            
+                        </span>
+                    </a>
+                    
+                    
+                    
+                </li>
+                
+                <li>
+                    
+                    
+                    
+                    <script id="2-example-1" type="application/json">{"type": "404", "schema": {"type": "object", "properties": {"resourceType": {"type": "string"}, "id": {"type": "string"}, "issue": {"type": "array", "items": {"type": "object", "properties": {"severity": {"type": "string"}, "location": {"type": "array", "items": {"type": "string"}}, "code": {"type": "string"}, "diagnostics": {"type": "string"}, "details": {"type": "object", "properties": {"text": {"type": "string"}, "coding": {"type": "array", "items": {"type": "object", "properties": {"system": {"type": "string"}, "code": {"type": "string"}, "display": {"type": "string"}}}}}}}}}}}, "examples": {"InvalidIdExample": {"value": {"resourceType": "OperationOutcome", "id": "request.id", "issue": [{"severity": "fatal", "location": ["http.ID"], "code": "processing", "diagnostics": "Invalid Value: the_invalid_id ", "details": {"text": "The read resource request contained an invalid ID.", "coding": [{"system": "urn:oid:1.2.840.114350.1.13.0.1.7.2.657369", "code": "4102", "display": "The read resource request contained an invalid ID."}]}}]}}}, "description": "Invalid Resource ID"}</script>
+                    <a id="404-1" class="response-tab-link"
+                        onclick="sandboxModule.showJSONResponse(1, '2-example-1')">
+                        <span
+                            class="response-tab-badge badge-red">
+                            <span class="response-tab-badge-text">
+                                404
+                            </span>
+                        </span>
+                        <span class="response-tab-text">
+                            
+                                Invalid Resource ID
+                            
+                        </span>
+                    </a>
+                    
+                    
+                    
+                </li>
+                
+            </ul>
+        </div>
+
+        <div id="json-response-div-1" class="response-content-section">
+            <div id="jsonResponse-1" class="tab-content response-tab-content 1">
+
+            </div>
+            <div class="response-btns-section">
+                <button id="copy-response-btn-1" class="response-section-btn"
+                    onclick="sandboxModule.copyResponseJson(1)">
+                    <span class="request-response-btns-text">Copy code</span>
+                </button>
+                <button id="expand-response-btn-1" class="response-section-btn"
+                    onclick="sandboxModule.expandOrCollapseAllJSONKeys(1, 'all')">
+                    <span class="request-response-btns-text">Expand all</span>
+                </button>
+                <button id="collapse-response-btn-1" class="response-section-btn"
+                    onclick="sandboxModule.expandOrCollapseAllJSONKeys(1)">
+                    <span class="request-response-btns-text">Collapse all</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    </div>
+</div>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://d2uelhfk503lgh.cloudfront.net/static/js/usagechart.4cbf474e28e4.js"></script>
+  <script src="https://d2uelhfk503lgh.cloudfront.net/static/js/edit_application.controller.40736eb6b7e2.js"></script>
+  <script src="https://d2uelhfk503lgh.cloudfront.net/static/js/validation_service.7d25b1d89d08.js"></script>
+  <script src="https://d2uelhfk503lgh.cloudfront.net/static/js/signup_validation.a8802fd75cc5.js"></script>
+  <script src="https://d2uelhfk503lgh.cloudfront.net/static/js/signin_validation.b810830db88d.js"></script>
+  <script src="https://d2uelhfk503lgh.cloudfront.net/static/js/forgotResetPassword_validation.140a2facac54.js"></script>
+  <script src="https://d2uelhfk503lgh.cloudfront.net/static/js/utils.cee4b0a91d1d.js"></script>
+  <script src="https://d2uelhfk503lgh.cloudfront.net/static/js/app_validation.70f7f8e66c75.js"></script>
+</body>
+
+</html>
