@@ -40,8 +40,17 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: Lato;
+  src: url("./assets/fonts/Lato-Regular.ttf");
+}
+@font-face {
+  font-family: Roboto;
+  src: url("./assets/fonts/Roboto-Regular.ttf");
+}
+
 html {
-  font-family: sans-serif;
+  font-family: Lato;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -168,7 +177,7 @@ sup {
 }
 
 a {
-  color: #bd5d38;
+  color: #324d65;
   text-decoration: none;
   background-color: transparent;
 }
@@ -6490,7 +6499,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #bd5d38 !important;
+  background-color: #324d65 !important;
 }
 
 a.bg-primary:hover,
@@ -10205,9 +10214,13 @@ button.bg-dark:focus {
   color: #bd5d38 !important;
 }
 
+.text-primary-surname {
+  color: #324d65 !important;
+}
+
 a.text-primary:hover,
 a.text-primary:focus {
-  color: #824027 !important;
+  color: #324d65 !important;
 }
 
 .text-secondary {
@@ -10513,7 +10526,7 @@ p.lead {
   margin-right: 0;
 }
 .social-icons .social-icon:hover {
-  background-color: #bd5d38;
+  background-color: #324d65;
 }
 
 .dev-icons {
