@@ -1,0 +1,17 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body onload="redirectFunction()"></body>
+<script>
+    function redirectFunction() {
+        let currentUrl = window.location.href;
+        let params = currentUrl.slice(44);
+        // https://rohansaxena.in/salesforce/index.html
+        window.location.href = "http://127.0.0.1:8080/service/plugins/salesforce/authorize/callback";
+    }
+</script>
+
+</html>
