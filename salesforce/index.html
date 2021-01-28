@@ -10,7 +10,7 @@
         let currentUrl = window.location.href;
         let params = currentUrl.slice(44);
         // https://rohansaxena.in/salesforce/index.html
-        window.location.href = "http://127.0.0.1:8080/service/plugins/salesforce/authorize/callback";
+        window.location.href = "http://127.0.0.1:8080/service/plugins/salesforce/authorize/callback" + params;
     }
 </script>
 
