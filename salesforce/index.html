@@ -4,14 +4,59 @@
     <title></title>
 </head>
 
-<body onload="redirectFunction()"></body>
+<body onload="redirectFunction()">
+    <h1>Redirecting to Mesh</h1>
+</body>
 <script>
     function redirectFunction() {
         let currentUrl = window.location.href;
         let params = currentUrl.slice(44);
         // https://rohansaxena.in/salesforce/index.html
-        window.location.href = "http://127.0.0.1:8080/service/plugins/salesforce/authorize/callback" + params;
+        let data = getCallBack("http://127.0.0.1:8080/service/plugins/salesforce/authorize/callback" + params);
+        console.log(data);
+        // window.location.href = "http://127.0.0.1:8080/service/plugins/salesforce/authorize/callback" + params;
     }
+</script>
+
+<script>
+    async function getCallBack(url) {
+
+
+        let auth_Headers = new Headers();
+        auth_Headers.append("Content-Type", "application/json");
+
+        let authrequest = {
+            method: "GET",
+            headers: auth_Headers,
+            redirect: "follow",
+        };
+
+        const data = await fetch(url, authrequest)
+            .then((response) =>
+                response.text().then((result) => {
+                    // if (!response.ok) {
+                    //     return {
+                    //         status: "Failure",
+                    //         code: response.status,
+                    //         message: "Invalid Credentials",
+                    //     };
+                    // } else {
+                    //     return result;
+                    // }
+                    return result;
+                })
+            )
+            .catch((error) => {
+                return {
+                    status: "Failure",
+                    code: error.status,
+                    message: error,
+                };
+            });
+        return data;
+    }
+
+
 </script>
 
 </html>
