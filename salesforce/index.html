@@ -5,15 +5,18 @@
 </head>
 
 <body onload="redirectFunction()">
-    <h1>Redirecting to Mesh</h1>
+    <h1>The People Mesh</h1>
+    <p id="resultId"></p>
 </body>
 <script>
-    function redirectFunction() {
+    async function redirectFunction() {
         let currentUrl = window.location.href;
         let params = currentUrl.slice(44);
         // https://rohansaxena.in/salesforce/index.html
-        let data = getCallBack("http://127.0.0.1:8080/service/plugins/salesforce/authorize/callback" + params);
+        let data = await getCallBack("http://127.0.0.1:8080/service/plugins/salesforce/authorize/callback" + params);
+
         console.log(data);
+        document.getElementById("resultId").innerHTML = data["status"] + "\n" + data["message"];
         // window.location.href = "http://127.0.0.1:8080/service/plugins/salesforce/authorize/callback" + params;
     }
 </script>
@@ -34,16 +37,19 @@
         const data = await fetch(url, authrequest)
             .then((response) =>
                 response.text().then((result) => {
-                    // if (!response.ok) {
-                    //     return {
-                    //         status: "Failure",
-                    //         code: response.status,
-                    //         message: "Invalid Credentials",
-                    //     };
-                    // } else {
-                    //     return result;
-                    // }
-                    return result;
+                    if (!response.ok) {
+                        return {
+                            status: "Failure",
+                            code: response.status,
+                            message: "Invalid Credentials",
+                        };
+                    } else {
+                        return {
+                            status: "Success",
+                            code: response.status,
+                            message: result
+                        }
+                    }
                 })
             )
             .catch((error) => {
