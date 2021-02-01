@@ -1,23 +1,29 @@
 <html>
 
 <head>
-    <title></title>
+    <title>Authorization</title>
 </head>
+<style>
+    body {
+        font-family: 'Roboto';
+    }
+</style>
 
 <body onload="redirectFunction()">
     <div class="container-fluid">
-        <div class="row" style="margin-top: 4rem;text-align: center;">
+        <div class="row" style="margin-top: 7rem;text-align: center;">
             <div class="col">
-                <h1>The People Mesh</h1>
+                <img src="./img/mesh-A.png">
+                <!-- <h1>The People Mesh</h1> -->
             </div>
         </div>
-        <div class="row" style="margin-top: 1rem;text-align: center;">
+        <div class="row" style="margin-top: 2rem;text-align: center;  color:rgb(204, 73, 73)">
             <div class="col">
                 <h2 id="resultId">
                 </h2>
             </div>
         </div>
-        <div class="row" style="margin-top: 1rem;text-align: center;">
+        <div class="row" style="margin-top: 2rem;text-align: center; color:rgb(99, 25, 25)">
             <div>
                 <div>
                     <h3 id="responseResult"></h3>
@@ -35,8 +41,8 @@
         let params = currentUrl.slice(44);
         let data = await getCallBack("http://127.0.0.1:8080/service/plugins/salesforce/settings/callback" + params);
 
-        document.getElementById("responseResult").innerHTML = data["message"];
-        document.getElementById("resultId").innerHTML = data["status"] + "\n" + data["message"];
+        document.getElementById("responseResult").innerHTML = data["message"]["message"];
+        document.getElementById("resultId").innerHTML = data["status"] + "," + data["code"];
     }
 </script>
 
@@ -60,13 +66,13 @@
                         return {
                             status: "Failure",
                             code: response.status,
-                            message: result,
+                            message: JSON.parse(result),
                         };
                     } else {
                         return {
                             status: "Success",
                             code: response.status,
-                            message: result
+                            message: JSON.parse(result)
                         }
                     }
                 })
