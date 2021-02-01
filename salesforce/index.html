@@ -13,20 +13,27 @@
     <div class="container-fluid">
         <div class="row" style="margin-top: 7rem;text-align: center;">
             <div class="col">
-                <img src="./img/mesh-A.png">
+                <img src="./img/mesh-A.png" height="150rem">
                 <!-- <h1>The People Mesh</h1> -->
             </div>
         </div>
-        <div class="row" style="margin-top: 2rem;text-align: center;  color:rgb(204, 73, 73)">
+        <div class="row" style="margin-top: 5rem;text-align: center;  color:rgb(41, 37, 37); font-size: 26px;">
             <div class="col">
-                <h2 id="resultId">
-                </h2>
+                <h1 id="resultId">
+                </h1>
             </div>
         </div>
-        <div class="row" style="margin-top: 2rem;text-align: center; color:rgb(99, 25, 25)">
+        <div class="row" style="margin-top: 2rem;text-align: center; color:rgb(99, 25, 25);font-size: 20px;">
             <div>
                 <div>
                     <h3 id="responseResult"></h3>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 2rem;text-align: center; color:rgb(100, 72, 72);font-size: 20px;">
+            <div>
+                <div>
+                    <p>Closing in <span id="countdown"></span></p>
                 </div>
             </div>
         </div>
@@ -35,6 +42,19 @@
 
 
 </body>
+
+<script>
+    var timeleft = 10;
+    var downloadTimer = setInterval(function () {
+        if (timeleft <= 0) {
+            clearInterval(downloadTimer);
+            window.close();
+        } else {
+            document.getElementById("countdown").innerHTML = timeleft + " seconds.";
+        }
+        timeleft -= 1;
+    }, 1000);
+</script>
 <script>
     async function redirectFunction() {
         let currentUrl = window.location.href;
@@ -43,6 +63,17 @@
 
         document.getElementById("responseResult").innerHTML = data["message"]["message"];
         document.getElementById("resultId").innerHTML = data["status"] + "," + data["code"];
+
+        var timeleft = 10;
+        var downloadTimer = setInterval(function () {
+            if (timeleft <= 0) {
+                clearInterval(downloadTimer);
+                window.close();
+            } else {
+                document.getElementById("countdown").innerHTML = timeleft + " seconds.";
+            }
+            timeleft -= 1;
+        }, 1000);
     }
 </script>
 
