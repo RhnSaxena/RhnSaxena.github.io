@@ -15,10 +15,8 @@
     async function redirectFunction() {
         let currentUrl = window.location.href;
         let params = currentUrl.slice(44);
-        // https://rohansaxena.in/salesforce/index.html
         let data = await getCallBack("http://127.0.0.1:8080/service/plugins/salesforce/settings/callback" + params);
 
-        console.log(data);
         document.getElementById("responseResult").innerHTML = data["message"];
         document.getElementById("resultId").innerHTML = data["status"] + "\n" + data["message"];
     }
@@ -44,7 +42,7 @@
                         return {
                             status: "Failure",
                             code: response.status,
-                            message: "Invalid Credentials",
+                            message: result,
                         };
                     } else {
                         return {
