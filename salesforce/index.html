@@ -50,6 +50,7 @@
             clearInterval(downloadTimer);
             window.close();
         } else {
+            document.getElementById("countdown").innerHTML = "";
             document.getElementById("countdown").innerHTML = timeleft + " seconds.";
         }
         timeleft -= 1;
