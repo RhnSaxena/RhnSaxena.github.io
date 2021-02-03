@@ -1,0 +1,314 @@
+@media (min-width: 1024px) {
+  .fixed-bottom-web {
+    position: fixed !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    z-index: 1030 !important;
+  }
+  html {
+    height: 100vh;
+  }
+}
+
+.text-black {
+  color: black;
+}
+
+.shdw {
+  -webkit-box-shadow: 2px 4px 20px 2px rgba(0, 0, 0, 0.75) !important;
+  -moz-box-shadow: 2px 4px 20px 2px rgba(0, 0, 0, 0.75) !important;
+  box-shadow: 2px 4px 20px 2px rgba(0, 0, 0, 0.75) !important;
+}
+
+.shdw-med {
+  -webkit-box-shadow: 2px 4px 20px -4px rgba(0, 0, 0, 0.75) !important;
+  -moz-box-shadow: 2px 4px 20px -4px rgba(0, 0, 0, 0.75) !important;
+  box-shadow: 2px 4px 20px -4px rgba(0, 0, 0, 0.75) !important;
+}
+.shdw-light {
+  -webkit-box-shadow: 6px 10px 6px -5px #777 !important;
+  -moz-box-shadow: 6px 10px 6px -5px #777 !important;
+  box-shadow: 6px 10px 6px -5px #777 !important;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.company-logo {
+  height: 8rem;
+  width: 8rem;
+}
+
+.gradient {
+  background-color: #bdd4e7;
+  background-image: linear-gradient(315deg, #5cc2d0 0%, #4858da 74%);
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.btn-rounded {
+  border-radius: 30px !important;
+}
+
+.btn-facebook {
+  background-color: #3b5998 !important;
+}
+.btn-whatsapp {
+  background-color: #25d366 !important;
+}
+.btn-gmail {
+  background-color: #d44638 !important;
+}
+.btn-map {
+  background-color: #0daf71 !important;
+}
+.btn-phone {
+  background-color: #c64fe0 !important;
+}
+.btn-instagram {
+  background-color: #e1306c !important;
+}
+
+.zoom-effect:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 510px) {
+  .company-logo {
+    height: 5rem;
+    width: 5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .company-logo {
+    height: 6rem;
+    width: 6rem;
+  }
+}
+
+/* For Carousel */
+/* Start */
+
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
+}
+
+#custCarousel .carousel-indicators {
+  position: static;
+  margin-top: 20px;
+}
+
+#custCarousel .carousel-indicators > li {
+  width: 100px;
+}
+
+#custCarousel .carousel-indicators li img {
+  display: block;
+  /* opacity: 0.5; */
+}
+
+#custCarousel .carousel-indicators li.active img {
+  opacity: 1;
+}
+
+.carousel-item img {
+  width: 80%;
+}
+
+/*Zoom Button and Tint Overlay*/
+#lightgallery li a span.overlay i {
+  display: block;
+  visibility: hidden;
+  opacity: 0.55;
+  -moz-opacity: 0.55;
+  -webkit-opacity: 0.55;
+  filter: alpha(opacity=65);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
+}
+
+@media (max-width: 768px) {
+  .modal-body {
+    height: 35rem;
+    overflow-y: scroll;
+  }
+}
+
+/*Zoom Button*/
+#lightgallery li a:hover span.overlay i {
+  visibility: visible;
+  position: absolute;
+  top: 35%;
+  left: 0%;
+  width: 100%;
+  font-size: 2.25em;
+  color: #fff !important;
+  text-align: center;
+  opacity: 0.7;
+  -moz-opacity: 1;
+  -webkit-opacity: 1;
+  filter: alpha(opacity=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+}
+
+@media (max-width: 768px) {
+  .filler {
+    display: none;
+  }
+}
+
+/* LightBox */
+/* START */
+
+.page-head {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.page-head .lead {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 50px;
+  margin-top: 0;
+}
+
+.page-head h1 {
+  font-size: 42px;
+  margin: 0 0 20px;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+}
+
+.page-head h1 .version {
+  bottom: 0;
+  color: #ddd;
+  font-size: 11px;
+  font-style: italic;
+  position: absolute;
+  width: 58px;
+  right: -58px;
+}
+
+.demo-gallery > ul {
+  margin-bottom: 0;
+  padding-left: 15px;
+}
+
+.demo-gallery > ul > li {
+  margin-bottom: 15px;
+  width: 180px;
+  display: inline-block;
+  margin-right: 15px;
+  list-style: outside none none;
+}
+
+.demo-gallery > ul > li a {
+  border: 3px solid #fff;
+  border-radius: 3px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  float: left;
+}
+
+.demo-gallery > ul > li a > img {
+  -webkit-transition: -webkit-transform 0.15s ease 0s;
+  -moz-transition: -moz-transform 0.15s ease 0s;
+  -o-transition: -o-transform 0.15s ease 0s;
+  transition: transform 0.15s ease 0s;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  height: 100%;
+  width: 100%;
+}
+
+.demo-gallery > ul > li a:hover > img {
+  -webkit-transform: scale3d(1.1, 1.1, 1.1);
+  transform: scale3d(1.1, 1.1, 1.1);
+}
+
+.demo-gallery > ul > li a .demo-gallery-poster {
+  background-color: rgba(0, 0, 0, 0.1);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: background-color 0.15s ease 0s;
+  -o-transition: background-color 0.15s ease 0s;
+  transition: background-color 0.15s ease 0s;
+}
+
+.demo-gallery > ul > li a:hover .demo-gallery-poster {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.demo-gallery .justified-gallery > a > img {
+  -webkit-transition: -webkit-transform 0.15s ease 0s;
+  -moz-transition: -moz-transform 0.15s ease 0s;
+  -o-transition: -o-transform 0.15s ease 0s;
+  transition: transform 0.15s ease 0s;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  height: 100%;
+  width: 100%;
+}
+
+.demo-gallery .justified-gallery > a:hover > img {
+  -webkit-transform: scale3d(1.1, 1.1, 1.1);
+  transform: scale3d(1.1, 1.1, 1.1);
+}
+
+.demo-gallery .justified-gallery > a:hover .demo-gallery-poster > img {
+  opacity: 1;
+}
+
+.demo-gallery .justified-gallery > a .demo-gallery-poster {
+  background-color: rgba(0, 0, 0, 0.1);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: background-color 0.15s ease 0s;
+  -o-transition: background-color 0.15s ease 0s;
+  transition: background-color 0.15s ease 0s;
+}
+
+.demo-gallery .justified-gallery > a .demo-gallery-poster > img {
+  left: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  -webkit-transition: opacity 0.3s ease 0s;
+  -o-transition: opacity 0.3s ease 0s;
+  transition: opacity 0.3s ease 0s;
+}
+
+.demo-gallery .justified-gallery > a:hover .demo-gallery-poster {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.demo-gallery .video .demo-gallery-poster img {
+  height: 48px;
+  margin-left: -24px;
+  margin-top: -24px;
+  opacity: 0.8;
+  width: 48px;
+}
+
+.demo-gallery.dark > ul > li a {
+  border: 3px solid #04070a;
+}
+/* END */
+/* LightBox */
