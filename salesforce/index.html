@@ -48,21 +48,23 @@
     async function redirectFunction() {
         let currentUrl = window.location.href;
         let params = currentUrl.slice(44);
-        let data = await getCallBack("http://127.0.0.1:8080/service/plugins/salesforce/settings/callback" + params);
+        let redirectUrl = "https://localhost:3000/settings/plugins/salesforce" + params;
+        window.location.href = redirectUrl;
+        // let data = await getCallBack("http://127.0.0.1:8080/service/plugins/salesforce/settings/callback" + params);
 
-        document.getElementById("responseResult").innerHTML = data["message"]["message"];
-        document.getElementById("resultId").innerHTML = data["status"] + "," + data["code"];
+        // document.getElementById("responseResult").innerHTML = data["message"]["message"];
+        // document.getElementById("resultId").innerHTML = data["status"] + "," + data["code"];
 
-        var timeleft = 10;
-        var downloadTimer = setInterval(function () {
-            if (timeleft <= 0) {
-                clearInterval(downloadTimer);
-                window.close();
-            } else {
-                document.getElementById("countdown").innerHTML = timeleft + " seconds.";
-            }
-            timeleft -= 1;
-        }, 1000);
+        // var timeleft = 10;
+        // var downloadTimer = setInterval(function () {
+        //     if (timeleft <= 0) {
+        //         clearInterval(downloadTimer);
+        //         window.close();
+        //     } else {
+        //         document.getElementById("countdown").innerHTML = timeleft + " seconds.";
+        //     }
+        //     timeleft -= 1;
+        // }, 1000);
     }
 </script>
 
