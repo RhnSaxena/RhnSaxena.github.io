@@ -475,7 +475,7 @@ table {
  }
  @media screen and (max-width: 1024px) {
 	.hero {
-		background: url('../img/header-bg.jpg') right top 45% no-repeat;
+		background: url('../img/header-bg.jpg') right 70% top 40% no-repeat;
 		background-size: fill;
 	}
 	.hero h1 {
